@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="icon" href="assets/img/portfolio.ico">
+    <link rel="stylesheet" href="assets/css/portfolio.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.css" />
+  </head>
+  <body class="bg-background">
+    <!-- home-start -->
+    <section id="home" class="section-base bio:h-screen md:grid md:grid-cols-1 bio:grid-cols-bio md:grid-rows-bio justify-content-center bio:align-items-center">
+      <nav class="fixed z-50 bg-[#343E4B]/50 inset-x-0 top-6 mx-6 rounded-md border-solid border-2 p-3 backdrop-blur-lg border-accent flex justify-between items-center md:hidden">
+        <div class="space-x-9 flex w-max items-center">
+          <div class="w-max flex items-center space-x-4">
+            <img src="assets/img/logo.png" alt="logo">
+            <h3 class="text-2xl font-bold">Portfolio</h3>
+          </div>
+          <div class="w-max hidden sm:flex items-center space-x-2">
+            <i class="fa-regular fa-globe"></i>
+            <span>EN</span>
+          </div>
+        </div>
+        <div class="w-11 h-8 flex flex-col justify-between">
+          <div class="w-full h-1 bg-accent rounded-full"></div>
+          <div class="w-1/2 self-end h-1 bg-accent rounded-full"></div>
+          <div class="w-full h-1 bg-accent rounded-full"></div>
+        </div>
+      </nav>
+
+      <nav class="hidden md:flex items-center justify-between col-span-full py-7 space-x-2">
+        <div class="space-x-9 flex w-max items-center">
+          <div class="w-max flex items-center space-x-4">
+            <img src="assets/img/logo.png" alt="logo">
+            <h3 class="text-2xl font-bold">Portfolio</h3>
+          </div>
+          <div class="w-max hidden sm:flex items-center space-x-2">
+            <i class="fa-regular fa-globe"></i>
+            <span>EN</span>
+          </div>
+        </div>
+        <ul class="w-max capitalize font-semibold flex items-center space-x-16">
+          <li><a href="#home" class="text-accent cursor-pointer">home</a></li>
+          <li><a href="#education" class="cursor-pointer">education</a></li>
+          <li><a href="#skills" class="cursor-pointer">skills</a></li>
+          <li><a href="#projects" class="cursor-pointer">projects</a></li>
+        </ul>
+      </nav>
+
+      <nav class="hidden fixed inset-0 z-[99] bg-background p-12 grid grid-cols-2 grid-rows-nav align-items-center">
+        <div class="w-max flex items-center space-x-2 sm:invisible">
+          <i class="fa-regular fa-globe"></i>
+          <span>EN</span>
+        </div>
+        <div class="aspect-square w-16 sm:w-20 bg-dark rounded-full relative cursor-pointer justify-self-end">
+          <div class="absolute w-full h-full p-2 flex items-center">
+            <div class="w-full rotate-45 h-1 bg-base"></div>
+          </div>
+          <div class="absolute w-full h-full p-2 flex items-center">
+            <div class="w-full -rotate-45 h-1 bg-base"></div>
+          </div>
+        </div>
+        <ul class="col-span-full">
+          <li class="nav-child">home</li>
+          <li class="nav-child">education</li>
+          <li class="nav-child">skills</li>
+          <li class="nav-child">project</li>
+        </ul>
+      </nav>
+
+      <div class="w-[320px] sm:w-[400px] mx-auto aspect-square relative mt-32 md:mt-0 bio:order-2 bio:justify-self-end bio:mx-0">
+        <svg class="absolute inset-0 scale-150 drop-shadow-basic" viewBox="0 0 200 200">
+          <path fill="#00BD95" d="M39.4,-41.8C50.3,-28.5,57.8,-14.3,57.1,-0.6C56.5,13,47.7,26,36.8,32.1C26,38.3,13,37.6,-2.6,40.2C-18.2,42.8,-36.5,48.8,-47.9,42.6C-59.3,36.5,-63.8,18.2,-58.6,5.2C-53.4,-7.9,-38.5,-15.7,-27.1,-29C-15.7,-42.2,-7.9,-60.8,3.2,-63.9C14.3,-67.1,28.5,-55,39.4,-41.8Z" transform="translate(100 100)" />
+        </svg>
+        <img class="absolute w-full scale-[.7] rotate-[8.5deg]" src="assets/img/geometri.png" alt="geometri">
+      </div>
+
+      <div class="text-center capitalize mt-4 bio:mt-0 bio:order-1 bio:justify-self-start bio:text-start">
+        <div class="space-y-4 sm:space-y-5">
+          <h3 class="text-2xl sm:text-3xl">hello, <span class="text-accent">i'm</span></h3>
+          <h1 class="text-4xl sm:text-5xl text-accent font-suez tracking-widest">luji ramdhan</h1>
+          <h2 class="text-2xl sm:text-3xl font-semibold">junior frontend developer</h2>
+          <p class="text-sm sm:text-sm lowercase max-w-[470px] mx-auto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit molestiae sequi aut dolorem perferendis quaerat!</p>
+        </div>
+        <div class="mx-auto bio:ml-0 mt-10 mb-16 sm:mt-14 sm:mb-20 bg-accent drop-shadow-basic capitalize w-36 h-11 font-bold text-xl font-arial flex justify-center items-center rounded-xl">let's talk</div>
+
+        <div class="hidden bio:flex w-max space-x-5">
+          <div class="hexagon">
+            <i class="fa-brands fa-github -rotate-90"></i>  
+          </div>
+          <div class="hexagon">
+            <i class="fa-brands fa-instagram -rotate-90"></i>  
+          </div>
+          <div class="hexagon">
+            <i class="fa-brands fa-facebook-f -rotate-90"></i>  
+          </div>
+      </div>
+    </section>
+    <!-- home-end -->
+
+    <!-- education-start -->
+    <div id="education" class="h-[500px] bg-rose-500"></div>
+    <!-- education-end -->
+  </body>
+</html>

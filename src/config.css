@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #EBECED;
+    }
+
+    @font-face {
+        font-family: 'suez';
+        src: url('../font/SuezOne-Regular.ttf') format('truetype');
+    }
+    
+    @font-face {
+        font-family: 'sansation';
+        src: url('../font/Sansation-Regular-webfont.woff') format('woff');
+    }
+
+    body {
+        @apply font-sansation text-base;
+    }
+}
+
+@layer components {
+    .section-base {
+       @apply px-2.5 md:px-5 overflow-hidden;
+    }
+
+    .hexagon {
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        @apply w-16 h-14 flex justify-center items-center text-4xl bg-[#165750] rotate-90;
+    }
+
+    .nav-child {
+        @apply bg-dark text-center capitalize font-semibold text-4xl sm:text-5xl py-10 sm:py-12;
+    }
+}
+
+@layer utilities {
+    .justify-content-center {
+        justify-content: center;
+    }
+
+    .align-items-center {
+        align-items: center;
+    }
+}
