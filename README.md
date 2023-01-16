@@ -1,2 +1,2 @@
-# portfolio
-Personal portfolio
+# Portfolio
+Portfolio with animation.
