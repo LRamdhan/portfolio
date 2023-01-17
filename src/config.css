@@ -42,6 +42,18 @@
     .nav-child {
         @apply bg-dark text-center capitalize font-semibold text-4xl sm:text-5xl py-10 sm:py-12;
     }
+
+    .project-card {
+        @apply aspect-square w-28 sm:w-44 md:w-56 bg-[#81848A] rounded-xl;
+    }
+
+    .project-nav {
+        @apply bg-[#2F3135]/60 aspect-square w-12 sm:w-14 rounded-full overflow-hidden flex justify-center items-center;
+    }
+
+    .project-arrow {
+        @apply aspect-square w-1/3 border-solid border-t-[3.5px] sm:border-t-4 border-l-[3.5px] sm:border-l-4 border-accent;
+    }
 }
 
 @layer utilities {
