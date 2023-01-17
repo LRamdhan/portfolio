@@ -12,6 +12,7 @@
         -ms-user-select: none;
         user-select: none;
         color: #EBECED;
+        @apply scroll-smooth;
     }
 
     @font-face {
@@ -53,6 +54,10 @@
 
     .project-arrow {
         @apply aspect-square w-1/3 border-solid border-t-[3.5px] sm:border-t-4 border-l-[3.5px] sm:border-l-4 border-accent;
+    }
+
+    .btn {
+        @apply mx-auto mb-16 sm:mb-20 bg-accent drop-shadow-basic capitalize w-36 h-11 font-bold text-xl font-arial flex justify-center items-center rounded-xl;
     }
 }
 
