@@ -29,22 +29,25 @@
           <div class="w-full h-1 bg-accent rounded-full"></div>
         </div>
       </nav>
-      <nav class="hidden md:flex items-center justify-between col-span-full py-7 space-x-2">
+      <nav class="hidden relative z-[80] md:flex items-center justify-between col-span-full py-7 space-x-2">
         <div class="space-x-9 flex w-max items-center">
           <div class="w-max flex items-center space-x-4">
             <img src="assets/img/logo.png" alt="logo">
             <h3 class="text-2xl font-bold">Portfolio</h3>
           </div>
-          <div class="w-max hidden sm:flex items-center space-x-2">
-            <i class="fa-regular fa-globe"></i>
-            <span>EN</span>
+          <div class="w-max group">
+            <div class="w-max hidden sm:flex items-center space-x-2 link">
+              <i class="fa-regular fa-globe"></i>
+              <span>EN</span>
+            </div>
+            <div class="link-bar"></div>
           </div>
         </div>
         <ul class="w-max capitalize font-semibold flex items-center space-x-16">
-          <li><a href="#home" class="text-accent cursor-pointer">home</a></li>
-          <li><a href="#education" class="cursor-pointer">education</a></li>
-          <li><a href="#skills" class="cursor-pointer">skills</a></li>
-          <li><a href="#projects" class="cursor-pointer">projects</a></li>
+          <li><a href="#home" class="text-accent link group">home<div class="link-bar"></div></a></li>
+          <li><a href="#education" class="link group">education<div class="link-bar"></div></a></li>
+          <li><a href="#skills" class="link group">skills<div class="link-bar"></div></a></li>
+          <li><a href="#projects" class="link group">projects<div class="link-bar"></div></a></li>
         </ul>
       </nav>
       <nav class="hidden fixed inset-0 z-[99] bg-background p-12 grid grid-cols-2 grid-rows-nav align-items-center">
@@ -67,7 +70,7 @@
           <li class="nav-child">project</li>
         </ul>
       </nav>
-      <div class="w-[320px] sm:w-[400px] mx-auto aspect-square relative mt-32 md:mt-0 bio:order-2 bio:justify-self-end bio:mx-0">
+      <div class="w-[320px] sm:w-[400px] md:w-[450px] mx-auto aspect-square relative mt-32 md:mt-0 bio:order-2 bio:justify-self-end bio:mx-0">
         <svg class="absolute inset-0 scale-150 drop-shadow-basic" viewBox="0 0 200 200">
           <path fill="#00BD95" d="M39.4,-41.8C50.3,-28.5,57.8,-14.3,57.1,-0.6C56.5,13,47.7,26,36.8,32.1C26,38.3,13,37.6,-2.6,40.2C-18.2,42.8,-36.5,48.8,-47.9,42.6C-59.3,36.5,-63.8,18.2,-58.6,5.2C-53.4,-7.9,-38.5,-15.7,-27.1,-29C-15.7,-42.2,-7.9,-60.8,3.2,-63.9C14.3,-67.1,28.5,-55,39.4,-41.8Z" transform="translate(100 100)" />
         </svg>
@@ -82,14 +85,17 @@
         </div>
         <div class="btn bio:ml-0 mt-10 sm:mt-14">let's talk</div>
         <div class="hidden bio:flex w-max space-x-5">
-          <div class="hexagon">
-            <i class="fa-brands fa-github -rotate-90"></i>  
+          <div class="hexagon group">
+            <div class="sosial-link-layer"></div>
+            <i class="sosial-link-icon fa-brands fa-github -rotate-90"></i>  
           </div>
-          <div class="hexagon">
-            <i class="fa-brands fa-instagram -rotate-90"></i>  
+          <div class="hexagon group">
+            <div class="sosial-link-layer"></div>
+            <i class="sosial-link-icon fa-brands fa-instagram -rotate-90"></i>  
           </div>
-          <div class="hexagon">
-            <i class="fa-brands fa-facebook-f -rotate-90"></i>  
+          <div class="hexagon group">
+            <div class="sosial-link-layer"></div>
+            <i class="sosial-link-icon fa-brands fa-facebook-f -rotate-90"></i>  
           </div>
       </div>
     </section>
@@ -122,7 +128,7 @@
             <p class="hidden md:block w-80 translate-y-1/4 md:text-end text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores fugiat ipsa ullam quam veniam molestias architecto cumque</p>
           </div>
           <div class="w-max mr-5 md:ml-5">
-            <div class="w-[2.5px] h-14 sm:h-[111px] bg-accent mx-auto"></div>
+            <div class="w-[2.5px] h-20 sm:h-[111px] md:h-36 bg-accent mx-auto"></div>
             <div class="aspect-square w-7 border-solid border-2 border-accent mx-auto rounded-full flex justify-center items-center">
               <div class="w-1/2 aspect-square bg-accent rounded-full"></div>
             </div>
@@ -137,7 +143,7 @@
             <p class="hidden md:block w-80 translate-y-1/4 md:text-start text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores fugiat ipsa ullam quam veniam molestias architecto cumque</p>
           </div>
           <div class="w-max mr-5 md:ml-5">
-            <div class="w-[2.5px] h-14 sm:h-[111px] bg-accent mx-auto"></div>
+            <div class="w-[2.5px] h-20 sm:h-[111px] md:h-36 bg-accent mx-auto"></div>
             <div class="aspect-square w-7 border-solid border-2 border-accent mx-auto rounded-full flex justify-center items-center">
               <div class="w-1/2 aspect-square bg-accent rounded-full"></div>
             </div>
@@ -155,16 +161,16 @@
     <section id="skills" class="section-base py-10 sm:py-14 md:py-16 space-y-10 md:space-y-14">
       <h1 class="text-center uppercase font-semibold text-3xl text-accent">skills</h1>
       <div class="w-max mx-auto grid grid-cols-skill-sm sm:grid-cols-skill-md grid-rows-skill-sm sm:grid-rows-skill-md place-items-center gap-8">
-        <img class="w-14 sm:w-20 md:w-24" src="assets/img/html.png" alt="html">
-        <img class="w-14 sm:w-20 md:w-24" src="assets/img/css.png" alt="css">
-        <img class="w-14 sm:w-20 md:w-24" src="assets/img/javascript.png" alt="javascript">
-        <img class="w-14 sm:w-20 md:w-24" src="assets/img/sass.png" alt="sass">
-        <img class="w-14 sm:w-20 md:w-24" src="assets/img/tailwind.png" alt="tailwind">
-        <img class="w-14 sm:w-20 md:w-24 sm:col-start-2" src="assets/img/php.png" alt="php">
-        <img class="w-14 sm:w-20 md:w-24" src="assets/img/mysql.png" alt="mysql">
-        <img class="w-14 sm:w-20 md:w-24" src="assets/img/git.png" alt="git">
-        <img class="w-14 sm:w-20 md:w-24 sm:col-start-2 sm:translate-x-1/2" src="assets/img/adobe xd.png" alt="adobe xd">
-        <img class="w-14 sm:w-20 md:w-24 col-start-2 sm:col-start-4 sm:-translate-x-1/2" src="assets/img/figma.png" alt="figma">
+        <img class="teknologi" src="assets/img/html.png" alt="html">
+        <img class="teknologi" src="assets/img/css.png" alt="css">
+        <img class="teknologi" src="assets/img/javascript.png" alt="javascript">
+        <img class="teknologi" src="assets/img/sass.png" alt="sass">
+        <img class="teknologi" src="assets/img/tailwind.png" alt="tailwind">
+        <img class="teknologi sm:col-start-2" src="assets/img/php.png" alt="php">
+        <img class="teknologi" src="assets/img/mysql.png" alt="mysql">
+        <img class="teknologi" src="assets/img/git.png" alt="git">
+        <img class="teknologi sm:col-start-2 sm:translate-x-1/2" src="assets/img/adobe xd.png" alt="adobe xd">
+        <img class="teknologi col-start-2 sm:col-start-4 sm:-translate-x-1/2" src="assets/img/figma.png" alt="figma">
       </div>
     </section>
     <!-- skills-end -->
@@ -173,17 +179,25 @@
     <section id="projects" class="section-base bg-dark pt-10 sm:pt-14 md:pt-16 pb-20 sm:pb-28 md:pb-32">
       <h1 class="text-center uppercase font-semibold text-3xl text-accent">projects</h1>
       <p class="text-center mx-auto w-80 sm:w-[433px] text-sm mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores fugiat ipsa ullam quam veniam molestias architecto cumque</p>
-      <div class="mx-auto mt-16 sm:mt-24 w-72 sm:w-[450px] md:w-[591px] flex justify-between relative">
-        <div class="project-card"></div>
-        <div class="project-card"></div>
-        <div class="absolute inset-0 flex justify-center">
-          <div class="project-card scale-150 shadow-pr"></div>
+      <div class="mx-auto mt-20 sm:mt-24 w-80 sm:w-[450px] md:w-[591px] flex justify-between relative">
+        <div class="project-card bg-phone"></div>
+        <div class="project-card bg-ipad"></div>
+        <div class="absolute inset-0 flex justify-center z-50">
+          <div class="project-card relative scale-150 group/root shadow-pr bg-desktop">
+            <div class="absolute w-full h-full left-0 -top-full bg-black/60 transition-all ease-out group-hover/root:top-0"></div>
+            <div class="absolute inset-0 flex flex-col justify-center items-center p-2.5 space-y-4">
+              <p class="text-center text-xs font-semibold transition-all ease-out translate-y-5 opacity-0 group-hover/root:opacity-100 group-hover/root:translate-y-0 delay-300">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem, ipsum dolor.</p>
+              <a href="#" class="transition-all ease-out translate-y-5 opacity-0 invisible group-hover/root:opacity-100 group-hover/root:translate-y-0 delay-500 group-hover/root:visible">
+                <div class="w-max text-[11px] px-4 py-[2px] border-solid border-2 border-base rounded-full font-semibold capitalize hover:border-base hover:bg-base hover:text-dark transition-all">visit website</div>
+              </a>
+            </div>
+          </div>
         </div>
         <div class="absolute inset-0 flex justify-between items-center">
-          <div class="project-nav -translate-x-1/2 sm:-translate-x-[140%] md:-translate-x-[200%]">
+          <div class="project-nav -translate-x-[60%] sm:-translate-x-[140%] md:-translate-x-[150%] bio:-translate-x-[200%]">
             <div class="project-arrow -rotate-45 translate-x-1/4"></div>
           </div>
-          <div class="project-nav translate-x-1/2 sm:translate-x-[140%] md:translate-x-[200%]">
+          <div class="project-nav translate-x-[60%] sm:translate-x-[140%] md:translate-x-[150%]  bio:translate-x-[200%]">
             <div class="project-arrow rotate-[135deg] -translate-x-1/4"></div>
           </div>
         </div>

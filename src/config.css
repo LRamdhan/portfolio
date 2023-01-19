@@ -24,6 +24,14 @@
         font-family: 'sansation';
         src: url('../font/Sansation-Regular-webfont.woff') format('woff');
     }
+    
+    ::-webkit-scrollbar {
+        @apply w-2 bg-dark;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-accent rounded-full;
+    }
 
     body {
         @apply font-sansation text-base;
@@ -37,7 +45,15 @@
 
     .hexagon {
         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        @apply w-16 h-14 flex justify-center items-center text-4xl bg-[#165750] rotate-90;
+        @apply w-16 h-14 flex justify-center items-center text-3xl bg-[#165750] rotate-90 cursor-pointer overflow-hidden;
+    }
+
+    .sosial-link-layer {
+        @apply absolute scale-150 -top-full -left-full transition-all ease-out duration-300 w-full h-full rotate-45 bg-accent group-hover:top-0 group-hover:left-0;
+    }
+
+    .sosial-link-icon {
+        @apply transition-all ease-out group-hover:text-4xl;
     }
 
     .nav-child {
@@ -45,11 +61,11 @@
     }
 
     .project-card {
-        @apply aspect-square w-28 sm:w-44 md:w-56 bg-[#81848A] rounded-xl;
+        @apply aspect-square w-44 rounded-md md:w-56 bg-[#81848A] sm:rounded-lg md:rounded-xl overflow-hidden bg-cover bg-center;
     }
 
     .project-nav {
-        @apply bg-[#2F3135]/60 aspect-square w-12 sm:w-14 rounded-full overflow-hidden flex justify-center items-center;
+        @apply bg-[#2F3135]/60 aspect-square w-14 rounded-full overflow-hidden flex justify-center items-center hover:scale-110 transition ease-out cursor-pointer;
     }
 
     .project-arrow {
@@ -57,7 +73,19 @@
     }
 
     .btn {
-        @apply mx-auto mb-16 sm:mb-20 bg-accent drop-shadow-basic capitalize w-36 h-11 font-bold text-xl font-arial flex justify-center items-center rounded-xl;
+        @apply mx-auto mb-16 sm:mb-20 bg-accent drop-shadow-basic capitalize w-36 h-11 font-bold text-xl font-arial flex justify-center items-center rounded-xl border-solid border-accent border-2 hover:text-accent hover:scale-110 cursor-pointer transition ease-out hover:bg-transparent hover:drop-shadow-none;
+    }
+
+    .link {
+        @apply cursor-pointer hover:text-base transition;
+    }
+
+    .link-bar {
+        @apply w-0 bg-base h-[2px] mt-[2px] transition-all ease-out group-hover:w-full;
+    }
+
+    .teknologi {
+        @apply w-14 sm:w-20 md:w-24 hover:scale-125 transition ease-out;
     }
 }
 
