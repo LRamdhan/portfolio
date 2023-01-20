@@ -12,7 +12,7 @@
   <body class="bg-background">
     <!-- home-start -->
     <section id="home" class="section-base bio:h-screen md:grid md:grid-cols-1 bio:grid-cols-bio md:grid-rows-bio justify-content-center bio:align-items-center">
-      <nav class="fixed z-50 bg-[#343E4B]/50 inset-x-0 top-6 mx-6 rounded-md border-solid border-2 p-3 backdrop-blur-lg border-accent flex justify-between items-center md:hidden">
+      <nav id="nav-mobile" class="fixed z-50 bg-[#343E4B]/50 inset-x-0 top-6 mx-6 rounded-md border-solid border-2 p-3 backdrop-blur-lg border-accent flex justify-between items-center md:hidden opacity-0">
         <div class="space-x-9 flex w-max items-center">
           <div class="w-max flex items-center space-x-4">
             <img src="assets/img/logo.png" alt="logo">
@@ -29,7 +29,7 @@
           <div class="w-full h-1 bg-accent rounded-full"></div>
         </div>
       </nav>
-      <nav class="hidden relative z-[80] md:flex items-center justify-between col-span-full py-7 space-x-2">
+      <nav id="nav-desktop" class="hidden relative z-[80] md:flex items-center justify-between col-span-full py-7 space-x-2 opacity-0">
         <div class="space-x-9 flex w-max items-center">
           <div class="w-max flex items-center space-x-4">
             <img src="assets/img/logo.png" alt="logo">
@@ -50,7 +50,7 @@
           <li><a href="#projects" class="link group">projects<div class="link-bar"></div></a></li>
         </ul>
       </nav>
-      <nav class="hidden fixed inset-0 z-[99] bg-background p-12 grid grid-cols-2 grid-rows-nav align-items-center">
+      <nav class="hidden fixed inset-0 z-[99] bg-background p-12 grid grid-cols-2 grid-rows-nav align-items-center opacity-0">
         <div class="w-max flex items-center space-x-2 sm:invisible">
           <i class="fa-regular fa-globe"></i>
           <span>EN</span>
@@ -70,32 +70,32 @@
           <li class="nav-child">project</li>
         </ul>
       </nav>
-      <div class="w-[320px] sm:w-[400px] md:w-[450px] mx-auto aspect-square relative mt-32 md:mt-0 bio:order-2 bio:justify-self-end bio:mx-0">
+      <div id="geometri" class="w-[320px] sm:w-[400px] md:w-[450px] mx-auto aspect-square relative mt-32 md:mt-0 bio:order-2 bio:justify-self-end bio:mx-0 opacity-0">
         <svg class="absolute inset-0 scale-150 drop-shadow-basic" viewBox="0 0 200 200">
           <path fill="#00BD95" d="M39.4,-41.8C50.3,-28.5,57.8,-14.3,57.1,-0.6C56.5,13,47.7,26,36.8,32.1C26,38.3,13,37.6,-2.6,40.2C-18.2,42.8,-36.5,48.8,-47.9,42.6C-59.3,36.5,-63.8,18.2,-58.6,5.2C-53.4,-7.9,-38.5,-15.7,-27.1,-29C-15.7,-42.2,-7.9,-60.8,3.2,-63.9C14.3,-67.1,28.5,-55,39.4,-41.8Z" transform="translate(100 100)" />
         </svg>
         <img class="absolute w-full scale-[.7] rotate-[8.5deg]" src="assets/img/geometri.png" alt="geometri">
       </div>
       <div class="text-center capitalize mt-4 bio:mt-0 bio:order-1 bio:justify-self-start bio:text-start">
-        <div class="space-y-4 sm:space-y-5">
-          <h3 class="text-2xl sm:text-3xl">hello, <span class="text-accent">i'm</span></h3>
-          <h1 class="text-4xl sm:text-5xl text-accent font-suez tracking-widest">luji ramdhan</h1>
-          <h2 class="text-2xl sm:text-3xl font-semibold">junior frontend developer</h2>
-          <p class="text-sm sm:text-sm lowercase max-w-[470px] mx-auto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit molestiae sequi aut dolorem perferendis quaerat!</p>
+        <div class="space-y-4 sm:space-y-5 flex flex-col justify-center items-center bio:items-start">
+          <h3 id="hello" class="bio-text text-2xl sm:text-3xl w-max opacity-0 h-max overflow-hidden whitespace-nowrap">hello, <span class="text-accent">i'm</span></h3>
+          <h1 id="name" class="bio-text text-4xl sm:text-5xl text-accent font-suez tracking-widest w-max opacity-0 h-max overflow-hidden whitespace-nowrap">luji ramdhan</h1>
+          <h2 id="role" class="bio-text text-2xl sm:text-3xl font-semibold w-max opacity-0 h-max overflow-hidden whitespace-nowrap">junior frontend developer</h2>
+          <p id="desk" class="text-sm sm:text-sm lowercase max-w-[470px] mx-auto opacity-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit molestiae sequi aut dolorem perferendis quaerat!</p>
         </div>
-        <div class="btn bio:ml-0 mt-10 sm:mt-14">let's talk</div>
-        <div class="hidden bio:flex w-max space-x-5">
+        <div id="talk" class="btn bio:ml-0 mt-10 sm:mt-14 opacity-0">let's talk</div>
+        <div id="hexagon" class="hidden bio:flex w-max space-x-5">
           <div class="hexagon group">
             <div class="sosial-link-layer"></div>
-            <i class="sosial-link-icon fa-brands fa-github -rotate-90"></i>  
+            <i class="sosial-link-icon fa-brands fa-github"></i>  
           </div>
           <div class="hexagon group">
             <div class="sosial-link-layer"></div>
-            <i class="sosial-link-icon fa-brands fa-instagram -rotate-90"></i>  
+            <i class="sosial-link-icon fa-brands fa-instagram"></i>  
           </div>
           <div class="hexagon group">
             <div class="sosial-link-layer"></div>
-            <i class="sosial-link-icon fa-brands fa-facebook-f -rotate-90"></i>  
+            <i class="sosial-link-icon fa-brands fa-facebook-f"></i>  
           </div>
       </div>
     </section>
@@ -218,5 +218,6 @@
       </a>
     </section>
     <!-- contact-end -->
+    <script src="assets/js/portfolio.js" type="module"></script>
   </body>
 </html>

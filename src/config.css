@@ -45,7 +45,7 @@
 
     .hexagon {
         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        @apply w-16 h-14 flex justify-center items-center text-3xl bg-[#165750] rotate-90 cursor-pointer overflow-hidden;
+        @apply relative w-16 h-14 flex justify-center items-center text-3xl bg-[#165750] rotate-90 cursor-pointer overflow-hidden opacity-0;
     }
 
     .sosial-link-layer {
@@ -53,7 +53,7 @@
     }
 
     .sosial-link-icon {
-        @apply transition-all ease-out group-hover:text-4xl;
+        @apply transition-all ease-out group-hover:text-4xl z-10;
     }
 
     .nav-child {

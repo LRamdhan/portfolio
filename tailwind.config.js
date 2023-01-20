@@ -35,9 +35,9 @@ module.exports = {
         pr: "0 0 10.3px rgba(0, 0, 0, .7)"
       },
       backgroundImage: {
-        desktop: "url(../img/desktop.png)",
-        phone: "url(../img/phone.png)",
-        ipad: "url(../img/ipad.png)"
+        // desktop: "url(../img/desktopX.png)",
+        // phone: "url(../img/phone.pXng)",
+        // ipad: "url(../img/ipad.pnXg)"
       }
     },
   },
