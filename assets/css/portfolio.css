@@ -1007,22 +1007,6 @@ body {
   width: 33.333333%;
 }
 
-.w-0 {
-  width: 0px;
-}
-
-.w-\[\.\] {
-  width: .;
-}
-
-.w-\[\.2px\] {
-  width: .2px;
-}
-
-.w-\[1px\] {
-  width: 1px;
-}
-
 .max-w-\[470px\] {
   max-width: 470px;
 }
@@ -1191,6 +1175,10 @@ body {
   --tw-space-y-reverse: 0;
   margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+
+.self-start {
+  align-self: flex-start;
 }
 
 .self-end {
@@ -1743,6 +1731,10 @@ body {
     --tw-space-y-reverse: 0;
     margin-top: calc(3.5rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(3.5rem * var(--tw-space-y-reverse));
+  }
+
+  .md\:self-start {
+    align-self: flex-start;
   }
 
   .md\:py-16 {
