@@ -85,7 +85,7 @@
     }
 
     .teknologi {
-        @apply w-14 sm:w-20 md:w-24 hover:scale-125 transition ease-out opacity-0;
+        @apply w-14 sm:w-20 md:w-24 hover:scale-125 transition ease-out;
     }
 }
 
