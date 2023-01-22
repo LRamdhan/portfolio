@@ -108,7 +108,7 @@ class Animation {
             duration: 500,
             delay: 50,
             translateY: {
-                value: '20%',
+                value: (translate == 'custom') ? 0 : '20%',
                 duration: 10,
                 delay: 0
             },
