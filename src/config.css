@@ -34,7 +34,7 @@
     }
 
     body {
-        @apply font-sansation text-base;
+        @apply font-sansation text-base transform-gpu;
     }
 }
 
@@ -85,7 +85,7 @@
     }
 
     .teknologi {
-        @apply w-14 sm:w-20 md:w-24 hover:scale-125 transition ease-out;
+        @apply w-14 sm:w-20 md:w-24 hover:scale-125 transition ease-out opacity-0;
     }
 }
 

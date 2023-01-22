@@ -1,8 +1,6 @@
 import anime from "./../../node_modules/animejs/lib/anime.es.js";
 
 class Animation {
-    #growHeight = 0;
-
     fadeDown(dom) {
         new anime({
             targets: dom,
@@ -91,7 +89,18 @@ class Animation {
         });
     }
 
-    swipe(dom, direction, to) {
+    swipe(dom, direction, to, translate = 'default') {
+        let elementY;
+        if(translate == 'default') {
+            elementY = (to != 'right') ? -20 : 20;
+        } else if(translate == 'custom') {
+            if(dom.dataset.x == '') {
+                const translateX = parseInt(window.getComputedStyle(dom).transform.split(',')[4]);
+                dom.dataset.x = (translateX < 0) ? (translateX * (-1)) : translateX;
+            }
+            const value = parseInt(dom.dataset.x);
+            elementY = (to != 'right') ? (value * (-1)) : value;
+        }
         new anime({
             targets: dom,
             easing: 'easeInOutCubic',
@@ -99,12 +108,12 @@ class Animation {
             duration: 500,
             delay: 50,
             translateY: {
-                value: "20%",
+                value: '20%',
                 duration: 10,
                 delay: 0
             },
             opacity: [0, 1],
-            translateX: [(to == 'right') ? -20 : 20, 0]
+            translateX: [0, elementY]
         });
     }
 }
