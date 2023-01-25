@@ -34,13 +34,13 @@
     }
 
     body {
-        @apply font-sansation text-base transform-gpu;
+        @apply font-sansation text-base;
     }
 }
 
 @layer components {
     .section-base {
-       @apply px-2.5 md:px-5 overflow-hidden;
+       @apply px-2.5 md:px-5 overflow-hidden transform-gpu;
     }
 
     .hexagon {
@@ -61,7 +61,31 @@
     }
 
     .project-card {
-        @apply aspect-square w-44 rounded-md md:w-56 bg-[#81848A] sm:rounded-lg md:rounded-xl overflow-hidden bg-cover bg-center;
+        @apply aspect-square w-44 rounded-md md:w-56 sm:rounded-lg md:rounded-xl overflow-hidden flex-initial;
+    }
+
+    .project-main {
+        @apply project-card relative;
+    }
+
+    .project-layer {
+        @apply absolute w-full h-full left-0 -top-full bg-black/60 transition-all ease-out group-hover/root:top-0;
+    }
+
+    .project-desk {
+        @apply absolute inset-0 flex flex-col justify-center items-center p-2.5 space-y-4;
+    }
+
+    .project-teks {
+        @apply text-center text-xs font-semibold transition-all ease-out translate-y-5 opacity-0 group-hover/root:opacity-100 group-hover/root:translate-y-0 delay-300;
+    }
+
+    .project-link {
+        @apply transition-all ease-out translate-y-5 opacity-0 invisible group-hover/root:opacity-100 group-hover/root:translate-y-0 delay-500 group-hover/root:visible;
+    }
+
+    .project-link-child {
+        @apply w-max text-[11px] px-4 py-[2px] border-solid border-2 border-base rounded-full font-semibold capitalize hover:border-base hover:bg-base hover:text-dark transition-all;
     }
 
     .project-nav {
@@ -96,5 +120,13 @@
 
     .align-items-center {
         align-items: center;
+    }
+
+    .t-border {
+        border: 2px solid red;
+    }
+    
+    .b-border {
+        border: 1px solid blue;
     }
 }

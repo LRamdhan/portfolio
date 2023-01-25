@@ -12,6 +12,12 @@ class RunningAnimation {
     #normalProject = [];
     #reverseProject = [];
     #contact = Array.from(document.getElementById('contact').children);
+    #projectGallery = document.getElementById('project-gallery').children;
+    #currentProject = 4;
+    #dropNav;
+    #navChild;
+    #dropNavLang;
+    #dropNavExit;
 
     constructor() {
         this.#setHeight();
@@ -20,6 +26,7 @@ class RunningAnimation {
         this.#createReverseEducation();
         this.#countEducationDuration();
         this.#createProject();
+        this.#createDropNav();
     }
 
     #setHeight() {
@@ -190,8 +197,6 @@ class RunningAnimation {
         this.#normalProject.push("this.#animate.fadeUpR('#project-title', 'normal')");
         this.#normalProject.push("this.#animate.fadeUpR('#project-desk', 'normal')");
         this.#normalProject.push("this.#animate.pop('#project-img', 'normal')");
-        this.#normalProject.push("this.#animate.swipe(document.getElementById('project-nav-left'), 'normal', 'left', 'custom')");
-        this.#normalProject.push("this.#animate.swipe(document.getElementById('project-nav-right'), 'normal', 'right', 'custom')");
         this.#normalProject.forEach(el => {
             this.#reverseProject.unshift(el.replaceAll('normal', 'reverse'));
         });
@@ -218,7 +223,7 @@ class RunningAnimation {
                 delay = 300;
             } else if(ind == 2) {
                 delay = 700;
-            } else if(ind > 2){
+            } else if(ind > 2) {
                 delay = 1000;
             }
             setTimeout(() => eval(el), delay);
@@ -239,6 +244,65 @@ class RunningAnimation {
             setTimeout(() => this.#animate.fadeUpR(el, 'reverse'), delay);
             delay -= 200;
         });
+    }
+
+    startArrowUp() {
+        this.#animate.fadeUpR('#arrow-up', 'normal');
+    }
+    
+    endArrowUp() {
+        this.#animate.fadeUpR('#arrow-up', 'reverse');
+    }
+
+    nextProject() {
+        if(this.#currentProject == this.#projectGallery.length - 1) return;
+        this.#animate.scale(this.#projectGallery[this.#currentProject].firstElementChild.firstElementChild, 'reverse');
+        setTimeout(() => {
+            this.#projectGallery[this.#currentProject].firstElementChild.style.zIndex = 0;
+            this.#projectGallery[this.#currentProject].firstElementChild.style.position = 'static';
+        }, 320);
+        setTimeout(() => this.#currentProject++, 350);
+        setTimeout(() => this.#projectGallery[this.#currentProject].scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'}), 370);        
+        setTimeout(() => this.#projectGallery[this.#currentProject].firstElementChild.style.position = 'absolute', 790);
+        setTimeout(() => this.#projectGallery[this.#currentProject].firstElementChild.style.zIndex = 10, 800);
+        setTimeout(() => this.#animate.scale(this.#projectGallery[this.#currentProject].firstElementChild.firstElementChild, 'normal'), 820);
+    }
+
+    previousProject() {
+        if(this.#currentProject == 0) return;
+        this.#animate.scale(this.#projectGallery[this.#currentProject].firstElementChild.firstElementChild, 'reverse');
+        setTimeout(() => {
+            this.#projectGallery[this.#currentProject].firstElementChild.style.zIndex = 0;
+            this.#projectGallery[this.#currentProject].firstElementChild.style.position = 'static';
+        }, 320);
+        setTimeout(() => this.#currentProject--, 350);
+        setTimeout(() => this.#projectGallery[this.#currentProject].scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'}), 370);        
+        setTimeout(() => this.#projectGallery[this.#currentProject].firstElementChild.style.position = 'absolute', 790);
+        setTimeout(() => this.#projectGallery[this.#currentProject].firstElementChild.style.zIndex = 10, 800);
+        setTimeout(() => this.#animate.scale(this.#projectGallery[this.#currentProject].firstElementChild.firstElementChild, 'normal'), 820);
+    }
+
+    #createDropNav() {
+        this.#navChild = Array.from(document.getElementById('drop-nav-child').children);
+        this.#navChild.pop();
+        this.#navChild.reverse();
+        this.#dropNav = document.getElementById('drop-nav');
+        this.#dropNavLang = document.getElementById('drop-nav-lang');
+        this.#dropNavExit = document.getElementById('drop-nav-exit');
+    }
+
+    startDropNav() {
+        this.#animate.swipeDown(this.#dropNav, 'normal');
+        setTimeout(() => this.#animate.dock(this.#navChild, 'normal'), 400);
+        setTimeout(() => this.#animate.pop(this.#dropNavLang, 'normal'), 1200);
+        setTimeout(() => this.#animate.pop(this.#dropNavExit, 'normal'), 1200);
+    }
+    
+    endDropNav() {
+        this.#animate.pop(this.#dropNavExit, 'reverse');
+        this.#animate.pop(this.#dropNavLang, 'reverse');
+        setTimeout(() => this.#animate.dock(this.#navChild, 'reverse'), 250);
+        setTimeout(() => this.#animate.swipeDown(this.#dropNav, 'reverse'), 1000);
     }
 }
 

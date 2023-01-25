@@ -116,6 +116,37 @@ class Animation {
             translateX: [0, elementY]
         });
     }
+    
+    scale(dom, direction) {
+        new anime({
+            targets: dom,
+            direction: direction,
+            easing: 'easeInOutCubic',
+            duration: 300,
+            scale: [1, 1.5]
+        });
+    }
+
+    swipeDown(dom, direction) {
+        new anime({
+            targets: dom,
+            direction: direction,
+            duration: 800,
+            easing: 'easeInOutCirc',
+            translateY: ['-100%', 0]
+        });
+    }
+
+    dock(dom, direction) {
+        new anime({
+            targets: dom,
+            direction: direction,
+            duration: 1000,
+            easing: 'easeOutQuint',
+            translateY: ['-70%', 0],
+            delay: anime.stagger(200)
+        });
+    }
 }
 
 export default Animation;
