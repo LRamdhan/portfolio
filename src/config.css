@@ -65,7 +65,7 @@
     }
 
     .project-main {
-        @apply project-card relative;
+        @apply project-card relative bg-cover bg-center;
     }
 
     .project-layer {

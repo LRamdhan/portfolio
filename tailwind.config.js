@@ -35,9 +35,15 @@ module.exports = {
         pr: "0 0 10.3px rgba(0, 0, 0, .7)"
       },
       backgroundImage: {
-        // desktop: "url(../img/desktopX.png)",
-        // phone: "url(../img/phone.pXng)",
-        // ipad: "url(../img/ipad.pnXg)"
+        article: "url(../img/article.png)",
+        calculator: "url(../img/calculator.png)",
+        chat: "url(../img/chat.png)",
+        fashion: "url(../img/fashion.png)",
+        film: "url(../img/film.png)",
+        filter: "url(../img/filter.png)",
+        gallery: "url(../img/gallery.png)",
+        menu: "url(../img/menu.png)",
+        pizza: "url(../img/pizza.png)"
       }
     },
   },
