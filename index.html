@@ -18,7 +18,7 @@
             <img src="assets/img/logo.png" alt="logo">
             <h3 class="text-2xl font-bold">Portfolio</h3>
           </div>
-          <div class="w-max group">
+          <div class="w-max group opacity-0 invisible">
             <div class="w-max hidden sm:flex items-center space-x-2 link">
               <i class="fa-regular fa-globe"></i>
               <span>EN</span>
@@ -26,11 +26,12 @@
             <div class="link-bar"></div>
           </div>
         </div>
-        <ul class="w-max capitalize font-semibold flex items-center space-x-16">
+        <ul class="w-max capitalize font-semibold flex items-center space-x-14">
           <li><a href="#home" class="text-accent link group">home<div class="link-bar"></div></a></li>
           <li><a href="#education" class="link group">education<div class="link-bar"></div></a></li>
           <li><a href="#skills" class="link group">skills<div class="link-bar"></div></a></li>
           <li><a href="#projects" class="link group">projects<div class="link-bar"></div></a></li>
+          <li><a href="#contact" class="link group">contact<div class="link-bar"></div></a></li>
         </ul>
       </nav>
       <div id="geometri" class="w-[320px] sm:w-[400px] md:w-[450px] mx-auto aspect-square relative mt-32 md:mt-0 bio:order-2 bio:justify-self-end bio:mx-0 opacity-0">
@@ -49,19 +50,6 @@
         <a href="https://wa.me/62895385071788" target="_blank" class="w-max block bio:ml-0 mt-10 sm:mt-14 mx-auto opacity-0" id="talk">
           <div class="btn">let's talk</div>
         </a>
-        <div id="hexagon" class="hidden bio:flex w-max space-x-5">
-          <a href="https://github.com/LRamdhan" target="_blank" class="hexagon group">
-            <div class="sosial-link-layer"></div>
-            <i class="sosial-link-icon fa-brands fa-github"></i>  
-          </a>
-          <a href="https://www.instagram.com/luzi_rmdhn/" target="_blank" class="hexagon group">
-            <div class="sosial-link-layer"></div>
-            <i class="sosial-link-icon fa-brands fa-instagram"></i>  
-          </a>
-          <a href="https://facebook.com/luji.ramdhan" target="_blank" class="hexagon group">
-            <div class="sosial-link-layer"></div>
-            <i class="sosial-link-icon fa-brands fa-facebook-f"></i>  
-          </a>
       </div>
     </section>
     <!-- home-end -->
@@ -73,7 +61,7 @@
           <img src="assets/img/logo.png" alt="logo">
           <h3 class="text-2xl font-bold">Portfolio</h3>
         </div>
-        <div class="w-max hidden sm:flex items-center space-x-2">
+        <div class="w-max hidden sm:flex items-center space-x-2 invisible">
           <i class="fa-regular fa-globe"></i>
           <span>EN</span>
         </div>
@@ -84,12 +72,12 @@
         <div class="w-full h-1 bg-accent rounded-full"></div>
       </div>
     </nav>
-    <nav id="drop-nav" class="fixed -translate-y-full inset-0 overflow-hidden z-[1009] bg-background p-12 grid grid-cols-2 grid-rows-nav align-items-center">
-      <div id="drop-nav-lang" class="w-max flex items-center space-x-2 sm:invisible opacity-0">
+    <nav id="drop-nav" class="fixed -translate-y-full inset-0 overflow-hidden z-[1009] bg-background px-12 py-7 grid grid-cols-2 grid-rows-nav align-items-center gap-y-4">
+      <div id="drop-nav-lang" class="w-max flex items-center space-x-2 sm:invisible opacity-0 invisible">
         <i class="fa-regular fa-globe"></i>
         <span>EN</span>
       </div>
-      <div id="drop-nav-exit" class="aspect-square w-16 sm:w-20 bg-dark rounded-full relative cursor-pointer justify-self-end opacity-0">
+      <div id="drop-nav-exit" class="aspect-square w-16 bg-dark rounded-full relative cursor-pointer justify-self-end opacity-0">
         <div class="absolute w-full h-full p-2 flex items-center">
           <div class="w-full rotate-45 h-1 bg-base"></div>
         </div>
@@ -102,6 +90,7 @@
         <li class="nav-child">education</li>
         <li class="nav-child">skills</li>
         <li class="nav-child">project</li>
+        <li class="nav-child">contact</li>
       </ul>
     </nav>
     <a id="arrow-up" href="#home" class="aspect-square w-16 fixed z-[100] right-10 sm:right-12 md:right-14 bottom-10 sm:bottom-12 bg-accent rounded-full flex justify-center items-center opacity-0">
@@ -111,7 +100,7 @@
 
 
     <!-- education-start -->
-    <section id="education" class="py-12 section-base sm:py-16 bg-dark space-y-7 md:space-y-14">
+    <section id="education" class="py-16 pb-[80px] section-base bg-dark space-y-7 md:space-y-14">
       <h1 id="education-title" class="text-center uppercase font-semibold text-3xl text-accent opacity-0">education</h1>
       <div class="w-max md:w-full mx-auto">
         <div id="graduation-cap" class="hidden md:flex md:justify-center md:items-center text-2xl text-accent w-16 aspect-square rounded-full border-solid border-accent border-4 mx-auto opacity-0">
@@ -143,7 +132,7 @@
             </div>
           </div>
           <div id="edu-right-2" class="font-semibold uppercase translate-y-1/4 md:w-96 opacity-0">
-            <h2 class="text-accent text-lg sm:text-2xl">basic programming course</h2>
+            <h2 class="text-accent text-lg sm:text-2xl">programming course</h2>
             <h3 class="text-xs sm:text-sm">feb 2021-apr 2022 <span class="text-[#81848A]">|</span> codepolitan</h3>
           </div>
         </div>
@@ -167,7 +156,7 @@
     <!-- education-end -->
 
     <!-- skills-start -->
-    <section id="skills" class="section-base py-10 sm:py-14 md:py-16 space-y-10 md:space-y-14">
+    <section id="skills" class="section-base py-16 space-y-10 md:space-y-14">
       <h1 id="skill-title" class="text-center uppercase font-semibold text-3xl text-accent opacity-0">skills</h1>
       <div id="skill-img" class="w-max mx-auto grid grid-cols-skill-sm sm:grid-cols-skill-md grid-rows-skill-sm sm:grid-rows-skill-md place-items-center gap-8">
         <div class="w-max opacity-0">
@@ -205,10 +194,11 @@
     <!-- skills-end -->
 
     <!-- project-start -->
-    <section id="projects" class="w-full bg-dark pt-10 sm:pt-14 md:pt-16 pb-20 sm:pb-28 md:pb-32">
+    <section id="projects" class="w-full bg-dark pt-16 pb-32">
       <h1 id="project-title" class="text-center uppercase font-semibold text-3xl text-accent opacity-0">projects</h1>
       <p id="project-desk" class="text-center mx-auto w-80 sm:w-[433px] text-sm mt-4 opacity-0">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously .</p>
       <div id="project-img" class="w-full mt-20 sm:mt-24 opacity-0 relative">
+        <div class="absolute inset-0 z-[5]"></div>
         <div class="w-full overflow-hidden" id="scroll">
           <div id="project-gallery" class="w-max flex px-[600px] justify-center space-x-5">
             <div class="project-card">
@@ -217,7 +207,7 @@
                   <div class="project-layer"></div>
                   <div class="project-desk">
                     <p class="project-teks">Article was made with basic tailwind utilities.</p>
-                    <a href="#" class="project-link">
+                    <a href="https://sortarticle.netlify.app" target="_blank" class="project-link">
                       <div class="project-link-child">visit website</div>
                     </a>
                   </div>
@@ -230,7 +220,7 @@
                   <div class="project-layer"></div>
                   <div class="project-desk">
                     <p class="project-teks">A simple chat ui that can automatically reply to random messages.</p>
-                    <a href="#" class="project-link">
+                    <a href="https://singlechat.netlify.app" target="_blank" class="project-link">
                       <div class="project-link-child">visit website</div>
                     </a>
                   </div>
@@ -244,7 +234,7 @@
                   <div class="project-desk">
                     <p class="project-teks">Fashion landing page was made with sass and javascript for the
                       interativity.</p>
-                    <a href="#" class="project-link">
+                    <a href="https://simplefashion.netlify.app" target="_blank" class="project-link">
                       <div class="project-link-child">visit website</div>
                     </a>
                   </div>
@@ -257,7 +247,7 @@
                   <div class="project-layer"></div>
                   <div class="project-desk">
                     <p class="project-teks">It discovers film and its details by requesting to film open api.</p>
-                    <a href="#" class="project-link">
+                    <a href="http://findfilm.epizy.com" target="_blank" class="project-link">
                       <div class="project-link-child">visit website</div>
                     </a>
                   </div>
@@ -270,7 +260,7 @@
                   <div class="project-layer"></div>
                   <div class="project-desk">
                     <p class="project-teks">A responsive landing page for pizza made with tailwind.</p>
-                    <a href="#" class="project-link">
+                    <a href="https://simplepizza.netlify.app" target="_blank" class="project-link">
                       <div class="project-link-child">visit website</div>
                     </a>
                   </div>
@@ -283,7 +273,7 @@
                   <div class="project-layer"></div>
                   <div class="project-desk">
                     <p class="project-teks">Calculator for simple computation made with html, css, and vanilla javascript.</p>
-                    <a href="#" class="project-link">
+                    <a href="https://javascriptkalkulator.netlify.app" target="_blank" class="project-link">
                       <div class="project-link-child">visit website</div>
                     </a>
                   </div>
@@ -296,7 +286,7 @@
                   <div class="project-layer"></div>
                   <div class="project-desk">
                     <p class="project-teks">It changes filter from image directly without reloading the page.</p>
-                    <a href="#" class="project-link">
+                    <a href="https://filterfoto.netlify.app" target="_blank" class="project-link">
                       <div class="project-link-child">visit website</div>
                     </a>
                   </div>
@@ -309,7 +299,7 @@
                   <div class="project-layer"></div>
                   <div class="project-desk">
                     <p class="project-teks">A gallery with grid zoom effect made with tailwind.</p>
-                    <a href="#" class="project-link">
+                    <a href="https://zoomeffectgallery.netlify.app" target="_blank" class="project-link">
                       <div class="project-link-child">visit website</div>
                     </a>
                   </div>
@@ -322,7 +312,7 @@
                   <div class="project-layer"></div>
                   <div class="project-desk">
                     <p class="project-teks">It gets data from json and displays it as product card, built with php.</p>
-                    <a href="#" class="project-link">
+                    <a href="http://pizzamenu.epizy.com" target="_blank" class="project-link">
                       <div class="project-link-child">visit website</div>
                     </a>
                   </div>
@@ -346,13 +336,31 @@
     <!-- project-end -->
 
     <!-- contact-start -->
-    <section id="contact" class="section-base relative text-center pt-28 sm:pt-32 pb-24 sm:pb-28 md:h-screen md:flex md:flex-col md:justify-center md:py-0">
-      <h3 class="text-xl sm:text-3xl opacity-0">what's next?</h3>
-      <h1 class="text-5xl sm:text-6xl font-semibold capitalize text-accent mt-5 opacity-0">get in touch</h1>
-      <p class="text-xl w-[350px] sm:w-[537px] md:w-[771px] mx-auto mt-5 opacity-0">Although i'm still learning, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-      <div class="w-max mt-14 opacity-0 mx-auto">
-        <a href="mailto:luzirmdhn@gmail.com" class="btn">say hello</a>
+    <section id="contact" class="section-base relative text-center py-6 h-[80vh] sm:h-[90vh] md:h-screen flex flex-col justify-center">
+      <div class="w-full -translate-y-8">
+        <h3 class="text-xl sm:text-3xl opacity-0">what's next?</h3>
+        <h1 class="text-5xl sm:text-6xl font-semibold capitalize text-accent mt-5 md:mt-6 opacity-0">get in touch</h1>
+        <p class="text-xl w-[350px] sm:w-[537px] md:w-[771px] mx-auto mt-5 md:mt-6 opacity-0">Although i'm still learning, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+        <div class="flex w-max mx-auto space-x-5 mt-12 opacity-0">
+          <a href="https://github.com/LRamdhan" target="_blank" class="hexagon group">
+            <div class="sosial-link-layer"></div>
+            <i class="sosial-link-icon fa-brands fa-github"></i>  
+          </a>
+          <a href="https://www.instagram.com/luzi_rmdhn/" target="_blank" class="hexagon group">
+            <div class="sosial-link-layer"></div>
+            <i class="sosial-link-icon fa-brands fa-instagram"></i>  
+          </a>
+          <a href="https://facebook.com/luji.ramdhan" target="_blank" class="hexagon group">
+            <div class="sosial-link-layer"></div>
+            <i class="sosial-link-icon fa-brands fa-facebook-f"></i>  
+          </a>
+          <a href="mailto:luzirmdhn@gmail.com" target="_blank" class="hexagon group">
+            <div class="sosial-link-layer"></div>
+            <i class="sosial-link-icon fa-regular fa-envelope"></i>
+          </a>
+        </div>
       </div>
+      <h3 id="copyright" class="absolute bottom-0 text-lg py-5 capitalize w-full self-center opacity-0">built by luji ramdhan</h3>
     </section>
     <!-- contact-end -->
     

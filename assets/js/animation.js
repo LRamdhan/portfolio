@@ -54,7 +54,7 @@ class Animation {
         new anime({
             targets: dom,
             easing: "easeInOutCubic",
-            duration: 500,
+            duration: 300,
             direction: direction,
             translateY: [20, 0],
             opacity: [0, 1]            
@@ -66,7 +66,7 @@ class Animation {
             targets: dom,
             easing: 'easeInOutCubic',
             direction: direction,
-            duration: 400,
+            duration: 300,
             opacity: [0, 1],
             scale: [0.8, 1]
         });
@@ -78,7 +78,7 @@ class Animation {
             targets: dom,
             easing: 'linear',
             direction: direction,
-            duration: 400,
+            duration: 300,
             delay: 20,
             opacity: {
                 value: 1,
@@ -105,7 +105,7 @@ class Animation {
             targets: dom,
             easing: 'easeInOutCubic',
             direction: direction,
-            duration: 500,
+            duration: 300,
             delay: 50,
             translateY: {
                 value: (translate == 'custom') ? 0 : '20%',
@@ -131,20 +131,23 @@ class Animation {
         new anime({
             targets: dom,
             direction: direction,
-            duration: 800,
-            easing: 'easeInOutCirc',
+            duration: 500,
+            easing: (direction == 'normal') ? 'easeInOutCirc' : 'easeInOutExpo',
             translateY: ['-100%', 0]
         });
     }
 
     dock(dom, direction) {
+        let y = 50;
         new anime({
             targets: dom,
             direction: direction,
-            duration: 1000,
+            duration: 800,
             easing: 'easeOutQuint',
-            translateY: ['-70%', 0],
-            delay: anime.stagger(200)
+            translateY: () => {
+                y -= 50;
+                return [y, 0];
+            },
         });
     }
 }

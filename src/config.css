@@ -45,7 +45,7 @@
 
     .hexagon {
         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        @apply relative w-16 h-14 flex justify-center items-center text-3xl bg-[#165750] rotate-90 cursor-pointer overflow-hidden opacity-0;
+        @apply relative w-16 h-14 flex justify-center items-center text-3xl bg-[#165750] rotate-0 cursor-pointer overflow-hidden;
     }
 
     .sosial-link-layer {
@@ -57,7 +57,7 @@
     }
 
     .nav-child {
-        @apply bg-dark text-center capitalize font-semibold text-4xl sm:text-5xl py-10 sm:py-12;
+        @apply bg-dark text-center capitalize font-semibold text-4xl py-10;
     }
 
     .project-card {
@@ -89,7 +89,7 @@
     }
 
     .project-nav {
-        @apply bg-[#2F3135]/60 aspect-square w-14 rounded-full overflow-hidden flex justify-center items-center hover:scale-110 transition ease-out cursor-pointer;
+        @apply bg-[#2F3135]/80 aspect-square w-14 rounded-full overflow-hidden flex justify-center items-center hover:scale-110 transition ease-out cursor-pointer;
     }
 
     .project-arrow {
@@ -97,7 +97,7 @@
     }
 
     .btn {
-        @apply mx-auto mb-16 sm:mb-20 bg-accent drop-shadow-basic capitalize w-36 h-11 font-bold text-xl font-arial flex justify-center items-center rounded-xl border-solid border-accent border-2 hover:text-accent hover:scale-110 cursor-pointer transition ease-out hover:bg-transparent hover:drop-shadow-none;
+        @apply mx-auto mb-20 bg-accent drop-shadow-basic capitalize w-36 h-11 font-bold text-xl font-arial flex justify-center items-center rounded-xl border-solid border-accent border-2 hover:text-accent hover:scale-110 cursor-pointer transition ease-out hover:bg-transparent hover:drop-shadow-none;
     }
 
     .link {

@@ -15,14 +15,14 @@ setInterval(() => {
                 eval("run" + el.start);
                 el.visible = true;
                 el.running = false;
-                setTimeout(() => el.running = true, el.duration + 500);
+                setTimeout(() => el.running = true, el.duration + 200);
             }
         } else {
             if(el.visible && el.running) {
                 eval("run" + el.end);
                 el.visible = false;
                 el.running = false;
-                setTimeout(() => el.running = true, el.duration + 500);
+                setTimeout(() => el.running = true, el.duration + 200);
             }
         }
     });
@@ -40,10 +40,10 @@ setInterval(() => {
     }
 
     if(project.getBoundingClientRect().top <= tringgerHeight && scrollProject) {
-        setTimeout(() => run.nextProject(), 1200);
+        setTimeout(() => run.nextProject(), 1500); //
         scrollProject = false;
     }
-}, 500); 
+}, 400); 
 
 document.getElementById('scroll').scrollLeft = 700;
 let projectRun = true;
@@ -68,14 +68,14 @@ document.getElementById('hamberger').addEventListener('click', event => {
     if(dropRun) {
         run.startDropNav();
         dropRun = false;
-        setTimeout(() => dropRun = true, 1500);
+        setTimeout(() => dropRun = true, 1400);
     }
 });
 document.getElementById('drop-nav-exit').addEventListener('click', event => {
     if(dropRun) {
         run.endDropNav();
         dropRun = false;
-        setTimeout(() => dropRun = true, 1500);
+        setTimeout(() => dropRun = true, 1400);
     }
 });
 
@@ -83,12 +83,13 @@ const home = document.getElementById('home');
 const education = document.getElementById('education');
 const skill = document.getElementById('skills');
 const projects = document.getElementById('projects');
+const contact = document.getElementById('contact');
 Array.from(document.getElementById('drop-nav-child').children).forEach((el, ind) => {
     el.addEventListener('click', event => {
         if(dropRun) {
             run.endDropNav();
             dropRun = false;
-            setTimeout(() => dropRun = true, 1500);
+            setTimeout(() => dropRun = true, 1400);
             setTimeout(() => {
                 switch(ind) {
                     case 0 : 
@@ -102,8 +103,11 @@ Array.from(document.getElementById('drop-nav-child').children).forEach((el, ind)
                         break;
                     case 3 : 
                         projects.scrollIntoView({block: 'center', inline: 'center', behavior: 'smooth'});    
+                        break;
+                    case 4 : 
+                        contact.scrollIntoView({block: 'center', inline: 'center', behavior: 'smooth'});    
                 }
-            }, 1800);
+            }, 1400);
         }
     });
 });
