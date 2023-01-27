@@ -35,15 +35,15 @@ module.exports = {
         pr: "0 0 10.3px rgba(0, 0, 0, .7)"
       },
       backgroundImage: {
-        article: "url(../img/article.png)",
-        calculator: "url(../img/calculator.png)",
-        chat: "url(../img/chat.png)",
-        fashion: "url(../img/fashion.png)",
-        film: "url(../img/film.png)",
-        filter: "url(../img/filter.png)",
-        gallery: "url(../img/gallery.png)",
-        menu: "url(../img/menu.png)",
-        pizza: "url(../img/pizza.png)"
+        article: "url(../img/article.avif)",
+        calculator: "url(../img/calculator.avif)",
+        chat: "url(../img/chat.avif)",
+        fashion: "url(../img/fashion.avif)",
+        film: "url(../img/film.avif)",
+        filter: "url(../img/filter.avif)",
+        gallery: "url(../img/gallery.avif)",
+        menu: "url(../img/menu.avif)",
+        pizza: "url(../img/pizza.avif)"
       }
     },
   },

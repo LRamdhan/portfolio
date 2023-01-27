@@ -7,6 +7,7 @@ const triggerData = run.triggerData;
 let arrowVisibility = false;
 let scrollProject = true;
 const project = document.getElementById('projects');
+const half = innerHeight * (50 /100);
 setInterval(() => {
     triggerData.forEach(el => {
         const top = el.element.getBoundingClientRect().top;
@@ -27,7 +28,7 @@ setInterval(() => {
         }
     });
 
-    if(scrollY > (innerHeight * (50 /100))) {
+    if(scrollY > half) {
         if(!arrowVisibility) {
             run.startArrowUp();
             arrowVisibility = true;
