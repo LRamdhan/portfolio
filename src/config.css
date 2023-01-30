@@ -89,7 +89,7 @@
     }
 
     .project-nav {
-        @apply bg-[#2F3135]/80 aspect-square w-14 rounded-full overflow-hidden flex justify-center items-center hover:scale-110 transition ease-out cursor-pointer;
+        @apply bg-[#2F3135]/80 aspect-square w-[62px] rounded-full overflow-hidden flex justify-center items-center md:hover:scale-110 transition ease-out cursor-pointer;
     }
 
     .project-arrow {

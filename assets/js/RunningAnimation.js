@@ -291,16 +291,16 @@ class RunningAnimation {
 
     startDropNav() {
         this.#animate.swipeDown(this.#dropNav, 'normal');
-        setTimeout(() => this.#animate.dock(this.#navChild, 'normal'), 400);
-        setTimeout(() => this.#animate.pop(this.#dropNavLang, 'normal'), 500);
-        setTimeout(() => this.#animate.pop(this.#dropNavExit, 'normal'), 500);
+        setTimeout(() => this.#animate.dock(this.#navChild, 'normal'), 300);
+        setTimeout(() => this.#animate.pop(this.#dropNavLang, 'normal'), 300);
+        setTimeout(() => this.#animate.pop(this.#dropNavExit, 'normal'), 300);
     }
     
     endDropNav() {
         this.#animate.pop(this.#dropNavExit, 'reverse');
         this.#animate.pop(this.#dropNavLang, 'reverse');
-        setTimeout(() => this.#animate.dock(this.#navChild, 'reverse'), 200);
-        setTimeout(() => this.#animate.swipeDown(this.#dropNav, 'reverse'), 900);
+        this.#animate.dock(this.#navChild, 'reverse');
+        setTimeout(() => this.#animate.swipeDown(this.#dropNav, 'reverse'), 600);
     }
 }
 

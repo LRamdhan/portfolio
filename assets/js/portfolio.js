@@ -40,11 +40,11 @@ setInterval(() => {
         }
     }
 
-    if(project.getBoundingClientRect().top <= tringgerHeight && scrollProject) {
-        setTimeout(() => run.nextProject(), 1500); //
+    if(scrollProject && project.getBoundingClientRect().top <= tringgerHeight) {
+        setTimeout(() => run.nextProject(), 1500);
         scrollProject = false;
     }
-}, 400); 
+}, 500); 
 
 document.getElementById('scroll').scrollLeft = 700;
 let projectRun = true;
@@ -69,14 +69,14 @@ document.getElementById('hamberger').addEventListener('click', event => {
     if(dropRun) {
         run.startDropNav();
         dropRun = false;
-        setTimeout(() => dropRun = true, 1400);
+        setTimeout(() => dropRun = true, 1150);
     }
 });
 document.getElementById('drop-nav-exit').addEventListener('click', event => {
     if(dropRun) {
         run.endDropNav();
         dropRun = false;
-        setTimeout(() => dropRun = true, 1400);
+        setTimeout(() => dropRun = true, 1150);
     }
 });
 
@@ -90,7 +90,7 @@ Array.from(document.getElementById('drop-nav-child').children).forEach((el, ind)
         if(dropRun) {
             run.endDropNav();
             dropRun = false;
-            setTimeout(() => dropRun = true, 1400);
+            setTimeout(() => dropRun = true, 1150);
             setTimeout(() => {
                 switch(ind) {
                     case 0 : 

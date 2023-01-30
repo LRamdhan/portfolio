@@ -131,21 +131,21 @@ class Animation {
         new anime({
             targets: dom,
             direction: direction,
-            duration: 500,
-            easing: (direction == 'normal') ? 'easeInOutCirc' : 'easeInOutExpo',
+            duration: 400,
+            easing: (direction == 'normal') ? 'easeInOutCubic' : 'easeOutQuint',
             translateY: ['-100%', 0]
         });
     }
 
     dock(dom, direction) {
-        let y = 50;
+        let y = 70;
         new anime({
             targets: dom,
             direction: direction,
             duration: 800,
             easing: 'easeOutQuint',
             translateY: () => {
-                y -= 50;
+                y -= 70;
                 return [y, 0];
             },
         });
