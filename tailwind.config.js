@@ -20,13 +20,15 @@ module.exports = {
       gridTemplateColumns: {
         bio: "minmax(max-content, 500px) minmax(max-content, 500px)",
         "skill-sm": "repeat(3, max-content)",
-        "skill-md": "repeat(5, max-content)"
+        "skill-md": "repeat(5, max-content)",
+        "edu-md": "max-content max-content"
       },
       gridTemplateRows: {
         bio: "max-content auto",
         nav: "max-content auto",
         "skill-sm": "repeat(4, max-content)",
-        "skill-md": "repeat(3, max-content)"
+        "skill-md": "repeat(3, max-content)",
+        "edu-md": "max-content max-content"
       },
       screens: {
         bio: "1000px"

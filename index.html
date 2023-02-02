@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="icon" href="assets/img/portfolio.ico">
+    <link rel="icon" href="assets/img/logo.svg">
     <link rel="stylesheet" href="assets/css/portfolio.css" />
     <link rel="stylesheet" href="assets/css/font-awesome.css" />
   </head>
@@ -89,7 +89,7 @@
       <ul id="drop-nav-child" class="col-span-full">
         <li class="nav-child">home</li>
         <li class="nav-child">education</li>
-        <li class="nav-child">skills</li>
+        <li class="nav-child">skills</li>          
         <li class="nav-child">project</li>
         <li class="nav-child">contact</li>
       </ul>
@@ -99,57 +99,65 @@
     </a>
     <!-- fixed-element-start -->
 
-
     <!-- education-start -->
-    <section id="education" class="py-16 pb-[80px] section-base bg-dark space-y-7 md:space-y-14">
+    <section id="education" class="py-16 pb-[80px] section-base px-3 md:px-5 bg-dark space-y-11 md:space-y-14">
       <h1 id="education-title" class="text-center uppercase font-semibold text-3xl text-accent opacity-0">education</h1>
-      <div class="w-max md:w-full mx-auto">
+      <div class="mx-2">
         <div id="graduation-cap" class="hidden md:flex md:justify-center md:items-center text-2xl text-accent w-16 aspect-square rounded-full border-solid border-accent border-4 mx-auto opacity-0">
           <i class="fa-solid fa-graduation-cap"></i>
         </div>
-        <div class="flex justify-start md:justify-center items-end md:flex-row-reverse w-max md:w-full">
-          <div id="desk-right-1" class="w-max md:w-96 opacity-0">
-            <p class="hidden md:block w-80 md:text-start text-sm">For three years, I learned many things about computers from the basics, until finally I focused on programming.</p>
+        <div class="edu-root">
+          <div class="edu-icon row-start-1 row-end-3 col-start-1 col-end-2 hidden sm:max-md:block">
+            <i class="fa-solid fa-laptop text-8xl text-accent"></i>
           </div>
-          <div class="w-max mr-5 md:ml-5 md:self-start">
-            <div id="line-1" class="hidden md:block w-[2.5px] md:h-[51px] sm:h-[140px] bg-accent mx-auto opacity-0" data-height=""></div>
-            <div id="point-1" class="aspect-square w-7 border-solid border-2 border-accent mx-auto rounded-full flex justify-center items-center opacity-0">
+          <div id="edu-left-1" class="edu-school md:opacity-0">
+            <h2 class="text-accent text-lg sm:text-2xl">software engineering</h2>
+            <h3 class="text-xs mt-2 sm:text-sm">jun 2019-jun 2022 <span class="text-[#81848A]">|</span>  vocational high school</h3>
+          </div>
+          <div class="edu-point">
+            <div id="line-1" class="edu-point-1 md:opacity-0" data-height=""></div>
+            <div id="point-1" class="edu-point-2 md:opacity-0">
               <div class="w-1/2 aspect-square bg-accent rounded-full"></div>
             </div>
           </div>
-          <div id="edu-left-1" class="font-semibold uppercase translate-y-1/4 md:text-end md:w-96 opacity-0">
-            <h2 class="text-accent text-lg sm:text-2xl">vocational high schol</h2>
-            <h3 class="text-xs sm:text-sm">jun 2019-jun 2022 <span class="text-[#81848A]">|</span> smkn situraja</h3>
+          <div id="desk-right-1" class="edu-detail md:opacity-0">
+            <p class="edu-detail-text">For three years, I learned many things about computers from the basics, until finally I focused on programming.</p>
           </div>
         </div>
-        <div class="flex justify-start md:justify-center items-end w-max md:w-full">
-          <div id="desk-left-2" class="w-max md:w-96 md:flex md:justify-end opacity-0">
-            <p class="hidden md:block w-80 md:text-end text-sm">To learn programming, I took several online courses on backend and front web development.</p>
+        <div class="edu-root md:flex-row-reverse mt-9 sm:max-md:mt-28 md:mt-0">
+          <div class="edu-icon row-start-1 row-end-3 col-start-1 col-end-2 hidden sm:max-md:block">
+            <i class="fa-solid fa-code text-8xl text-accent"></i>
           </div>
-          <div class="w-max mr-5 md:ml-5 self-start">
-            <div id="line-2" class="w-[2.5px] h-20 sm:h-[111px] md:h-36 bg-accent mx-auto opacity-0" data-height=""></div>
-            <div id="point-2" class="aspect-square w-7 border-solid border-2 border-accent mx-auto rounded-full flex justify-center items-center opacity-0">
-              <div class="w-1/2 aspect-square bg-accent rounded-full"></div>
-            </div>
-          </div>
-          <div id="edu-right-2" class="font-semibold uppercase translate-y-1/4 md:w-96 opacity-0">
+          <div id="edu-right-2" class="edu-school md:text-left md:opacity-0">
             <h2 class="text-accent text-lg sm:text-2xl">programming course</h2>
-            <h3 class="text-xs sm:text-sm">feb 2021-apr 2022 <span class="text-[#81848A]">|</span> codepolitan, udemy</h3>
+            <h3 class="text-xs mt-2 sm:text-sm">feb 2021-now <span class="text-[#81848A]">|</span>  codepolitan, udemy</h3>
           </div>
-        </div>
-        <div class="flex justify-start md:justify-center items-end md:flex-row-reverse w-max md:w-full">
-          <div id="desk-right-3" class="w-max md:w-96 opacity-0">
-            <p class="hidden md:block w-80 md:text-start text-sm">I chose to major in informatics engineering, also entered a coding club and focused on front end web development.</p>
-          </div>
-          <div class="w-max mr-5 md:ml-5 self-start">
-            <div id="line-3" class="w-[2.5px] h-20 sm:h-[111px] md:h-36 bg-accent mx-auto opacity-0" data-height=""></div>
-            <div id="point-3" class="aspect-square w-7 border-solid border-2 border-accent mx-auto rounded-full flex justify-center items-center opacity-0">
+          <div class="edu-point">
+            <div id="line-2" class="edu-point-1-long md:opacity-0" data-height=""></div>
+            <div id="point-2" class="edu-point-2 md:opacity-0">
               <div class="w-1/2 aspect-square bg-accent rounded-full"></div>
             </div>
           </div>
-          <div id="edu-left-3" class="font-semibold uppercase translate-y-1/4 md:text-end md:w-96 opacity-0">
-            <h2 class="text-accent text-lg sm:text-2xl">bachelor degree</h2>
-            <h3 class="text-xs sm:text-sm">oct 2022-now <span class="text-[#81848A]">|</span> unsap</h3>
+          <div id="desk-left-2" class="edu-detail md:opacity-0">
+            <p class="edu-detail-text md:text-right md:float-right">To learn programming, I took several online courses on backend and front web development.</p>
+          </div>
+        </div>
+        <div class="edu-root mt-9 sm:max-md:mt-28 md:mt-0">
+          <div class="edu-icon row-start-1 row-end-3 col-start-1 col-end-2 hidden sm:max-md:block">
+            <i class="fa-solid fa-graduation-cap text-8xl text-accent"></i>
+          </div>
+          <div id="edu-left-3" class="edu-school md:opacity-0">
+            <h2 class="text-accent text-lg sm:text-2xl">computer science</h2>
+            <h3 class="text-xs mt-2 sm:text-sm">oct 2022-now <span class="text-[#81848A]">|</span>  bachelor degree</h3>
+          </div>
+          <div class="edu-point">
+            <div id="line-3" class="edu-point-1-long md:opacity-0" data-height=""></div>
+            <div id="point-3" class="edu-point-2 md:opacity-0">
+              <div class="w-1/2 aspect-square bg-accent rounded-full"></div>
+            </div>
+          </div>
+          <div id="desk-right-3" class="edu-detail md:opacity-0">
+            <p class="edu-detail-text">I chose to major in informatics engineering, also entered a coding club and focused on front end web development.</p>
           </div>
         </div>
       </div>
@@ -161,34 +169,34 @@
       <h1 id="skill-title" class="text-center uppercase font-semibold text-3xl text-accent opacity-0">skills</h1>
       <div id="skill-img" class="w-max mx-auto grid grid-cols-skill-sm sm:grid-cols-skill-md grid-rows-skill-sm sm:grid-rows-skill-md place-items-center gap-8">
         <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/html.png" alt="html">
+          <img class="teknologi" src="assets/img/html.svg" alt="html">
         </div>
         <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/css.png" alt="css">
+          <img class="teknologi" src="assets/img/css.svg" alt="css">
         </div>
         <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/javascript.png" alt="javascript">
+          <img class="teknologi" src="assets/img/javascript.svg" alt="javascript">
         </div>
         <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/sass.png" alt="sass">
+          <img class="teknologi" src="assets/img/sass.svg" alt="sass">
         </div>
         <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/tailwind.png" alt="tailwind">
+          <img class="teknologi" src="assets/img/tailwind.svg" alt="tailwind">
         </div>
         <div class="w-max sm:col-start-2 opacity-0">
-          <img class="teknologi" src="assets/img/php.png" alt="php">
+          <img class="teknologi" src="assets/img/php.svg" alt="php">
         </div>
         <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/mysql.png" alt="mysql">
+          <img class="teknologi" src="assets/img/mysql.svg" alt="mysql">
         </div>
         <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/git.png" alt="git">
+          <img class="teknologi" src="assets/img/git.svg" alt="git">
         </div>
         <div class="w-max sm:col-start-2 opacity-0">
-          <img class="teknologi sm:translate-x-1/2" src="assets/img/adobe xd.png" alt="adobe xd">
+          <img class="teknologi sm:translate-x-1/2" src="assets/img/adobe xd.svg" alt="adobe xd">
         </div>
         <div class="w-max col-start-2 sm:col-start-4 opacity-0">
-          <img class="teknologi sm:-translate-x-1/2" src="assets/img/figma.png" alt="figma">
+          <img class="teknologi sm:-translate-x-1/2" src="assets/img/figma.svg" alt="figma">
         </div>
       </div>
     </section>

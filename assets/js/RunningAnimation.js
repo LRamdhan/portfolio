@@ -18,6 +18,7 @@ class RunningAnimation {
     #navChild;
     #dropNavLang;
     #dropNavExit;
+    #eduRoot;
 
     constructor() {
         this.#setHeight();
@@ -88,26 +89,22 @@ class RunningAnimation {
     }
 
     #createNormalEducation() {
-        this.#normalEducation.push(['this.#animate.fadeUpR("#education-title", "normal");', 300]);
-        if(innerWidth >= 768) this.#normalEducation.push(['this.#animate.pop("#graduation-cap", "normal");', 300]);
-        if(innerWidth >= 768) this.#normalEducation.push(['this.#animate.growY(document.getElementById("line-1"), "normal");', 300]);
         if(innerWidth >= 768) {
+            this.#normalEducation.push(['this.#animate.fadeUpR("#education-title", "normal");', 300]);
+            this.#normalEducation.push(['this.#animate.pop("#graduation-cap", "normal");', 300]);
+            this.#normalEducation.push(['this.#animate.growY(document.getElementById("line-1"), "normal");', 300]);
             this.#normalEducation.push(['this.#animate.pop("#point-1", "normal"); this.#animate.swipe("#desk-right-1", "normal", "right"); this.#animate.swipe("#edu-left-1", "normal", "left");', 300]);
-        } else {
-            this.#normalEducation.push(['this.#animate.pop("#point-1", "normal"); this.#animate.swipe("#edu-left-1", "normal", "right");', 400]);
-        }
-        this.#normalEducation.push(['this.#animate.growY(document.getElementById("line-2"), "normal");', 300]);
-        if(innerWidth >= 768) {
-            this.#normalEducation.push(['this.#animate.pop("#point-2", "normal"); this.#animate.swipe("#desk-left-2", "normal", "left"); this.#animate.swipe("#edu-right-2", "normal", "right");', 300]);
-        } else {
-            this.#normalEducation.push(['this.#animate.pop("#point-2", "normal"); this.#animate.swipe("#edu-right-2", "normal", "right");', 300]);
-        }
-        this.#normalEducation.push(['this.#animate.growY(document.getElementById("line-3"), "normal");', 300]);
-        if(innerWidth >= 768) {
+            this.#normalEducation.push(['this.#animate.growY(document.getElementById("line-2"), "normal");', 300]);
+            this.#normalEducation.push(['this.#animate.pop("#point-2", "normal"); this.#animate.swipe("#desk-left-2", "normal", "left"); this.#animate.swipe("#edu-right-2", "normal", "right");', 300]);        
+            this.#normalEducation.push(['this.#animate.growY(document.getElementById("line-3"), "normal");', 300]);
             this.#normalEducation.push(['this.#animate.pop("#point-3", "normal"); this.#animate.swipe("#desk-right-3", "normal", "right"); this.#animate.swipe("#edu-left-3", "normal", "left");', 300]);
-        } else {
-            this.#normalEducation.push(['this.#animate.pop("#point-3", "normal"); this.#animate.swipe("#edu-left-3", "normal", "right");', 300]);
+            return;
         }
+        this.#eduRoot = Array.from(document.getElementsByClassName('edu-root'));
+        this.#normalEducation.push(['this.#animate.fadeUpR("#education-title", "normal");', 300]);
+        this.#eduRoot.forEach((el, ind) => {
+            this.#normalEducation.push([`this.#animate.fadeUpR(this.#eduRoot[${ind}], "normal");`, 300]);
+        });
     }
 
     #createReverseEducation() {     

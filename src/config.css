@@ -111,6 +111,42 @@
     .teknologi {
         @apply w-14 sm:w-20 md:w-24 hover:scale-125 transition ease-out;
     }
+
+    .edu-root {
+        @apply border-2 border-accent border-solid rounded-xl p-5 bg-[#2C343E] sm:p-0 sm:bg-transparent sm:border-none sm:grid sm:grid-cols-edu-md sm:grid-rows-edu-md sm:place-content-center sm:place-items-start sm:gap-x-10 sm:gap-y-2 md:flex md:gap-0 md:justify-center md:items-end opacity-0 md:opacity-100;
+    }
+
+    .edu-icon {
+        @applay w-max h-max self-center;
+    }
+
+    .edu-school {
+        @apply font-semibold uppercase md:translate-y-1/4 md:text-end md:w-96;
+    }
+
+    .edu-point {
+        @apply hidden md:block w-max mr-5 md:ml-5 md:self-start;
+    }
+
+    .edu-point-1 {
+        @apply hidden md:block w-[2.5px] md:h-[51px] sm:h-[140px] bg-accent mx-auto;
+    }
+
+    .edu-point-1-long {
+        @apply w-[2.5px] h-20 sm:h-[111px] md:h-36 bg-accent mx-auto;
+    }
+
+    .edu-point-2 {
+        @apply aspect-square w-7 border-solid border-2 border-accent mx-auto rounded-full flex justify-center items-center;
+    }
+
+    .edu-detail {
+       @apply mt-2 sm:mt-0 sm:w-max md:w-96 md:translate-y-1/4;
+    }
+
+    .edu-detail-text {
+       @apply text-justify sm:text-justify md:text-start text-sm sm:w-96 md:w-80;
+    }
 }
 
 @layer utilities {
