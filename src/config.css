@@ -113,7 +113,7 @@
     }
 
     .edu-root {
-        @apply border-2 border-accent border-solid rounded-xl p-5 bg-[#2C343E] sm:p-0 sm:bg-transparent sm:border-none sm:grid sm:grid-cols-edu-md sm:grid-rows-edu-md sm:place-content-center sm:place-items-start sm:gap-x-10 sm:gap-y-2 md:flex md:gap-0 md:justify-center md:items-end opacity-0 md:opacity-100;
+        @apply border-2 border-accent border-solid rounded-xl p-5 bg-[#2C343E] sm:p-0 sm:bg-transparent sm:border-none sm:grid sm:grid-cols-edu-md sm:grid-rows-edu-md sm:place-content-center sm:place-items-start sm:gap-x-10 sm:gap-y-2 md:flex md:gap-0 md:justify-center md:items-end md:opacity-100; /* */
     }
 
     .edu-icon {
