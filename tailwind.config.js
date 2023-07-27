@@ -15,7 +15,7 @@ module.exports = {
       fontFamily: {
         suez: "suez, arial",
         arial: "arial",
-        sansation: "sansation"
+        rubik: "rubik"
       },
       gridTemplateColumns: {
         bio: "minmax(max-content, 500px) minmax(max-content, 500px)",

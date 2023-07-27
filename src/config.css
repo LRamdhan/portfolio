@@ -21,8 +21,8 @@
     }
     
     @font-face {
-        font-family: 'sansation';
-        src: url('../font/Sansation-Regular-webfont.woff') format('woff');
+        font-family: 'rubik';
+        src: url('../font/rubik-regular-webfont.woff2') format('woff');
     }
     
     ::-webkit-scrollbar {
@@ -34,7 +34,7 @@
     }
 
     body {
-        @apply font-sansation text-base;
+        @apply font-rubik text-sm sm:text-[15px];
     }
 }
 
@@ -57,7 +57,7 @@
     }
 
     .nav-child {
-        @apply bg-dark text-center capitalize font-semibold text-4xl py-10;
+        @apply bg-dark text-center capitalize font-semibold text-[28px] sm:text-[45px] py-[54px] sm:py-20;
     }
 
     .project-card {
@@ -97,11 +97,11 @@
     }
 
     .btn {
-        @apply mx-auto mb-20 bg-accent drop-shadow-basic capitalize w-36 h-11 font-bold text-xl font-arial flex justify-center items-center rounded-xl border-solid border-accent border-2 hover:text-accent hover:scale-110 cursor-pointer transition ease-out hover:bg-transparent hover:drop-shadow-none;
+        @apply mx-auto bg-accent drop-shadow-basic capitalize py-[6px] px-[22px] sm:py-[7px] sm:px-[27px] font-bold text-lg sm:text-xl font-arial flex justify-center items-center rounded-xl border-solid border-accent border-2 hover:text-accent hover:scale-110 cursor-pointer transition ease-out hover:bg-transparent hover:drop-shadow-none;
     }
 
     .link {
-        @apply cursor-pointer hover:text-base transition;
+        @apply cursor-pointer transition;
     }
 
     .link-bar {
