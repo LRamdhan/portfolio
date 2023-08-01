@@ -8,14 +8,14 @@
     <link rel="icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/portfolio.css" />
     <link rel="stylesheet" href="assets/css/font-awesome.css" />
-    <!-- <script defer src="assets/js/main.js" type="module"></script> -->
+    <script defer src="assets/js/main.js" type="module"></script>
   </head>
   <body class="bg-background dark:bg-base">
 
 
     <!-- home-start -->
     <section id="home" class="px-[19px] sm:px-[22px] md:px-6 bio:px-0 bio:overflow-hidden transform-gpu mb-[98px] sm:mb-[92px] md:mb-[120px] bio:mb-0 bio:h-screen md:grid md:grid-cols-1 bio:grid-cols-bio md:grid-rows-bio justify-content-center bio:align-items-center">
-      <nav id="nav-desktop" class="hidden relative z-[80] md:flex items-center justify-between col-span-full py-7 bio:pb-0 space-x-2"> <!-- -->
+      <nav id="nav-desktop" class="hidden relative z-[80] md:flex items-center justify-between col-span-full py-7 bio:pb-0 space-x-2 opacity-0">
         <div class="space-x-[39px] flex w-max items-center">
           <div class="w-max flex items-center space-x-4">
             <img src="assets/img/logo.svg" alt="logo" class="dark:hidden">
@@ -40,22 +40,24 @@
         </ul>
       </nav>
       <div class="capitalize mt-[204px] sm:mt-52 md:mt-24 bio:mt-0 bio:justify-self-start">
-        <div class="space-y-[24px] sm:space-y-9 flex flex-col justify-center items-start sm:items-center bio:items-start">
-          <h3 id="hello" class="text-[22px] sm:text-[28px] w-max h-max overflow-hidden whitespace-nowrap">hello, <span class="text-accent dark:text-accent-dark">i'm</span></h3> <!-- -->
-          <h1 id="name" class="text-[36.7px] sm:text-[46px] text-accent dark:text-accent-dark font-suez tracking-widest w-max h-max whitespace-nowrap">luji ramdhan</h1> <!-- -->
-          <h2 id="role" class="text-[22px] sm:text-[26px] md:text-[27px] font-semibold w-max h-max whitespace-nowrap">frontend developer</h2> <!-- -->
+        <div class="space-y-[18px] sm:space-y-[24px] flex flex-col justify-center items-start sm:items-center bio:items-start">
+          <h3 id="hello" class="bio-text text-[22px] sm:text-[28px] w-max h-max overflow-hidden whitespace-nowrap opacity-0">hello, <span class="text-accent dark:text-accent-dark">i'm</span></h3>
+
+          <h1 id="name" class="bio-text text-[36.7px] sm:text-[46px] w-max h-max text-accent dark:text-accent-dark font-suez tracking-widest opacity-0 whitespace-nowrap overflow-hidden leading-none">luji ramdhan</h1>
+          
+          <h2 id="role" class="bio-text text-[22px] sm:text-[26px] md:text-[27px] font-semibold w-max h-max whitespace-nowrap opacity-0 overflow-hidden leading-none">frontend developer</h2>
         </div>
-        <p id="desk" class="normal-case pt-6 sm:pt-[26.3px] text-start sm:text-center sm:max-w-[470px] sm:mx-auto bio:text-start">Passionate about web development and new technology. I enjoy every process that makes something better.</p> <!-- -->
-        <div class="mt-[38px] sm:mt-[70px] sm:flex sm:space-x-[35px] sm:justify-center bio:justify-start">
-          <a href="https://wa.me/62895385071788" target="_blank" class="w-max block" id="talk"> <!-- -->
+        <p id="desk" class="normal-case pt-6 sm:pt-[26.3px] text-start sm:text-center sm:max-w-[470px] sm:mx-auto bio:text-start opacity-0">Passionate about web development and new technology. I enjoy every process that makes something better.</p>
+        <div id="talk" class="mt-[38px] sm:mt-[70px] sm:flex sm:space-x-[35px] sm:justify-center bio:justify-start opacity-0">
+          <a href="https://wa.me/62895385071788" target="_blank" class="w-max block" id="talk">
             <div class="btn">let's talk</div>
           </a> 
-          <a href="#" target="_blank" class="w-max block mt-[23px] sm:mt-0" id="talk"> <!-- -->
+          <a href="#" target="_blank" class="w-max block mt-[23px] sm:mt-0" id="talk">
             <div class="btn bg-transparent dark:bg-transparent drop-shadow-none dark:drop-shadow-none text-accent dark:text-accent-dark">download CV</div>
           </a> 
         </div>
       </div>
-      <div class="relative w-[294px] sm:w-[350px] mx-auto mt-[92px] sm:mt-[95px] bio:mt-0 bio:justify-self-end bio:mx-0">
+      <div id="myself" class="relative w-[294px] sm:w-[350px] mx-auto mt-[92px] sm:mt-[95px] bio:mt-0 bio:justify-self-end bio:mx-0 opacity-0">
         <img src="assets/img/self.svg" alt="self" class="relative w-full z-10">
         <img src="assets/img/morp.svg" alt="morp" class="w-full absolute bottom-0 drop-shadow-basic dark:hidden">
         <img src="assets/img/morp-dark.svg" alt="morp" class="w-full absolute bottom-0 drop-shadow-basic dark:drop-shadow-basic-dark hidden dark:block">
@@ -114,7 +116,7 @@
       </ul>
     </nav>
 
-    <a id="arrow-up" href="#home" class="aspect-square w-16 fixed z-[100] right-10 sm:right-12 md:right-14 bottom-10 sm:bottom-12 bg-accent dark:bg-accent-dark rounded-full flex justify-center items-center opacity-0">
+    <a href="#home" id="arrow-up" class="aspect-square w-16 fixed z-[100] right-10 sm:right-12 md:right-14 bottom-10 sm:bottom-12 bg-accent dark:bg-accent-dark rounded-full flex justify-center items-center opacity-0">
       <div class="aspect-square w-1/3 border-solid border-t-4 border-l-4 border-base rotate-45 translate-y-1/4"></div>
     </a>
 
@@ -176,55 +178,55 @@
 
     <!-- education-start -->
     <section id="education" class="section-base bg-dark dark:bg-light">
-      <h1 id="education-title" class="section-title">education</h1> <!-- -->
+      <h1 id="education-title" class="section-title opacity-0">education</h1>
       <div class="sm:max-md:px-[123px] mt-8 sm:mt-[35px] md:mt-12">
         <div class="edu-root">
           <div class="edu-point w-[21px] sm:w-[25px]">
-            <div id="line-1" class="edu-point-1" data-height=""></div> <!-- md:opacity-0 -->
+            <div id="line-1" class="edu-point-1 opacity-0" data-height=""></div> 
           </div>
         </div>
         <div class="edu-root">
-          <div id="edu-left-1" class="edu-school"> <!-- md:opacity-0 -->
+          <div id="edu-left-1" class="edu-school opacity-0">
             <h2 class="text-accent dark:text-accent-dark text-[19px] sm:text-[21px] font-semibold capitalize">software engineering</h2>
             <h3 class="text-[13px] mt-2 sm:text-sm capitalize">jun 2019-jun 2022 <span class="text-[#81848A]">|</span>  vocational high school</h3>
           </div>
           <div class="edu-point">
-            <div id="point-1" class="edu-point-2"> <!-- md:opacity-0 -->
+            <div id="point-1" class="edu-point-2 opacity-0">
               <div class="w-1/2 aspect-square bg-accent dark:bg-accent-dark rounded-full"></div>
             </div>
-            <div id="line-2" class="edu-point-1-long" data-height=""></div> <!-- md:opacity-0 -->
+            <div id="line-2" class="edu-point-1-long opacity-0" data-height=""></div>
           </div>
-          <div id="desk-right-1" class="edu-detail"> <!-- md:opacity-0 -->
+          <div id="desk-right-1" class="edu-detail opacity-0">
             <p class="edu-detail-text">For three years, I learned many things about computers from the basics, until finally I focused on programming. lorem</p>
           </div>
         </div>
         <div class="edu-root">
-          <div id="edu-right-2" class="edu-school"> <!-- md:opacity-0 -->
+          <div id="edu-right-2" class="edu-school opacity-0">
             <h2 class="text-accent dark:text-accent-dark text-[19px] sm:text-[21px] font-semibold capitalize">programming course</h2>
             <h3 class="text-[13px] mt-2 sm:text-sm capitalize">feb 2021-now <span class="text-[#81848A]">|</span>  codepolitan, udemy</h3>
           </div>
           <div class="edu-point">
-            <div id="point-2" class="edu-point-2"> <!-- md:opacity-0 -->
+            <div id="point-2" class="edu-point-2 opacity-0">
               <div class="w-1/2 aspect-square bg-accent dark:bg-accent-dark rounded-full"></div>
             </div>
-            <div id="line-2" class="edu-point-1-long" data-height=""></div> <!-- md:opacity-0 -->
+            <div id="line-3" class="edu-point-1-long opacity-0" data-height=""></div>
           </div>
-          <div id="desk-left-2" class="edu-detail"> <!-- md:opacity-0 -->
+          <div id="desk-left-2" class="edu-detail opacity-0">
             <p class="edu-detail-text">To learn programming, I took several online courses on backend and front web development.</p>
           </div>
         </div>
         <div class="edu-root">
-          <div id="edu-left-3" class="edu-school"> <!-- md:opacity-0 -->
+          <div id="edu-left-3" class="edu-school opacity-0">
             <h2 class="text-accent dark:text-accent-dark text-[19px] sm:text-[21px] font-semibold capitalize">computer science</h2>
             <h3 class="text-[13px] mt-2 sm:text-sm capitalize">oct 2022-now <span class="text-[#81848A]">|</span>  bachelor degree</h3>
           </div>
           <div class="edu-point">
-            <div id="point-3" class="edu-point-2"> <!-- md:opacity-0 -->
+            <div id="point-3" class="edu-point-2 opacity-0">
               <div class="w-1/2 aspect-square bg-accent dark:bg-accent-dark rounded-full"></div>
             </div>
-            <div id="line-1" class="edu-point-1" data-height=""></div> <!-- md:opacity-0 -->
+            <div id="line-4" class="edu-point-1 opacity-0" data-height=""></div>
           </div>
-          <div id="desk-right-3" class="edu-detail pb-0"> <!-- md:opacity-0 -->
+          <div id="desk-right-3" class="edu-detail pb-0 opacity-0">
             <p class="edu-detail-text">I chose to major in informatics engineering, also entered a coding club and focused on front end web development.</p>
           </div>
         </div>
@@ -235,8 +237,8 @@
 
     <!-- skills-start -->
     <section id="skills" class="section-base">
-      <h1 id="skill-title" class="section-title">skills</h1> <!---->
-      <div class="mt-[43px] sm:mt-[50px] grid grid-cols-2 auto-rows-max gap-x-[14px] gap-y-[32.4px] sm:max-w-[574px] sm:mx-auto sm:grid-cols-3 sm:gap-x-12 sm:gap-y-[38.4px] md:grid-cols-4 md:max-w-[898px] md:gap-x-2 bio:gap-x-[54px] md:gap-y-[34.5px]">
+      <h1 id="skill-title" class="section-title opacity-0">skills</h1>
+      <div id="skill-img" class="mt-[43px] sm:mt-[50px] grid grid-cols-2 auto-rows-max gap-x-[14px] gap-y-[32.4px] sm:max-w-[574px] sm:mx-auto sm:grid-cols-3 sm:gap-x-12 sm:gap-y-[38.4px] md:grid-cols-4 md:max-w-[898px] md:gap-x-2 bio:gap-x-[54px] md:gap-y-[34.5px]">
         <div class="skill">
           <img src="assets/img/skill/html.svg" alt="html" class="skill-img">
           <h3 class="skill-title">HTML</h3>
@@ -312,8 +314,8 @@
 
 
     <!-- sertification-start -->
-    <section id="education" class="section-base bg-dark dark:bg-light">
-      <h1 id="education-title" class="section-title">certifications</h1> <!-- -->
+    <section class="section-base bg-dark dark:bg-light">
+      <h1 class="section-title">certifications</h1> <!-- -->
       <div class="mt-11 sm:mt-[58px] grid grid-cols-1 auto-rows-max gap-y-[52px] sm:grid-cols-[406px] sm:justify-content-center sm:gap-y-[59px] bio:gap-y-0 bio:grid-cols-cert-bio bio:gap-x-[114px]">
         <div>
           <img src="assets/img/cert1.svg" alt="freecodecamp" class="w-full bio:w-auto bio:h-[304px]">
@@ -332,70 +334,46 @@
 
     <!-- project-start -->
     <section id="projects" class="section-base px-0">
-      <h1 id="project-title" class="section-title">projects</h1> <!---->
-      <p id="project-desk" class="px-[19px] mt-8 text-center sm:px-0 sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously .</p> <!---->
-
-      <div id="project-img" class="w-full relative mt-[88px] sm:mt-[127px] md:mt-[101px]"> <!---->
-
-        <div class="absolute inset-0 z-[5]"></div>
-
+      <h1 id="project-title" class="section-title opacity-0">projects</h1>
+      <p id="project-desk" class="px-[19px] mt-8 text-center sm:px-0 sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7 opacity-0">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously .</p>
+      <div id="project-img" class="w-full relative mt-[90px] mb-[62px] sm:mt-[126px] sm:mb-[100px] md:mt-[116px] opacity-0">
         <div class="w-full overflow-hidden" id="scroll">
-          <div id="project-gallery" class="w-max flex justify-center space-x-[22px]"> <!--px-[600px]-->
-            <div class="project-card">
-              <div class="w-full h-full flex justify-center"> 
-                <div class="project-main bg-article"></div>
-              </div>
+          <div id="project-gallery" class="w-max flex space-x-[22px] px-[600px]">
+
+            <div class="project-card" id="click">
+              <div class="project-main bg-article"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center"> 
-                <div class="project-main bg-article"></div>
-              </div>
+              <div class="project-main bg-gallery"></div>
+            </div>
+            <div class="project-card">             
+              <div class="project-main bg-article"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center"> 
-                <div class="project-main bg-article"></div>
-              </div>
+              <div class="project-main bg-gallery"></div>
+            </div>
+            <div class="project-card">             
+              <div class="project-main bg-article"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center"> 
-                <div class="project-main bg-article"></div>
-              </div>
+              <div class="project-main bg-gallery"></div>
+            </div>
+            <div class="project-card">             
+              <div class="project-main bg-article"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center"> 
-                <div class="project-main bg-article"></div>
-              </div>
+              <div class="project-main bg-gallery"></div>
+            </div>
+            <div class="project-card">             
+              <div class="project-main bg-article"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center"> 
-                <div class="project-main bg-article"></div>
-              </div>
+              <div class="project-main bg-gallery"></div>
             </div>
-            <div class="project-card">
-              <div class="w-full h-full flex justify-center"> 
-                <div class="project-main bg-article"></div>
-              </div>
+            <div class="project-card">             
+              <div class="project-main bg-article"></div>
             </div>
-            <div class="project-card">
-              <div class="w-full h-full flex justify-center"> 
-                <div class="project-main bg-article"></div>
-              </div>
-            </div>
-            <div class="project-card">
-              <div class="w-full h-full flex justify-center"> 
-                <div class="project-main bg-article"></div>
-              </div>
-            </div>
-            <div class="project-card">
-              <div class="w-full h-full flex justify-center"> 
-                <div class="project-main bg-article"></div>
-              </div>
-            </div>
-            <div class="project-card">
-              <div class="w-full h-full flex justify-center"> 
-                <div class="project-main bg-article"></div>
-              </div>
-            </div>
+
           </div>
         </div>
 
@@ -414,26 +392,26 @@
     <!-- project-end -->
 
 
-    <!-- desing-start -->
-    <section id="education" class="section-base bg-dark dark:bg-light">
-      <h1 id="education-title" class="section-title">designs</h1> <!-- -->
-      <p id="project-desk" class="mt-8 text-center sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously .</p> <!---->
+    <!-- design-start -->
+    <section id="designs" class="section-base bg-dark dark:bg-light">
+      <h1 class="section-title">designs</h1> <!-- -->
+      <p class="mt-8 text-center sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously .</p> <!---->
       <div class="mt-[34px] sm:mt-[25px] md:mt-[35px] sm:text-center">
         <div class="h-[222px] bg-[#4D5153] rounded-[10px] sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px]"></div>
         <div class="h-[222px] bg-[#4D5153] rounded-[10px] mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block sm:ml-11 md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px]"></div>
         <div class="h-[222px] bg-[#4D5153] rounded-[10px] mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:mx-auto sm:mt-[42px] bio:mt-0 bio:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px]"></div>
       </div>
     </section> 
-    <!-- desing-end -->
+    <!-- design-end -->
 
 
     <!-- contact-start -->
     <section id="contact" class="section-base relative text-center py-6 h-[80vh] sm:h-[90vh] md:h-screen flex flex-col justify-center">
       <div class="w-full -translate-y-8">
-        <h3 class="text-[20px] sm:text-[27px] leading-normal">What's next?</h3> <!---->
-        <h1 class="text-[38px] font-semibold capitalize text-accent dark:text-accent-dark leading-normal mt-[13px] sm:text-[50px] sm:mt-[10px]">get in touch</h1> <!---->
-        <p class="sm:text-[18px] sm:max-w-[527px] bio:max-w-[771px] leading-normal mx-auto mt-[15px] sm:mt-[20px] md:mt-[21px]">Although i'm still learning, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p> <!---->
-        <div class="flex w-max mx-auto space-x-5 mt-14 sm:mt-12 md:mt-14"> <!---->
+        <h3 class="text-[20px] sm:text-[27px] leading-normal opacity-0">What's next?</h3>
+        <h1 class="text-[38px] font-semibold capitalize text-accent dark:text-accent-dark leading-normal mt-[13px] sm:text-[50px] sm:mt-[10px] opacity-0">get in touch</h1>
+        <p class="sm:text-[18px] sm:max-w-[527px] bio:max-w-[771px] leading-normal mx-auto mt-[15px] sm:mt-[20px] md:mt-[21px] opacity-0">Although i'm still learning, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+        <div class="flex w-max mx-auto space-x-5 mt-14 sm:mt-12 md:mt-14 opacity-0">
           <a href="https://github.com/LRamdhan" target="_blank" class="hexagon group">
             <div class="sosial-link-layer"></div>
             <i class="sosial-link-icon fa-brands fa-github"></i>  
@@ -452,7 +430,7 @@
           </a>
         </div>
       </div>
-      <h3 id="copyright" class="absolute bottom-0 py-5 capitalize w-full self-center sm:text-[14px]">built by luji ramdhan</h3> <!---->
+      <h3 id="copyright" class="absolute bottom-0 py-5 capitalize w-full self-center sm:text-[14px] opacity-0">built by luji ramdhan</h3>
     </section>
     <!-- contact-end -->    
   </body>
