@@ -1,12 +1,11 @@
-import RunningAnimation from "./RunningAnimation.js";
+import Interactivity from "./Interactivity.js";
 
-const run = new RunningAnimation();
+const run = new Interactivity();
 
 const tringgerHeight = innerHeight * (50 / 100);
 const triggerData = run.triggerData;
 let arrowVisibility = false;
 let scrollProject = true;
-const project = document.getElementById('projects');
 const half = innerHeight * (50 /100);
 
 setInterval(() => {
@@ -43,6 +42,34 @@ setInterval(() => {
 
 
 
+// 
+// try {
+//     let data = await fetch("data/en.json");
+//     data = await data.json();
+//     data = JSON.stringify(data);
+//     localStorage.setItem('en', data);
+//     data = await fetch("data/id.json");
+//     data = await data.json();
+//     data = JSON.stringify(data);
+//     localStorage.setItem('id', data);
+// } catch(error) {
+//     console.log(error.message);
+// }
+
+let currentLang = 'en';
+for(let btn of document.getElementsByClassName("switch-lang")) {
+    btn.addEventListener("click", async event => {
+        let result = await run.switchLang(currentLang === 'en' ? 'id' : 'en');
+        if(result) {
+            currentLang = currentLang === 'en' ? 'id' : 'en';
+        } else {
+            alert(currentLang === 'id' ? 'Terjadi error, bahasa gagal diganti!' : "There's an error, language is failed to be change");
+        }
+    });
+}
+
+
+
 const projectList = Array.from(document.getElementById('project-gallery').children);
 const midIdx = Math.ceil(projectList.length / 2) - 1;
 const middle = projectList[midIdx].firstElementChild;
@@ -72,7 +99,48 @@ document.getElementById('project-nav-next').addEventListener('click', event => {
         setTimeout(() => projectRun = true, 1070);
     }
 });
-
+new Hammer(document.getElementById('project-img')).on('swipeleft swiperight', function(e) {
+    if(e.type === "swiperight" && projectRun) {
+        run.previousProject();
+        projectRun = false;
+        setTimeout(() => projectRun = true, 1070);
+    } else if(e.type === "swipeleft" && projectRun) {
+        run.nextProject();
+        projectRun = false;
+        setTimeout(() => projectRun = true, 1070);
+    }
+});
+let popupOpen = false;
+Array.from(document.getElementsByClassName('project-card')).forEach((el, idx) => {
+    el.addEventListener('click', event => {
+        if(event.target.style.position === "absolute") {
+            run.startDetailProject(idx, currentLang);
+            popupOpen = true;
+            return;
+        }
+        if(projectRun) {
+            run.pickProject(idx);
+            projectRun = false;
+            let syncDrt = 0;
+            if(innerWidth >= 1300) {
+                syncDrt = 200;
+            } else if(innerWidth >= 800) {
+                syncDrt = 100;
+            }
+            setTimeout(() => projectRun = true, 1070 + syncDrt);
+        }
+    });
+});
+Array.from(document.getElementsByClassName('detail-project-exit')).forEach(el => el.addEventListener('click', () => {
+    run.endDetailProject();
+    popupOpen = false;
+}));
+document.addEventListener('keyup', event => {
+    if(popupOpen && event.code === "Escape") {
+        event.preventDefault();
+        run.endDetailProject();
+    }
+});
 
 
 let dropRun = true;
@@ -121,3 +189,24 @@ Array.from(document.getElementById('drop-nav-child').children).forEach((el, ind)
         }
     });
 });
+
+
+
+const root = document.getElementById('root');
+let modeRun = false;
+Array.from(document.getElementsByClassName('switch')).forEach(el => {
+    el.addEventListener('click', () => {
+        if(modeRun) return;
+        modeRun = true;
+        if(root.classList.contains('dark')) {
+            run.endSwitchMode();
+            setTimeout(() => modeRun = false, 700);
+            return;
+        }
+        run.startSwitchMode();
+        setTimeout(() => modeRun = false, 700);
+    });
+});
+
+
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" id="root">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,6 +8,7 @@
     <link rel="icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/portfolio.css" />
     <link rel="stylesheet" href="assets/css/font-awesome.css" />
+    <script defer src="node_modules/hammerjs/hammer.min.js"></script>
     <script defer src="assets/js/main.js" type="module"></script>
   </head>
   <body class="bg-background dark:bg-base">
@@ -17,31 +18,33 @@
     <section id="home" class="px-[19px] sm:px-[22px] md:px-6 bio:px-0 bio:overflow-hidden transform-gpu mb-[98px] sm:mb-[92px] md:mb-[120px] bio:mb-0 bio:h-screen md:grid md:grid-cols-1 bio:grid-cols-bio md:grid-rows-bio justify-content-center bio:align-items-center">
       <nav id="nav-desktop" class="hidden relative z-[80] md:flex items-center justify-between col-span-full py-7 bio:pb-0 space-x-2 opacity-0">
         <div class="space-x-[39px] flex w-max items-center">
-          <div class="w-max flex items-center space-x-4">
+          <div class="w-max flex items-center">
             <img src="assets/img/logo.svg" alt="logo" class="dark:hidden">
             <img src="assets/img/logo-dark.svg" alt="logo" class="hidden dark:block">
-            <h3 class="text-[23px] font-semibold">Luji R</h3>
+            <h3 class="text-[23px] ml-4 font-semibold">Luji R</h3>
           </div>
           <div class="w-max group">
-            <div class="w-max hidden sm:flex items-center space-x-2 link">
+            <div class="switch-lang w-max hidden sm:flex items-center link">
               <img src="assets/img/icon/globe-light.svg" alt="globe" class="w-[23px] dark:hidden">
               <img src="assets/img/icon/globe-dark.svg" alt="globe" class="w-[23px] hidden dark:block">
-              <span>EN</span>
+              <span class="language ml-2">ID</span>
             </div>
           </div>
-          <img src="assets/img/icon/sun.svg" alt="sun" class="w-[23px] cursor-pointer dark:hidden">
-          <img src="assets/img/icon/moon.svg" alt="moon" class="w-[23px] cursor-pointer hidden dark:block">
+          <div class="switch w-max h-max">
+            <img id="sun-lg" src="assets/img/icon/sun.svg" alt="sun" class="w-[23px] cursor-pointer">
+            <img id="moon-lg" src="assets/img/icon/moon.svg" alt="moon" class="w-[23px] cursor-pointer hidden">
+          </div>
         </div>
-        <ul class="w-max capitalize font-semibold flex items-center space-x-14">
+        <ul id="bio-scroll-nav" class="w-max capitalize font-semibold flex items-center space-x-14">
           <li><a href="#about" class="text-accent dark:text-accent-dark link hover:text-[#EBECED] dark:hover:text-background group">about<div class="link-bar"></div></a></li>
-          <li><a href="#project" class="link group">projects<div class="link-bar"></div></a></li>
-          <li><a href="#design" class="link group">designs<div class="link-bar"></div></a></li>
+          <li><a href="#projects" class="link group">projects<div class="link-bar"></div></a></li>
+          <li><a href="#designs" class="link group">designs<div class="link-bar"></div></a></li>
           <li><a href="#contact" class="link group">contact<div class="link-bar"></div></a></li>
         </ul>
       </nav>
       <div class="capitalize mt-[204px] sm:mt-52 md:mt-24 bio:mt-0 bio:justify-self-start">
         <div class="space-y-[18px] sm:space-y-[24px] flex flex-col justify-center items-start sm:items-center bio:items-start">
-          <h3 id="hello" class="bio-text text-[22px] sm:text-[28px] w-max h-max overflow-hidden whitespace-nowrap opacity-0">hello, <span class="text-accent dark:text-accent-dark">i'm</span></h3>
+          <h3 id="hello" class="bio-text text-[22px] sm:text-[28px] w-max h-max overflow-hidden whitespace-nowrap leading-none opacity-0">hello, <span class="text-accent dark:text-accent-dark">i'm</span></h3>
 
           <h1 id="name" class="bio-text text-[36.7px] sm:text-[46px] w-max h-max text-accent dark:text-accent-dark font-suez tracking-widest opacity-0 whitespace-nowrap overflow-hidden leading-none">luji ramdhan</h1>
           
@@ -50,10 +53,10 @@
         <p id="desk" class="normal-case pt-6 sm:pt-[26.3px] text-start sm:text-center sm:max-w-[470px] sm:mx-auto bio:text-start opacity-0">Passionate about web development and new technology. I enjoy every process that makes something better.</p>
         <div id="talk" class="mt-[38px] sm:mt-[70px] sm:flex sm:space-x-[35px] sm:justify-center bio:justify-start opacity-0">
           <a href="https://wa.me/62895385071788" target="_blank" class="w-max block" id="talk">
-            <div class="btn">let's talk</div>
+            <div id="wa" class="btn">let's talk</div>
           </a> 
-          <a href="#" target="_blank" class="w-max block mt-[23px] sm:mt-0" id="talk">
-            <div class="btn bg-transparent dark:bg-transparent drop-shadow-none dark:drop-shadow-none text-accent dark:text-accent-dark">download CV</div>
+          <a href="data/Luji Ramdhan_CV.pdf" target="_blank" class="w-max block mt-[23px] sm:mt-0" id="talk">
+            <div id="cv" class="btn bg-transparent dark:bg-transparent drop-shadow-none dark:drop-shadow-none text-accent dark:text-accent-dark">download CV</div>
           </a> 
         </div>
       </div>
@@ -69,18 +72,20 @@
     <!-- fixed-element-start -->
     <nav id="nav-mobile" class="fixed z-50 bg-[#343E4B]/50 dark:bg-[#343E4B]/10 inset-x-0 top-6 mx-6 rounded-md border-solid border-2 p-3 backdrop-blur-lg border-accent dark:border-accent-dark flex justify-between items-center md:hidden"> <!-- -->
       <div class="space-x-9 flex w-max items-center">
-        <div class="w-max flex items-center space-x-4">
+        <div class="w-max flex items-center">
           <img src="assets/img/logo.svg" alt="logo" class="dark:hidden">
           <img src="assets/img/logo-dark.svg" alt="logo" class="hidden dark:block">
-          <h3 class="text-[22px] sm:text-2xl font-semibold">Luji R</h3>
+          <h3 class="text-[22px] ml-4 sm:text-2xl font-semibold">Luji R</h3>
         </div>
-        <div class="w-max hidden sm:flex items-center space-x-2"> 
+        <div class="switch-lang w-max hidden sm:flex items-center"> 
           <img src="assets/img/icon/globe-light.svg" alt="globe" class="w-[21px] dark:hidden">
           <img src="assets/img/icon/globe-dark.svg" alt="globe" class="w-[21px] hidden dark:block">
-          <span>EN</span>
+          <span class="language ml-2">ID</span>
         </div>
-        <img src="assets/img/icon/sun.svg" alt="globe" class="w-[21px] hidden sm:block dark:hidden">
-        <img src="assets/img/icon/moon.svg" alt="globe" class="w-[21px] hidden dark:sm:block">
+        <div class="switch w-max h-max">
+          <img id="sun-md" src="assets/img/icon/sun.svg" alt="globe" class="w-[21px] hidden sm:block">
+          <img id="moon-md" src="assets/img/icon/moon.svg" alt="globe" class="w-[21px] hidden">
+        </div>
       </div>
       <div class="w-11 h-8 flex flex-col justify-between cursor-pointer">
         <div id="hamberger" class="absolute inset-y-0 w-20 right-0"></div>
@@ -92,15 +97,17 @@
     
     <nav id="drop-nav" class="fixed inset-0 -translate-y-full overflow-hidden z-[1009] bg-background dark:bg-base px-12 pt-[59px] pb-7 grid grid-cols-2 grid-rows-nav align-items-center sm:pt-[51px]">
       <div id="drop-nav-lang" class="w-max flex items-center space-x-7 sm:invisible"> <!---->
-        <div class="w-max flex items-center space-x-[9px]">
+        <div class="switch-lang w-max flex items-center">
           <img src="assets/img/icon/globe-light.svg" alt="globe" class="w-[19px] dark:hidden">
           <img src="assets/img/icon/globe-dark.svg" alt="globe" class="w-[19px] hidden dark:block">
-          <span class="font-semibold">EN</span>
+          <span class="language font-semibold ml-[9px]">ID</span>
         </div>
-        <img src="assets/img/icon/sun.svg" alt="sun" class="w-6 dark:hidden">
-        <img src="assets/img/icon/moon.svg" alt="moon" class="w-6 hidden dark:block">
+        <div class="switch w-max h-max">
+          <img id="sun-sm" src="assets/img/icon/sun.svg" alt="sun" class="w-6">
+          <img id="moon-sm" src="assets/img/icon/moon.svg" alt="moon" class="w-6 hidden">
+        </div>
       </div>
-      <div id="drop-nav-exit" class="aspect-square w-9 relative cursor-pointer justify-self-end"> <!---->
+      <div id="drop-nav-exit" class="aspect-square w-9 relative cursor-pointer justify-self-end">
         <div class="absolute w-full h-full flex items-center">
           <div class="w-full rotate-45 h-1 bg-base dark:bg-background"></div>
         </div>
@@ -110,7 +117,7 @@
       </div>
       <ul id="drop-nav-child" class="col-span-full">
         <li class="nav-child">about</li>
-        <li class="nav-child">project</li>
+        <li class="nav-child">projects</li>
         <li class="nav-child">designs</li>
         <li class="nav-child">contact</li>
       </ul>
@@ -120,28 +127,20 @@
       <div class="aspect-square w-1/3 border-solid border-t-4 border-l-4 border-base rotate-45 translate-y-1/4"></div>
     </a>
 
-    <div class="fixed inset-0 bg-black/50 z-[200] px-[21px] flex flex-col justify-center backdrop-blur-[10px] sm:backdrop-blur-none sm:px-0 sm:items-center md:px-5 hidden">
-      <div class="aspect-square w-9 cursor-pointer absolute top-6 right-[35px] sm:right-10 sm:top-10 md:hidden"> <!---->
-        <div class="absolute w-full h-full flex items-center">
-          <div class="w-full rotate-45 h-1 bg-base"></div>
-        </div>
-        <div class="absolute w-full h-full flex items-center">
-          <div class="w-full -rotate-45 h-1 bg-base"></div>
-        </div>
-      </div>
-
-      <div class="w-full h-[589px] bg-popup dark:bg-light rounded-[5px] overflow-hidden sm:rounded-[10px] sm:h-[753px] sm:w-[553px] md:w-full min-[820px]:w-[818px] md:h-[400px] md:flex">
-
-        <div class="h-[198px] bg-fullfashion bg-cover bg-top sm:h-[300px] md:w-1/2 md:h-full">
-          <div class="w-full h-full hidden backdrop-blur-[7px] justify-center items-start overflow-hidden pt-[31px] sm:flex md:pt-7">
-            <img src="assets/img/project/fullfashion.png" alt="calculator" class="w-[392px] shadow-project md:w-[308px]">
+    <div id="detail-project" class="fixed inset-0 z-[200] hidden">
+      <div id="detail-project-layer" class="bg-black/50 absolute inset-0 z-[210] backdrop-blur-[10px] sm:backdrop-blur-none transition-all duration-300"></div>
+      <div class="absolute inset-0 z-[220] px-[21px] flex flex-col justify-center sm:px-0 sm:items-center md:px-5">
+        <div id="detail-project-exit-outer" class="detail-project-exit aspect-square w-9 cursor-pointer absolute top-6 right-[35px] sm:right-10 sm:top-10 md:hidden opacity-0">
+          <div class="absolute w-full h-full flex items-center">
+            <div class="w-full rotate-45 h-1 bg-base"></div>
+          </div>
+          <div class="absolute w-full h-full flex items-center">
+            <div class="w-full -rotate-45 h-1 bg-base"></div>
           </div>
         </div>
-
-        <div class="px-[21px] mt-[34px] sm:mt-[49px] sm:px-[38px] md:w-1/2 md:mt-0 md:py-[18px] md:px-[35px] md:relative">
-
-          <div class="hidden md:flex justify-end absolute inset-x-0 right-[18px]">
-            <div class="aspect-square w-5 cursor-pointer relative"> <!---->
+        <div id="detail-project-paper" class="w-full h-[589px] bg-popup dark:bg-light rounded-[5px] overflow-hidden sm:rounded-[10px] sm:h-[753px] sm:w-[553px] md:w-full min-[820px]:w-[818px] md:h-[400px] md:flex relative transform-gpu opacity-0">
+          <div class="hidden top-4 md:flex justify-end absolute inset-x-0 right-[18px]">
+            <div class="detail-project-exit aspect-square w-5 cursor-pointer relative">
               <div class="absolute w-full h-full flex items-center">
                 <div class="w-full rotate-45 h-[3px] bg-base dark:bg-background"></div>
               </div>
@@ -150,24 +149,44 @@
               </div>
             </div>
           </div>
-
-          <h2 class="capitalize text-[20px] font-semibold sm:text-[21px] md:pt-5">film search</h2>
-          <p class="text-justify mt-[26px] sm:mt-[35px] md:mt-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. A cum veniam debitis. Eligendi, nulla cumque. Dignissimos veniam itaque maiores ut, distinctio voluptates laborum, similique nam consequuntur modi est eos ad.</p>
-          <div class="flex space-x-6 mt-[29px]">
-            <img src="assets/img/skill/javascript.svg" alt="javascript" class="h-9">
-            <img src="assets/img/skill/mysql.svg" alt="mysql" class="h-9">
-            <img src="assets/img/skill/axios.svg" alt="axios" class="h-9">
-          </div>
-          <div class="flex space-x-[19px] mt-14">
-            <div class="w-[114px] h-10 border border-solid border-base dark:border-background rounded-full flex justify-center items-center space-x-2">
-              <span class="capitalize">demo</span>
-              <img src="assets/img/icon/link.svg" alt="link" class="w-[19px] hidden">
-              <img src="assets/img/icon/link-dark.svg" alt="link" class="w-[19px] hidden dark:block">
+          <p id="detail-project-error" class="text-center absolute inset-x-0 top-14 capitalize hidden">something went wrong</p>
+          <div id="detail-project-blur" style="background-image: url(assets/img/project/fullfashion.png);" class="h-[198px] bg-cover bg-top sm:h-[300px] md:w-1/2 md:h-full hidden">
+            <div class="w-full h-full hidden backdrop-blur-[7px] justify-center items-start overflow-hidden pt-[31px] sm:flex md:pt-7">
+              <img id="detail-project-clear" src="assets/img/project/fullfashion.png" alt="calculator" class="w-[392px] shadow-project md:w-[308px]">
             </div>
-            <div class="w-[114px] h-10 border border-solid border-base dark:border-background rounded-full flex justify-center items-center space-x-2">
-              <span class="capitalize">code</span>
-              <img src="assets/img/icon/code.svg" alt="code" class="w-[19px] hidden">
-              <img src="assets/img/icon/code-dark.svg" alt="code" class="w-[19px] hidden dark:block">
+          </div>
+          <div class="skeleton bone h-[198px] sm:h-[300px] md:w-1/2 md:h-full animate-pulse hidden"></div>
+          <div class="px-[21px] mt-[34px] sm:mt-[49px] sm:px-[38px] md:w-1/2 md:mt-0 md:py-[18px] md:px-[35px]">
+            
+            <h2 id="detail-project-title" class="capitalize text-[20px] font-semibold sm:text-[21px] md:pt-5 hidden"></h2>
+            <div class="skeleton bone h-4 w-28 md:mt-5 hidden"></div>
+            <p id="detail-project-desk" class="text-justify mt-[26px] sm:mt-[35px] md:mt-7 hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci amet asperiores nesciunt blanditiis ea quod doloremque recusandae</p>
+            <div class="skeleton space-y-3 mt-[26px] sm:mt-[35px] md:mt-7 hidden">
+              <div class="bone h-3"></div>
+              <div class="bone h-3"></div>
+              <div class="bone h-3"></div>
+              <div class="bone h-3 w-8/12"></div>
+            </div>
+            <img src="assets/img/skill/javascript.svg" alt="javascript" class="h-9 hidden">
+            <div class="bone aspect-square w-9 hidden"></div>
+            <div id="detail-project-tech" class="flex space-x-6 mt-[29px]"></div>
+            <div class="flex mt-14">
+              <a id="detail-project-demo" href="https://github" target="_blank" class="w-max h-max hidden">
+                <div class="w-[114px] h-10 border border-solid border-base dark:border-background rounded-full flex justify-center items-center space-x-2">
+                  <span id="demo-content" class="capitalize">demo</span>
+                  <img src="assets/img/icon/link.svg" alt="link" class="w-[19px] dark:hidden">
+                  <img src="assets/img/icon/link-dark.svg" alt="link" class="w-[19px] hidden dark:block">
+                </div>
+              </a>
+              <div class="skeleton bone w-[114px] h-10 ml-0 hidden"></div>
+              <a id="detail-project-code" href="https://apaaja.com" target="_blank" class="w-max h-max ml-[19px] hidden">
+                <div class="w-[114px] h-10 border border-solid border-base dark:border-background rounded-full flex justify-center items-center space-x-2">
+                  <span id="code-content" class="capitalize">code</span>
+                  <img src="assets/img/icon/code.svg" alt="code" class="w-[19px] dark:hidden">
+                  <img src="assets/img/icon/code-dark.svg" alt="code" class="w-[19px] hidden dark:block">
+                </div>
+              </a>
+              <div class="skeleton bone w-[114px] h-10 ml-[19px] hidden"></div>
             </div>
           </div>
         </div>
@@ -188,7 +207,7 @@
         <div class="edu-root">
           <div id="edu-left-1" class="edu-school opacity-0">
             <h2 class="text-accent dark:text-accent-dark text-[19px] sm:text-[21px] font-semibold capitalize">software engineering</h2>
-            <h3 class="text-[13px] mt-2 sm:text-sm capitalize">jun 2019-jun 2022 <span class="text-[#81848A]">|</span>  vocational high school</h3>
+            <h3 class="text-[13px] mt-2 sm:text-sm capitalize">jun 2019-jun 2022  <span class="text-[#81848A]">|</span>  SMKN Situraja</h3>
           </div>
           <div class="edu-point">
             <div id="point-1" class="edu-point-2 opacity-0">
@@ -203,7 +222,7 @@
         <div class="edu-root">
           <div id="edu-right-2" class="edu-school opacity-0">
             <h2 class="text-accent dark:text-accent-dark text-[19px] sm:text-[21px] font-semibold capitalize">programming course</h2>
-            <h3 class="text-[13px] mt-2 sm:text-sm capitalize">feb 2021-now <span class="text-[#81848A]">|</span>  codepolitan, udemy</h3>
+            <h3 class="text-[13px] mt-2 sm:text-sm capitalize">feb 2021-now  <span class="text-[#81848A]">|</span>  codepolitan, udemy</h3>
           </div>
           <div class="edu-point">
             <div id="point-2" class="edu-point-2 opacity-0">
@@ -218,7 +237,7 @@
         <div class="edu-root">
           <div id="edu-left-3" class="edu-school opacity-0">
             <h2 class="text-accent dark:text-accent-dark text-[19px] sm:text-[21px] font-semibold capitalize">computer science</h2>
-            <h3 class="text-[13px] mt-2 sm:text-sm capitalize">oct 2022-now <span class="text-[#81848A]">|</span>  bachelor degree</h3>
+            <h3 class="text-[13px] mt-2 sm:text-sm capitalize">oct 2022-now  <span class="text-[#81848A]">|</span>  UNSAP</h3>
           </div>
           <div class="edu-point">
             <div id="point-3" class="edu-point-2 opacity-0">
@@ -314,15 +333,15 @@
 
 
     <!-- sertification-start -->
-    <section class="section-base bg-dark dark:bg-light">
-      <h1 class="section-title">certifications</h1> <!-- -->
+    <section id="certifications" class="section-base bg-dark dark:bg-light">
+      <h1 id="cert-title" class="section-title opacity-0">certifications</h1>
       <div class="mt-11 sm:mt-[58px] grid grid-cols-1 auto-rows-max gap-y-[52px] sm:grid-cols-[406px] sm:justify-content-center sm:gap-y-[59px] bio:gap-y-0 bio:grid-cols-cert-bio bio:gap-x-[114px]">
-        <div>
+        <div id="cert-1" class="opacity-0">
           <img src="assets/img/cert1.svg" alt="freecodecamp" class="w-full bio:w-auto bio:h-[304px]">
           <p class="text-accent dark:text-accent-dark leading-[27.8px] mt-[13px] sm:text-[17px]">FreeCodeCamp</p>
           <h3 class="text-[15px] font-semibold leading-[25px] sm:text-[18px]">Javascript Algorithms and Data Structures</h3>
         </div>
-        <div>
+        <div id="cert-2" class="opacity-0">
           <img src="assets/img/cert2.svg" alt="udemy" class="w-full bio:w-auto bio:h-[304px]">
           <p class="text-accent dark:text-accent-dark leading-[27.8px] mt-[13px] sm:text-[17px]">Udemy</p>
           <h3 class="text-[15px] font-semibold leading-[25px] sm:text-[18px]">React Masterclass</h3>
@@ -335,12 +354,12 @@
     <!-- project-start -->
     <section id="projects" class="section-base px-0">
       <h1 id="project-title" class="section-title opacity-0">projects</h1>
-      <p id="project-desk" class="px-[19px] mt-8 text-center sm:px-0 sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7 opacity-0">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously .</p>
-      <div id="project-img" class="w-full relative mt-[90px] mb-[62px] sm:mt-[126px] sm:mb-[100px] md:mt-[116px] opacity-0">
+      <p id="project-desk" class="px-[19px] mt-8 text-center sm:px-0 sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7 opacity-0">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously.</p>
+      <div id="project-img" class="w-full relative pt-[90px] pb-[62px] sm:pt-[126px] sm:pb-[100px] md:pt-[116px] opacity-0">
         <div class="w-full overflow-hidden" id="scroll">
           <div id="project-gallery" class="w-max flex space-x-[22px] px-[600px]">
 
-            <div class="project-card" id="click">
+            <div class="project-card">
               <div class="project-main bg-article"></div>
             </div>
             <div class="project-card">
@@ -376,16 +395,11 @@
 
           </div>
         </div>
-
-        <div class="hidden w-max absolute inset-y-0 md:flex items-center left-0 z-30" data-x="">
-          <div id="project-nav-previous" class="project-nav translate-x-[5%] sm:translate-x-[140%] md:translate-x-[150%] bio:translate-x-[520%]">
-            <div class="project-arrow -rotate-45 translate-x-1/4"></div>
-          </div>
+        <div id="project-nav-previous" data-x="" class="project-nav left-1/2 -translate-x-[330px]">
+          <div class="project-arrow -rotate-45 translate-x-1/4"></div>
         </div>
-        <div class="hidden w-max absolute inset-y-0 md:flex items-center right-0 z-30" data-x="">
-          <div id="project-nav-next" class="project-nav -translate-x-[5%] sm:-translate-x-[140%] md:-translate-x-[150%] bio:-translate-x-[520%]">
-            <div class="project-arrow rotate-[135deg] -translate-x-1/4"></div>
-          </div>
+        <div data-x="" id="project-nav-next" class="project-nav right-1/2 translate-x-[330px]">
+          <div class="project-arrow rotate-[135deg] -translate-x-1/4"></div>
         </div>
       </div>
     </section>
@@ -394,12 +408,12 @@
 
     <!-- design-start -->
     <section id="designs" class="section-base bg-dark dark:bg-light">
-      <h1 class="section-title">designs</h1> <!-- -->
-      <p class="mt-8 text-center sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously .</p> <!---->
-      <div class="mt-[34px] sm:mt-[25px] md:mt-[35px] sm:text-center">
-        <div class="h-[222px] bg-[#4D5153] rounded-[10px] sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px]"></div>
-        <div class="h-[222px] bg-[#4D5153] rounded-[10px] mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block sm:ml-11 md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px]"></div>
-        <div class="h-[222px] bg-[#4D5153] rounded-[10px] mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:mx-auto sm:mt-[42px] bio:mt-0 bio:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px]"></div>
+      <h1 id="design-title" class="section-title opacity-0">designs</h1>
+      <p id="design-desk" class="mt-8 text-center sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7 opacity-0">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously .</p>
+      <div id="design-pict" class="mt-[34px] sm:mt-[25px] md:mt-[35px] sm:text-center">
+        <div class="h-[222px] bg-[#4D5153] rounded-[10px] sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px] opacity-0"></div>
+        <div class="h-[222px] bg-[#4D5153] rounded-[10px] mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block sm:ml-11 md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px] opacity-0"></div>
+        <div class="h-[222px] bg-[#4D5153] rounded-[10px] mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:mx-auto sm:mt-[42px] bio:mt-0 bio:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px] opacity-0"></div>
       </div>
     </section> 
     <!-- design-end -->
@@ -408,9 +422,9 @@
     <!-- contact-start -->
     <section id="contact" class="section-base relative text-center py-6 h-[80vh] sm:h-[90vh] md:h-screen flex flex-col justify-center">
       <div class="w-full -translate-y-8">
-        <h3 class="text-[20px] sm:text-[27px] leading-normal opacity-0">What's next?</h3>
-        <h1 class="text-[38px] font-semibold capitalize text-accent dark:text-accent-dark leading-normal mt-[13px] sm:text-[50px] sm:mt-[10px] opacity-0">get in touch</h1>
-        <p class="sm:text-[18px] sm:max-w-[527px] bio:max-w-[771px] leading-normal mx-auto mt-[15px] sm:mt-[20px] md:mt-[21px] opacity-0">Although i'm still learning, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+        <h3 id="contact-question" class="text-[20px] sm:text-[27px] leading-normal opacity-0">What's next?</h3>
+        <h1 id="contact-title" class="text-[38px] font-semibold capitalize text-accent dark:text-accent-dark leading-normal mt-[13px] sm:text-[50px] sm:mt-[10px] opacity-0">get in touch</h1>
+        <p id="contact-desk" class="sm:text-[18px] sm:max-w-[527px] bio:max-w-[771px] leading-normal mx-auto mt-[15px] sm:mt-[20px] md:mt-[21px] opacity-0">Although i'm still learning, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
         <div class="flex w-max mx-auto space-x-5 mt-14 sm:mt-12 md:mt-14 opacity-0">
           <a href="https://github.com/LRamdhan" target="_blank" class="hexagon group">
             <div class="sosial-link-layer"></div>

@@ -1,0 +1,90 @@
+[
+  {
+    "name": "SolarScribe Energy Tracker",
+    "description": "SolarScribe is a mobile app that empowers homeowners to monitor their solar panel performance in real-time. It provides users with detailed insights into energy production, savings, and environmental impact, fostering sustainable energy practices.",
+    "technology": ["html", "php", "git"],
+    "image": "fullfashion.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "ArtHeal VR Gallery",
+    "description": "ArtHeal is a virtual reality platform that brings the therapeutic benefits of art to individuals unable to visit physical galleries. Users can immerse themselves in a soothing VR gallery, promoting relaxation and emotional well-being.",
+    "technology": ["html", "javascript", "css"],
+    "image": "fullgallery.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "PollutionMapper Drone System",
+    "description": "PollutionMapper is an autonomous drone network designed to monitor air quality in urban areas. Equipped with advanced sensors, it collects real-time pollution data and creates dynamic maps to aid city planners in tackling environmental challenges.",
+    "technology": ["mysql", "php", "javascript"],
+    "image": "fullpizza.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "FoodWaste Warriors",
+    "description": "FoodWaste Warriors is a community-driven initiative that partners with local restaurants to reduce food waste. Volunteers collect surplus food and distribute it to shelters, fostering a more sustainable and compassionate food ecosystem",
+    "technology": ["html", "php", "git"],
+    "image": "fullfashion.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "MindfulTech App Suite",
+    "description": "MindfulTech offers a suite of smartphone apps designed to promote digital well-being. From screen-time reminders to focus-enhancing tools, this project helps users strike a healthier balance between technology and mindfulness.",
+    "technology": ["html", "javascript", "css"],
+    "image": "fullpizza.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "LingoBuddy Language Exchange",
+    "description": "LingoBuddy is a web platform connecting language learners worldwide for virtual language exchanges. Users can practice speaking and listening skills with native speakers of their target language, fostering cultural exchange and friendship.",
+    "technology": ["mysql", "php", "javascript"],
+    "image": "fullfashion.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "Aquaponic Oasis",
+    "description": "The Aquaponic Oasis is a self-sustaining urban farming installation that combines aquaculture and hydroponics. It produces fish and fresh vegetables in a closed-loop system, demonstrating a resource-efficient model for urban food production.",
+    "technology": ["html", "php", "git"],
+    "image": "fullgallery.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "EduBot Learning Companion",
+    "description": "EduBot is an AI-powered chatbot designed to assist students in their studies. With natural language processing capabilities, it answers questions, provides explanations, and offers personalized learning resources 24/7",
+    "technology": ["html", "javascript", "css"],
+    "image": "fullcalculator.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "ReNewPlast Upcycling Initiative",
+    "description": "ReNewPlast is a community project that transforms plastic waste into functional and artistic products. Through workshops and collaborative efforts, participants learn to repurpose plastic, reducing its environmental impact.",
+    "technology": ["mysql", "php", "javascript"],
+    "image": "fullpizza.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "pizza landing page",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam illo nostrum consequuntur, facere sunt tempora eveniet explicabo deleniti veritatis totam exercitationem!",
+    "technology": ["html", "php", "git"],
+    "image": "fullgallery.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "calculator",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam!",
+    "technology": ["html", "javascript", "css"],
+    "image": "fullfashion.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  }
+]

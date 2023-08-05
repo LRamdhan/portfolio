@@ -25,7 +25,7 @@ class Animation {
                 value: 1,
                 duration: 1
             },
-            width: [0, dom.clientWidth]
+            width: [0, dom.clientWidth + 30]
         });
     }
 

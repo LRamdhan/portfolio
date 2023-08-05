@@ -1,0 +1,62 @@
+ {
+  "main": {
+    "bio": {
+      "nav": ["tentang", "projek", "design", "kontak"],
+      "greet": ["halo, ",  "saya"],
+      "name": "luji ramdhan",
+      "role": "frontend developer",
+      "description": "Tertarik pada pengembangan web dan teknologi baru. Saya menikmati setiap proses yang membuat sesuatu menjadi lebih baik.",
+      "whatsapp": "mari bicara",
+      "cv": "unduh CV"
+    },
+    "education": {
+      "title": "pendidikan",
+      "educations": [
+        {
+          "specialist": "rekayasa perangkat lunak",
+          "period": "jun 2019-jun 2022  ",
+          "place": "  SMKN Situraja",
+          "description": "Selama tiga tahun, saya belajar banyak hal tentang komputer dari dasar, sampai akhirnya saya fokus pada pemrograman"
+        },
+        {
+          "specialist": "kursus pemrograman",
+          "period": "feb 2021-sekarang  ",
+          "place": "  codepolitan, udemy",
+          "description": "Untuk mempelajari pemrograman, saya mengambil beberapa kursus online pada web frontend dan backend."
+        },
+        {
+          "specialist": "informatika",
+          "period": "oct 2022-sekarang  ",
+          "place": "  UNSAP",
+          "description": "saya memilih jurusan informatika, mengikuti kegiatan coding yang diadakan kampus dan fokus pada frontend web development."
+        }
+      ]
+    },
+    "skill": {
+      "title": "skill"
+    },
+    "certification": {
+      "title": "sertifikat"
+    },
+    "project": {
+      "title": "project",
+      "description": "Ini adalah beberapa project saya, beberapa dibuat berdasarkan design website yang sudah ada dan beberapa juga dibuat untuk mengimplementasikan apa yang sudah dipelajari, walaupun begitu semua project ini sepenuhnya dibuat oleh saya sendiri.",
+      "error": "terjadi kesalahan"
+    },
+    "design": {
+      "title": "design",
+      "description": "Ini adalah beberapa web design yang saya buat untuk mendukung pembuatan project, design ini saya buat dengan mengambil referensi dari internet dan telah diimplementasikan menjadi sebuah web nyata."
+    },
+    "contact": {
+      "question": "apa selanjutnya?",
+      "heading": "hubungi saya",
+      "description": "Meskipun saya masih belajar, kontak saya selalu terbukan. Kapanpun kamu memiliki pertanyaan atau hanya ingin menyapa, saya mencoba yang terbaik untuk kembali pada mu!",
+      "copyright": "dibuat oleh luji ramdhan"
+    }
+  },
+  "detail": {
+    "demo": "demo",
+    "code": "kode"
+  },
+  "nav": ["tentang", "projek", "design", "kontak"]
+}

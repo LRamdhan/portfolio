@@ -35,6 +35,10 @@
     body {
         @apply font-rubik text-base dark:text-background text-sm sm:text-[15px];
     }
+
+    * {
+        @apply transition-colors;
+    }
 }
 
 @layer components {
@@ -68,7 +72,7 @@
     }
 
     .project-nav {
-        @apply bg-[#2F3135]/80 dark:bg-[#2F3135]/30 aspect-square w-[62px] rounded-full overflow-hidden flex justify-center items-center md:hover:scale-110 transition ease-out cursor-pointer;
+        @apply hidden md:flex bg-[#2F3135]/80 dark:bg-[#2F3135]/30 aspect-square w-[62px] rounded-full overflow-hidden justify-center items-center md:hover:scale-110 transition ease-out cursor-pointer absolute z-30 top-1/2 -translate-y-1/2;
     }
 
     .project-arrow {
@@ -76,11 +80,11 @@
     }
 
     .btn {
-        @apply mx-auto bg-accent dark:bg-accent-dark dark:text-base drop-shadow-basic dark:drop-shadow-basic-dark capitalize py-[6px] px-[22px] sm:py-[7px] sm:px-[27px] font-bold text-lg sm:text-xl font-arial flex justify-center items-center rounded-xl border-solid border-accent dark:border-accent-dark border-2 hover:text-accent dark:hover:text-accent-dark hover:scale-110 cursor-pointer transition ease-out hover:bg-transparent dark:hover:bg-transparent hover:drop-shadow-none dark:hover:drop-shadow-none;
+        @apply mx-auto bg-accent dark:bg-accent-dark dark:text-base drop-shadow-basic dark:drop-shadow-basic-dark capitalize py-[6px] px-[22px] sm:py-[7px] sm:px-[27px] font-bold text-lg sm:text-xl dark:text-lg dark:sm:text-xl font-arial flex justify-center items-center rounded-xl border-solid border-accent dark:border-accent-dark border-2 hover:text-accent dark:hover:text-accent-dark hover:scale-110 cursor-pointer transition ease-out hover:bg-transparent dark:hover:bg-transparent hover:drop-shadow-none dark:hover:drop-shadow-none;
     }
 
     .link {
-        @apply cursor-pointer transition;
+        @apply cursor-pointer transition-all;
     }
 
     .link-bar {
@@ -137,6 +141,10 @@
 
     .skill-title {
         @apply capitalize md:text-[17px]; 
+    }
+
+    .bone {
+        @apply bg-[#4E5C6D] dark:bg-[#C9C9C9] animate-pulse;
     }
 }
 

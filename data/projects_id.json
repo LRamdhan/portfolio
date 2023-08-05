@@ -1,0 +1,90 @@
+[
+  {
+    "name": "pizza landing page",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam illo nostrum consequuntur, facere sunt tempora eveniet explicabo deleniti veritatis totam exercitationem!",
+    "technology": ["html", "php", "git"],
+    "image": "fullfashion.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "calculator",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam!",
+    "technology": ["html", "javascript", "css"],
+    "image": "fullgallery.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "film searcher",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam illo nostrum consequuntur, facere sunt tempora eveniet",
+    "technology": ["mysql", "php", "javascript"],
+    "image": "fullpizza.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "pizza landing page",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam illo nostrum consequuntur, facere sunt tempora eveniet explicabo deleniti veritatis totam exercitationem!",
+    "technology": ["html", "php", "git"],
+    "image": "fullfashion.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "calculator",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam!",
+    "technology": ["html", "javascript", "css"],
+    "image": "fullpizza.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "film searcher",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam illo nostrum consequuntur, facere sunt tempora eveniet",
+    "technology": ["mysql", "php", "javascript"],
+    "image": "fullfashion.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "pizza landing page",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam illo nostrum consequuntur, facere sunt tempora eveniet explicabo deleniti veritatis totam exercitationem!",
+    "technology": ["html", "php", "git"],
+    "image": "fullgallery.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "calculator",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam!",
+    "technology": ["html", "javascript", "css"],
+    "image": "fullcalculator.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "film searcher",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam illo nostrum consequuntur, facere sunt tempora eveniet",
+    "technology": ["mysql", "php", "javascript"],
+    "image": "fullpizza.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "pizza landing page",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam illo nostrum consequuntur, facere sunt tempora eveniet explicabo deleniti veritatis totam exercitationem!",
+    "technology": ["html", "php", "git"],
+    "image": "fullgallery.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  },
+  {
+    "name": "calculator",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam!",
+    "technology": ["html", "javascript", "css"],
+    "image": "fullfashion.png",
+    "demo": "https://nowhere.com",
+    "code": "https://github.com"
+  }
+]
