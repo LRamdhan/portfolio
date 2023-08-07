@@ -51,6 +51,12 @@ module.exports = {
         pizza: "url(../img/project/pizza.avif)",
         fullcalculator: "url(../img/project/fullcalculator.png)",
         fullfashion: "url(../img/project/fullfashion.png)",
+        clock: "url(../img/design/clock.png)",
+        weather: "url(../img/design/weather.png)",
+        portfolio: "url(../img/design/portfolio.png)"
+      }, 
+      aspectRatio: {
+        design: "229 / 159"
       }
     },
   },

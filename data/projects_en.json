@@ -41,7 +41,7 @@
   },
   {
     "name": "LingoBuddy Language Exchange",
-    "description": "LingoBuddy is a web platform connecting language learners worldwide for virtual language exchanges. Users can practice speaking and listening skills with native speakers of their target language, fostering cultural exchange and friendship.",
+    "description": "LingoBuddy is a web platform connecting language learners worldwide for virtual language exchanges. Users can practice speaking and listening skills with native speakers of their target language, fostering cultural exchange and friendship. lorem rm connecting language learners worldwide for virtual language exchanges. Users can practice speaking and listening skills with native speakers of their target language, fostering cultural exchange and friendship.",
     "technology": ["mysql", "php", "javascript"],
     "image": "fullfashion.png",
     "demo": "https://nowhere.com",

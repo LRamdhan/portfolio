@@ -17,16 +17,13 @@ class Animation {
     }
 
     writing(dom) {
-        new anime({
-            targets: dom,
-            duration: 1000,
-            easing: `steps(${dom.textContent.length})`,
-            opacity: {
-                value: 1,
-                duration: 1
-            },
-            width: [0, dom.clientWidth + 30]
-        });
+        const content = dom.dataset.content.split("");
+        let index = 0;
+        const ivl = setInterval(() => {
+            dom.textContent += content[index];
+            if(index === content.length - 1) clearInterval(ivl);
+            index++;
+        }, 80);
     }
 
     fadeUp(dom, direction, height, drt) {
@@ -112,6 +109,16 @@ class Animation {
             easing: 'easeInOutCubic',
             duration: 300,
             scale: [1, amount]
+        });
+    }
+    
+    scaleHover(dom, direction, normal, hover) {
+        new anime({
+            targets: dom,
+            direction: direction,
+            easing: 'easeInOutCubic',
+            duration: 100,
+            scale: [normal, hover]
         });
     }
 

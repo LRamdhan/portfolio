@@ -68,7 +68,7 @@
     }
 
     .project-main {
-        @apply project-card bg-cover bg-center shadow-pr z-50;
+        @apply project-card bg-cover bg-center shadow-pr z-50 cursor-pointer;
     }
 
     .project-nav {
@@ -84,7 +84,7 @@
     }
 
     .link {
-        @apply cursor-pointer transition-all;
+        @apply cursor-pointer transition-all leading-none;
     }
 
     .link-bar {

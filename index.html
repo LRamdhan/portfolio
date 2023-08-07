@@ -18,37 +18,52 @@
     <section id="home" class="px-[19px] sm:px-[22px] md:px-6 bio:px-0 bio:overflow-hidden transform-gpu mb-[98px] sm:mb-[92px] md:mb-[120px] bio:mb-0 bio:h-screen md:grid md:grid-cols-1 bio:grid-cols-bio md:grid-rows-bio justify-content-center bio:align-items-center">
       <nav id="nav-desktop" class="hidden relative z-[80] md:flex items-center justify-between col-span-full py-7 bio:pb-0 space-x-2 opacity-0">
         <div class="space-x-[39px] flex w-max items-center">
-          <div class="w-max flex items-center">
-            <img src="assets/img/logo.svg" alt="logo" class="dark:hidden">
-            <img src="assets/img/logo-dark.svg" alt="logo" class="hidden dark:block">
-            <h3 class="text-[23px] ml-4 font-semibold">Luji R</h3>
+          <div class="w-max h-max">
+            <a href="" class="w-max flex items-center">
+              <img src="assets/img/logo.svg" alt="logo" class="dark:hidden">
+              <img src="assets/img/logo-dark.svg" alt="logo" class="hidden dark:block">
+              <h3 class="text-[23px] ml-4 font-semibold">Luji R</h3>
+            </a>
+            <div class="link-bar"></div>
           </div>
-          <div class="w-max group">
+          <div class="w-max group hidden">
             <div class="switch-lang w-max hidden sm:flex items-center link">
               <img src="assets/img/icon/globe-light.svg" alt="globe" class="w-[23px] dark:hidden">
               <img src="assets/img/icon/globe-dark.svg" alt="globe" class="w-[23px] hidden dark:block">
               <span class="language ml-2">ID</span>
             </div>
           </div>
-          <div class="switch w-max h-max">
-            <img id="sun-lg" src="assets/img/icon/sun.svg" alt="sun" class="w-[23px] cursor-pointer">
-            <img id="moon-lg" src="assets/img/icon/moon.svg" alt="moon" class="w-[23px] cursor-pointer hidden">
-          </div>
+          
         </div>
         <ul id="bio-scroll-nav" class="w-max capitalize font-semibold flex items-center space-x-14">
           <li><a href="#about" class="text-accent dark:text-accent-dark link hover:text-[#EBECED] dark:hover:text-background group">about<div class="link-bar"></div></a></li>
           <li><a href="#projects" class="link group">projects<div class="link-bar"></div></a></li>
           <li><a href="#designs" class="link group">designs<div class="link-bar"></div></a></li>
           <li><a href="#contact" class="link group">contact<div class="link-bar"></div></a></li>
+          <div class="switch w-max h-max">
+            <img id="sun-lg" src="assets/img/icon/sun.svg" alt="sun" class="w-[23px] cursor-pointer">
+            <img id="moon-lg" src="assets/img/icon/moon.svg" alt="moon" class="w-[23px] cursor-pointer hidden">
+            <div class="link-bar"></div>
+          </div>
         </ul>
       </nav>
       <div class="capitalize mt-[204px] sm:mt-52 md:mt-24 bio:mt-0 bio:justify-self-start">
         <div class="space-y-[18px] sm:space-y-[24px] flex flex-col justify-center items-start sm:items-center bio:items-start">
-          <h3 id="hello" class="bio-text text-[22px] sm:text-[28px] w-max h-max overflow-hidden whitespace-nowrap leading-none opacity-0">hello, <span class="text-accent dark:text-accent-dark">i'm</span></h3>
+          <h3 id="hello" class="text-[22px] sm:text-[28px] w-max h-max overflow-hidden whitespace-nowrap leading-none">
+            <span data-content="hello, " class="bio-text"></span>
+            <span data-content="i'm" class="bio-text text-accent dark:text-accent-dark"></span>
+            <span> </span>
+          </h3>
 
-          <h1 id="name" class="bio-text text-[36.7px] sm:text-[46px] w-max h-max text-accent dark:text-accent-dark font-suez tracking-widest opacity-0 whitespace-nowrap overflow-hidden leading-none">luji ramdhan</h1>
+          <div class="w-max h-max text-[36.7px] sm:text-[46px] text-accent dark:text-accent-dark font-suez tracking-widest whitespace-nowrap overflow-hidden leading-none">
+            <h1 id="name" data-content="luji ramdhan" class="bio-text inline-block"></h1>
+            <span> </span>
+          </div>
           
-          <h2 id="role" class="bio-text text-[22px] sm:text-[26px] md:text-[27px] font-semibold w-max h-max whitespace-nowrap opacity-0 overflow-hidden leading-none">frontend developer</h2>
+          <div class="w-max h-max text-[22px] sm:text-[26px] md:text-[27px] font-semibold whitespace-nowrap overflow-hidden leading-none">
+            <h2 id="role" data-content="frontend developer" class="bio-text inline-block"></h2>
+            <span> </span>
+          </div>
         </div>
         <p id="desk" class="normal-case pt-6 sm:pt-[26.3px] text-start sm:text-center sm:max-w-[470px] sm:mx-auto bio:text-start opacity-0">Passionate about web development and new technology. I enjoy every process that makes something better.</p>
         <div id="talk" class="mt-[38px] sm:mt-[70px] sm:flex sm:space-x-[35px] sm:justify-center bio:justify-start opacity-0">
@@ -72,17 +87,17 @@
     <!-- fixed-element-start -->
     <nav id="nav-mobile" class="fixed z-50 bg-[#343E4B]/50 dark:bg-[#343E4B]/10 inset-x-0 top-6 mx-6 rounded-md border-solid border-2 p-3 backdrop-blur-lg border-accent dark:border-accent-dark flex justify-between items-center md:hidden"> <!-- -->
       <div class="space-x-9 flex w-max items-center">
-        <div class="w-max flex items-center">
+        <a href="" class="w-max flex items-center">
           <img src="assets/img/logo.svg" alt="logo" class="dark:hidden">
           <img src="assets/img/logo-dark.svg" alt="logo" class="hidden dark:block">
           <h3 class="text-[22px] ml-4 sm:text-2xl font-semibold">Luji R</h3>
-        </div>
-        <div class="switch-lang w-max hidden sm:flex items-center"> 
+        </a>
+        <div class="switch-lang w-max hidden items-center"> 
           <img src="assets/img/icon/globe-light.svg" alt="globe" class="w-[21px] dark:hidden">
           <img src="assets/img/icon/globe-dark.svg" alt="globe" class="w-[21px] hidden dark:block">
           <span class="language ml-2">ID</span>
         </div>
-        <div class="switch w-max h-max">
+        <div class="switch w-max h-max hidden">
           <img id="sun-md" src="assets/img/icon/sun.svg" alt="globe" class="w-[21px] hidden sm:block">
           <img id="moon-md" src="assets/img/icon/moon.svg" alt="globe" class="w-[21px] hidden">
         </div>
@@ -96,15 +111,15 @@
     </nav>
     
     <nav id="drop-nav" class="fixed inset-0 -translate-y-full overflow-hidden z-[1009] bg-background dark:bg-base px-12 pt-[59px] pb-7 grid grid-cols-2 grid-rows-nav align-items-center sm:pt-[51px]">
-      <div id="drop-nav-lang" class="w-max flex items-center space-x-7 sm:invisible"> <!---->
-        <div class="switch-lang w-max flex items-center">
+      <div id="drop-nav-lang" class="w-max flex items-center">
+        <div class="switch-lang w-max items-center hidden">
           <img src="assets/img/icon/globe-light.svg" alt="globe" class="w-[19px] dark:hidden">
           <img src="assets/img/icon/globe-dark.svg" alt="globe" class="w-[19px] hidden dark:block">
           <span class="language font-semibold ml-[9px]">ID</span>
         </div>
         <div class="switch w-max h-max">
-          <img id="sun-sm" src="assets/img/icon/sun.svg" alt="sun" class="w-6">
-          <img id="moon-sm" src="assets/img/icon/moon.svg" alt="moon" class="w-6 hidden">
+          <img id="sun-sm" src="assets/img/icon/sun.svg" alt="sun" class="w-6 sm:w-8">
+          <img id="moon-sm" src="assets/img/icon/moon.svg" alt="moon" class="w-6 sm:w-8 hidden">
         </div>
       </div>
       <div id="drop-nav-exit" class="aspect-square w-9 relative cursor-pointer justify-self-end">
@@ -157,10 +172,9 @@
           </div>
           <div class="skeleton bone h-[198px] sm:h-[300px] md:w-1/2 md:h-full animate-pulse hidden"></div>
           <div class="px-[21px] mt-[34px] sm:mt-[49px] sm:px-[38px] md:w-1/2 md:mt-0 md:py-[18px] md:px-[35px]">
-            
             <h2 id="detail-project-title" class="capitalize text-[20px] font-semibold sm:text-[21px] md:pt-5 hidden"></h2>
             <div class="skeleton bone h-4 w-28 md:mt-5 hidden"></div>
-            <p id="detail-project-desk" class="text-justify mt-[26px] sm:mt-[35px] md:mt-7 hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci amet asperiores nesciunt blanditiis ea quod doloremque recusandae</p>
+            <p id="detail-project-desk" class="text-justify mt-[26px] sm:mt-[35px] md:mt-7 hidden"></p>
             <div class="skeleton space-y-3 mt-[26px] sm:mt-[35px] md:mt-7 hidden">
               <div class="bone h-3"></div>
               <div class="bone h-3"></div>
@@ -172,7 +186,7 @@
             <div id="detail-project-tech" class="flex space-x-6 mt-[29px]"></div>
             <div class="flex mt-14">
               <a id="detail-project-demo" href="https://github" target="_blank" class="w-max h-max hidden">
-                <div class="w-[114px] h-10 border border-solid border-base dark:border-background rounded-full flex justify-center items-center space-x-2">
+                <div class="w-[114px] h-10 border border-solid border-base dark:border-background rounded-full flex justify-center items-center space-x-2 hover:bg-black/10">
                   <span id="demo-content" class="capitalize">demo</span>
                   <img src="assets/img/icon/link.svg" alt="link" class="w-[19px] dark:hidden">
                   <img src="assets/img/icon/link-dark.svg" alt="link" class="w-[19px] hidden dark:block">
@@ -180,7 +194,7 @@
               </a>
               <div class="skeleton bone w-[114px] h-10 ml-0 hidden"></div>
               <a id="detail-project-code" href="https://apaaja.com" target="_blank" class="w-max h-max ml-[19px] hidden">
-                <div class="w-[114px] h-10 border border-solid border-base dark:border-background rounded-full flex justify-center items-center space-x-2">
+                <div class="w-[114px] h-10 border border-solid border-base dark:border-background rounded-full flex justify-center items-center space-x-2 hover:bg-black/10">
                   <span id="code-content" class="capitalize">code</span>
                   <img src="assets/img/icon/code.svg" alt="code" class="w-[19px] dark:hidden">
                   <img src="assets/img/icon/code-dark.svg" alt="code" class="w-[19px] hidden dark:block">
@@ -337,14 +351,22 @@
       <h1 id="cert-title" class="section-title opacity-0">certifications</h1>
       <div class="mt-11 sm:mt-[58px] grid grid-cols-1 auto-rows-max gap-y-[52px] sm:grid-cols-[406px] sm:justify-content-center sm:gap-y-[59px] bio:gap-y-0 bio:grid-cols-cert-bio bio:gap-x-[114px]">
         <div id="cert-1" class="opacity-0">
-          <img src="assets/img/cert1.svg" alt="freecodecamp" class="w-full bio:w-auto bio:h-[304px]">
-          <p class="text-accent dark:text-accent-dark leading-[27.8px] mt-[13px] sm:text-[17px]">FreeCodeCamp</p>
-          <h3 class="text-[15px] font-semibold leading-[25px] sm:text-[18px]">Javascript Algorithms and Data Structures</h3>
+          <div class="hover:-translate-y-4 transition">
+            <a href="https://www.freecodecamp.org/certification/Luji_Ramdhan/javascript-algorithms-and-data-structures" target="_blank" class="block">
+              <img src="assets/img/cert1.svg" alt="freecodecamp" class="w-full bio:w-auto bio:h-[304px]">
+              <p class="text-accent dark:text-accent-dark leading-[27.8px] mt-[13px] sm:text-[17px]">FreeCodeCamp</p>
+              <h3 class="text-[15px] font-semibold leading-[25px] sm:text-[18px]">Javascript Algorithms and Data Structures</h3>
+            </a>
+          </div>
         </div>
         <div id="cert-2" class="opacity-0">
-          <img src="assets/img/cert2.svg" alt="udemy" class="w-full bio:w-auto bio:h-[304px]">
-          <p class="text-accent dark:text-accent-dark leading-[27.8px] mt-[13px] sm:text-[17px]">Udemy</p>
-          <h3 class="text-[15px] font-semibold leading-[25px] sm:text-[18px]">React Masterclass</h3>
+          <div class="hover:-translate-y-4 transition">
+            <a href="https://www.udemy.com/certificate/UC-883c760d-3afb-4ae7-aa58-26a9aad3aeba/" target="_blank" class="block">
+              <img src="assets/img/cert2.svg" alt="udemy" class="w-full bio:w-auto bio:h-[304px]">
+              <p class="text-accent dark:text-accent-dark leading-[27.8px] mt-[13px] sm:text-[17px]">Udemy</p>
+              <h3 class="text-[15px] font-semibold leading-[25px] sm:text-[18px]">React Masterclass</h3>
+            </a>
+          </div>
         </div>
     </div>
     </section>
@@ -405,15 +427,30 @@
     </section>
     <!-- project-end -->
 
+    <!-- 
+      229 / 159
+     -->
 
     <!-- design-start -->
     <section id="designs" class="section-base bg-dark dark:bg-light">
       <h1 id="design-title" class="section-title opacity-0">designs</h1>
-      <p id="design-desk" class="mt-8 text-center sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7 opacity-0">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously .</p>
+      <p id="design-desk" class="mt-8 text-center sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7 opacity-0">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously.</p>
       <div id="design-pict" class="mt-[34px] sm:mt-[25px] md:mt-[35px] sm:text-center">
-        <div class="h-[222px] bg-[#4D5153] rounded-[10px] sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px] opacity-0"></div>
-        <div class="h-[222px] bg-[#4D5153] rounded-[10px] mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block sm:ml-11 md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px] opacity-0"></div>
-        <div class="h-[222px] bg-[#4D5153] rounded-[10px] mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:mx-auto sm:mt-[42px] bio:mt-0 bio:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px] opacity-0"></div>
+        <div class="aspect-design rounded-[10px] sm:aspect-auto sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px] cursor-pointer overflow-hidden opacity-0">
+          <a href="https://www.figma.com/file/oO2ecFeTuCBlCUJ9qJh4xV/Clock?type=design&mode=design&t=3bQo6eFkrWfVJ0KP-1" target="_blank" class="w-full h-full">
+            <div class="w-full h-full bg-clock bg-cover bg-center hover:scale-[1.1] transition-transform"></div>
+          </a>
+        </div>
+        <div class="aspect-design rounded-[10px] sm:aspect-auto mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block sm:ml-11 md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px] overflow-hidden cursor-pointer opacity-0">
+          <a href="https://www.figma.com/file/cQt8HFTXtZohW0OTVR8Hb2/weather?type=design&mode=design&t=3bQo6eFkrWfVJ0KP-1" target="_blank" class="w-full h-full">
+            <div class="w-full h-full bg-weather bg-cover bg-center hover:scale-[1.1] transition-transform"></div>
+          </a>
+        </div>
+        <div class="aspect-design rounded-[10px] sm:aspect-auto mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:mx-auto sm:mt-[42px] bio:mt-0 bio:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px] overflow-hidden cursor-pointer opacity-0">
+          <a href="https://www.figma.com/file/SKqdkB06TTDRSIPY5LxmYN/portfolio?type=design&mode=design&t=3bQo6eFkrWfVJ0KP-1" target="_blank" class="w-full h-full">
+            <div class="w-full h-full bg-portfolio bg-cover bg-center hover:scale-[1.1] transition-transform"></div>
+          </a>
+        </div>
       </div>
     </section> 
     <!-- design-end -->
@@ -434,7 +471,7 @@
             <div class="sosial-link-layer"></div>
             <i class="sosial-link-icon fa-brands fa-instagram"></i>  
           </a>
-          <a href="https://facebook.com/luji.ramdhan" target="_blank" class="hexagon group">
+          <a href="https://www.linkedin.com/in/lujiramdhan/" target="_blank" class="hexagon group">
             <div class="sosial-link-layer"></div>
             <i class="sosial-link-icon fa-brands fa-linkedin-in"></i>
           </a>

@@ -69,12 +69,13 @@ class Interactivity {
     #bioSection() {
         const bioText = document.getElementsByClassName('bio-text');
         (innerWidth >= 768) ? this.#animate.fadeDown("#nav-desktop") : this.#animate.fadeDown("#nav-mobile");
-        setTimeout(() => this.#animate.writing(bioText[0]), 400);
-        setTimeout(() => this.#animate.writing(bioText[1]), 1200);
-        setTimeout(() => this.#animate.writing(bioText[2]), 1900);
-        setTimeout(() => this.#animate.fadeUp("#desk"), 2900);
-        setTimeout(() => this.#animate.fadeUp("#talk"), 3100);
-        setTimeout(() => this.#animate.fadeUp("#myself"), 3400);
+        setTimeout(() => this.#animate.writing(bioText[0]), 300); // 7
+        setTimeout(() => this.#animate.writing(bioText[1]), 860);
+        setTimeout(() => this.#animate.writing(bioText[2]), 1100);
+        setTimeout(() => this.#animate.writing(bioText[3]), 2060);
+        setTimeout(() => this.#animate.fadeUp("#desk"), 2500);
+        setTimeout(() => this.#animate.fadeUp("#talk"), 2700);
+        setTimeout(() => this.#animate.fadeUp("#myself"), 3000);
     }
 
     get triggerData() {
@@ -358,8 +359,8 @@ class Interactivity {
             elements.sun = document.getElementById('sun-sm');
             elements.moon = document.getElementById('moon-sm');
         } else if(innerWidth >= 640 && innerWidth < 768) {
-            elements.sun = document.getElementById('sun-md');
-            elements.moon = document.getElementById('moon-md');
+            elements.sun = document.getElementById('sun-sm');
+            elements.moon = document.getElementById('moon-sm');
         } else {
             elements.sun = document.getElementById('sun-lg');
             elements.moon = document.getElementById('moon-lg');
@@ -412,7 +413,7 @@ class Interactivity {
         setTimeout(() => this.#animate.fadeUp(this.#designElements.title, "reverse", undefined, 200), 800);
     }
 
-    startDetailProject(idx, lang) {
+    startDetailProject(idx) {
         this.#detailProject.popup.style.display = "flex";
         setTimeout(() => this.#detailProject.layer.style.opacity = 1, 100);
         setTimeout(() => this.#animate.fadeUp(this.#detailProject.paper, "normal", null, 300), 100);
@@ -425,7 +426,7 @@ class Interactivity {
         }, 150);
         setTimeout(async () => {
             try {  
-                let data = await fetch(`../../data/projects_${lang}.json`);
+                let data = await fetch(`../../data/projects_en.json`);
                 data = await data.json();
                 data = data[idx]; 
                 this.#detailProject.blurImg.style.backgroundImage = `url(assets/img/project/${data.image})`;
@@ -467,87 +468,6 @@ class Interactivity {
             this.#detailProject.error.style.display = 'none';
         }, 400);
     }
-
-    async switchLang(lang) {
-        // localStorage / request
-        let content = localStorage.getItem(lang);
-        let fail = false;
-        if(!content) {            
-            try {
-                content = await fetch(`data/${lang}.json`);
-                content = await content.json();
-                localStorage.setItem(lang, JSON.stringify(content));
-            } catch(error) {
-                console.log(error.message);
-                fail = true;
-            }
-        } else {
-            content = JSON.parse(content);
-        }
-        if(fail) return false;
-
-        // perbarui content
-        Array.from(document.getElementsByClassName('language')).forEach(el => el.textContent = lang === 'en' ? 'ID' : 'EN');
-        Array.from(document.getElementById('bio-scroll-nav').children).forEach((el, ind) => {
-            el.firstElementChild.childNodes[0].textContent = content.main.bio.nav[ind];
-        });
-        const hello = document.getElementById('hello').childNodes;
-        hello[0].textContent = content.main.bio.greet[0];
-        hello[1].textContent = content.main.bio.greet[1];
-        document.getElementById('desk').textContent = content.main.bio.description;
-        document.getElementById('wa').textContent = content.main.bio.whatsapp;
-        document.getElementById('cv').textContent = content.main.bio.cv;
-        Array.from(document.getElementById('drop-nav-child').children).forEach((el, ind) => {
-            el.textContent = content.nav[ind];
-        });
-        document.getElementById('detail-project-error').textContent = content.main.project.error;
-        document.getElementById('demo-content').textContent = content.detail.demo;
-        document.getElementById('code-content').textContent = content.detail.code;
-        document.getElementById('education-title').textContent = content.main.education.title;
-        const eduRoot = Array.from(document.getElementsByClassName('edu-root'));
-        eduRoot.shift();
-        eduRoot.forEach((el, ind) => {
-            const subContent = content.main.education.educations[ind];
-            el.firstElementChild.firstElementChild.textContent = subContent.specialist;
-            const detail = el.firstElementChild.lastElementChild.childNodes;
-            detail[0].textContent = subContent.period;
-            detail[2].textContent = subContent.place;
-            el.lastElementChild.firstElementChild.textContent = subContent.description;
-        });
-        document.getElementById('skill-title').textContent = content.main.skill.title;
-        document.getElementById('cert-title').textContent = content.main.certification.title;
-        document.getElementById('project-title').textContent = content.main.project.title;
-        document.getElementById('project-desk').textContent = content.main.project.description;
-        document.getElementById('design-title').textContent = content.main.design.title;
-        document.getElementById('design-desk').textContent = content.main.design.description;
-        document.getElementById('contact-question').textContent = content.main.contact.question;
-        document.getElementById('contact-title').textContent = content.main.contact.heading;
-        document.getElementById('contact-desk').textContent = content.main.contact.description;
-        document.getElementById('copyright').textContent = content.main.contact.copyright;
-
-        let line2 = document.getElementById('line-2');
-        line2.style.height = "100%";
-        line2.dataset.height = line2.clientHeight;
-        line2.style.height = line2.clientHeight;
-
-        // document.getElementById('line-3')
-
-        console.log(line2.clientHeight);
-
-        return true;
-    }
 }
 
 export default Interactivity;
-
-// SWITCH LANGUAGE
-// algoritmhs : manual, google translate api
-
-// algoritma manual
-// - saat pertama load, masukan bahasa ke localStorage
-// - ketika user mengubah bahasa
-//        jika ada di localStorage, ambil data tersebut dan replace content di html
-//        jika tidak ada, request ulang dan replace content di html
-// - jika data tidak ada atau bahasa yang direquest gagal, jangah ubah bahasa dan beri notifikasi
-// - data detail project ada 2 versi bahasa, yang direquest adalah data dengan bahasa yang sedang digunakan saat itu, hanya ganti path
-// - setiap kali akan mengubah bahasa element akan diambil pada saat itu juga, agar menghemat memori

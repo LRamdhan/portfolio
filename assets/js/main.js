@@ -1,6 +1,8 @@
 import Interactivity from "./Interactivity.js";
+import Animation from "./Animation.js";
 
 const run = new Interactivity();
+const animate = new Animation();
 
 const tringgerHeight = innerHeight * (50 / 100);
 const triggerData = run.triggerData;
@@ -39,34 +41,6 @@ setInterval(() => {
         }
     }
 }, 500); 
-
-
-
-// 
-// try {
-//     let data = await fetch("data/en.json");
-//     data = await data.json();
-//     data = JSON.stringify(data);
-//     localStorage.setItem('en', data);
-//     data = await fetch("data/id.json");
-//     data = await data.json();
-//     data = JSON.stringify(data);
-//     localStorage.setItem('id', data);
-// } catch(error) {
-//     console.log(error.message);
-// }
-
-let currentLang = 'en';
-for(let btn of document.getElementsByClassName("switch-lang")) {
-    btn.addEventListener("click", async event => {
-        let result = await run.switchLang(currentLang === 'en' ? 'id' : 'en');
-        if(result) {
-            currentLang = currentLang === 'en' ? 'id' : 'en';
-        } else {
-            alert(currentLang === 'id' ? 'Terjadi error, bahasa gagal diganti!' : "There's an error, language is failed to be change");
-        }
-    });
-}
 
 
 
@@ -114,7 +88,7 @@ let popupOpen = false;
 Array.from(document.getElementsByClassName('project-card')).forEach((el, idx) => {
     el.addEventListener('click', event => {
         if(event.target.style.position === "absolute") {
-            run.startDetailProject(idx, currentLang);
+            run.startDetailProject(idx);
             popupOpen = true;
             return;
         }
@@ -135,12 +109,43 @@ Array.from(document.getElementsByClassName('detail-project-exit')).forEach(el =>
     run.endDetailProject();
     popupOpen = false;
 }));
+let projectVisbility = false;
+new IntersectionObserver(entries => projectVisbility = entries[0].isIntersecting).observe(document.getElementById('projects'));
 document.addEventListener('keyup', event => {
     if(popupOpen && event.code === "Escape") {
         event.preventDefault();
         run.endDetailProject();
     }
+    if(event.code === 'ArrowRight') {
+        event.preventDefault();
+        if(projectVisbility && triggerData[3].visible && projectRun) {
+            run.nextProject();
+            projectRun = false;
+            setTimeout(() => projectRun = true, 1070);
+        }
+    } else if(event.code === 'ArrowLeft') {
+        event.preventDefault();
+        if(projectVisbility && triggerData[3].visible && projectRun) {
+            run.previousProject();
+            projectRun = false;
+            setTimeout(() => projectRun = true, 1070);
+        }
+    }
 });
+
+for(let pjr of document.getElementsByClassName('project-main')) {
+    let amount = (innerWidth >= 640 && innerWidth < 768) ? 1.8 : 1.65;
+    pjr.addEventListener('mouseover', event => {        
+        if(event.target.style.position === 'absolute' && projectRun) {
+            animate.scaleHover(event.target, 'normal', amount, amount + 0.10);
+        }
+    });
+    pjr.addEventListener('mouseleave', event => {
+        if(event.target.style.position === 'absolute' && projectRun) {
+            animate.scaleHover(event.target, 'reverse', amount, amount + 0.10);
+        }
+    });
+}
 
 
 let dropRun = true;
