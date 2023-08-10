@@ -1,90 +1,98 @@
 [
   {
-    "name": "SolarScribe Energy Tracker",
-    "description": "SolarScribe is a mobile app that empowers homeowners to monitor their solar panel performance in real-time. It provides users with detailed insights into energy production, savings, and environmental impact, fostering sustainable energy practices.",
-    "technology": ["html", "php", "git"],
-    "image": "fullfashion.png",
-    "demo": "https://nowhere.com",
-    "code": "https://github.com"
+    "name": "zoom effect gallery",
+    "description": "Gallery that provides multiple images in grid layout, grid has different layout based on screen size. Whenever the image is hovered, a zoom effect occurs.",
+    "technology": ["html", "tailwind"],
+    "image": {
+      "xs": "fullgallery.avif",
+      "sm": null,
+      "md": "fullgallerymd.avif"
+    },
+    "demo": "https://zoomeffectgallery.netlify.app/",
+    "code": null
   },
   {
-    "name": "ArtHeal VR Gallery",
-    "description": "ArtHeal is a virtual reality platform that brings the therapeutic benefits of art to individuals unable to visit physical galleries. Users can immerse themselves in a soothing VR gallery, promoting relaxation and emotional well-being.",
-    "technology": ["html", "javascript", "css"],
-    "image": "fullgallery.png",
-    "demo": "https://nowhere.com",
-    "code": "https://github.com"
-  },
-  {
-    "name": "PollutionMapper Drone System",
-    "description": "PollutionMapper is an autonomous drone network designed to monitor air quality in urban areas. Equipped with advanced sensors, it collects real-time pollution data and creates dynamic maps to aid city planners in tackling environmental challenges.",
-    "technology": ["mysql", "php", "javascript"],
-    "image": "fullpizza.png",
-    "demo": "https://nowhere.com",
-    "code": "https://github.com"
-  },
-  {
-    "name": "FoodWaste Warriors",
-    "description": "FoodWaste Warriors is a community-driven initiative that partners with local restaurants to reduce food waste. Volunteers collect surplus food and distribute it to shelters, fostering a more sustainable and compassionate food ecosystem",
-    "technology": ["html", "php", "git"],
-    "image": "fullfashion.png",
-    "demo": "https://nowhere.com",
-    "code": "https://github.com"
-  },
-  {
-    "name": "MindfulTech App Suite",
-    "description": "MindfulTech offers a suite of smartphone apps designed to promote digital well-being. From screen-time reminders to focus-enhancing tools, this project helps users strike a healthier balance between technology and mindfulness.",
-    "technology": ["html", "javascript", "css"],
-    "image": "fullpizza.png",
-    "demo": "https://nowhere.com",
-    "code": "https://github.com"
-  },
-  {
-    "name": "LingoBuddy Language Exchange",
-    "description": "LingoBuddy is a web platform connecting language learners worldwide for virtual language exchanges. Users can practice speaking and listening skills with native speakers of their target language, fostering cultural exchange and friendship. lorem rm connecting language learners worldwide for virtual language exchanges. Users can practice speaking and listening skills with native speakers of their target language, fostering cultural exchange and friendship.",
-    "technology": ["mysql", "php", "javascript"],
-    "image": "fullfashion.png",
-    "demo": "https://nowhere.com",
-    "code": "https://github.com"
-  },
-  {
-    "name": "Aquaponic Oasis",
-    "description": "The Aquaponic Oasis is a self-sustaining urban farming installation that combines aquaculture and hydroponics. It produces fish and fresh vegetables in a closed-loop system, demonstrating a resource-efficient model for urban food production.",
-    "technology": ["html", "php", "git"],
-    "image": "fullgallery.png",
-    "demo": "https://nowhere.com",
-    "code": "https://github.com"
-  },
-  {
-    "name": "EduBot Learning Companion",
-    "description": "EduBot is an AI-powered chatbot designed to assist students in their studies. With natural language processing capabilities, it answers questions, provides explanations, and offers personalized learning resources 24/7",
-    "technology": ["html", "javascript", "css"],
-    "image": "fullcalculator.png",
-    "demo": "https://nowhere.com",
-    "code": "https://github.com"
-  },
-  {
-    "name": "ReNewPlast Upcycling Initiative",
-    "description": "ReNewPlast is a community project that transforms plastic waste into functional and artistic products. Through workshops and collaborative efforts, participants learn to repurpose plastic, reducing its environmental impact.",
-    "technology": ["mysql", "php", "javascript"],
-    "image": "fullpizza.png",
-    "demo": "https://nowhere.com",
-    "code": "https://github.com"
-  },
-  {
-    "name": "pizza landing page",
-    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam illo nostrum consequuntur, facere sunt tempora eveniet explicabo deleniti veritatis totam exercitationem!",
-    "technology": ["html", "php", "git"],
-    "image": "fullgallery.png",
-    "demo": "https://nowhere.com",
-    "code": "https://github.com"
+    "name": "world clock",
+    "description": "World clock showing country city time. It searches for cities by country and time zone.",
+    "technology": ["react", "tailwind"],
+    "image": {
+      "xs": "fullclock.avif",
+      "sm": null,
+      "md": "fullclockmd.avif"
+    },
+    "demo": "https://worldclock.infinityfreeapp.com/",
+    "code": "https://github.com/LRamdhan/world-clock"
   },
   {
     "name": "calculator",
-    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda quae est, molestias illum magnam esse rem inventore numquam!",
-    "technology": ["html", "javascript", "css"],
-    "image": "fullfashion.png",
-    "demo": "https://nowhere.com",
-    "code": "https://github.com"
+    "description": "A calculator that performs simple calculations. It has a 3D button design and is also responsive.",
+    "technology": ["html", "css", "javascript"],
+    "image": {
+      "xs": "fullcalculator.avif",
+      "sm": "fullcalculatorsm.avif",
+      "md": "fullcalculatormd.avif"
+    },
+    "demo": "https://greycalculator.netlify.app/",
+    "code": "https://github.com/LRamdhan/calculator"
+  },
+  {
+    "name": "weather",
+    "description": "Weather app that looks up the weather status of a specific country's city. it provides hourly and 5-day forecasts and can also suggest the best activities based on the current weather. in addition it supports search history.",
+    "technology": ["react", "tailwind", "redux", "axios", "materialui"],
+    "image": {
+      "xs": "fullweather.avif",
+      "sm": null,
+      "md": null
+    },
+    "demo": "https://cityweather.infinityfreeapp.com/",
+    "code": "https://github.com/LRamdhan/weather"
+  },
+  {
+    "name": "movie finder",
+    "description": "Movie finder that searches for movies based on keywords in the input field. Each movie has detailed data like release year, duration, genre, etc.",
+    "technology": ["html", "css", "javascript"],
+    "image": {
+      "xs": "fullfilm.avif",
+      "sm": null,
+      "md": null
+    },
+    "demo": "https://filmsearcher.netlify.app/",
+    "code": null
+  },
+  {
+    "name": "aspirasi kampus",
+    "description": "Application that can send aspirations. The status of submitted aspirations can be tracked. It also has an admin role. i built this app only in backend. If you want to access it, you can use npm: 220660122210 and pass: jkla.",
+    "technology": ["php", "mysql", "bootstrap"],
+    "image": {
+      "xs": "fullaspirasi.avif",
+      "sm": null,
+      "md": "fullaspirasimd.avif"
+    },
+    "demo": "http://aspirasi.epizy.com/",
+    "code": "https://github.com/LRamdhan/aspirasi"
+  },
+  {
+    "name": "pizzCheap",
+    "description": "A pizza delivery shop landing page that includes information like plans, contacts, and foods. It has parallax effect and is responsive.",
+    "technology": ["html", "tailwind"],
+    "image": {
+      "xs": "fullpizza.avif",
+      "sm": null,
+      "md": null
+    },
+    "demo": "https://pizzcheap.netlify.app/",
+    "code": null
+  },
+  {
+    "name": "fashion",
+    "description": "Fashion shop landing page that features horizontal scrolling, parallax effect and responsiveness.",
+    "technology": ["html", "sass", "javascript"],
+    "image": {
+      "xs": "fullfashion.avif",
+      "sm": null,
+      "md": null
+    },
+    "demo": "https://fashions.netlify.app/",
+    "code": "https://github.com/LRamdhan/fashion-shop"
   }
 ]

@@ -43,7 +43,6 @@ setInterval(() => {
 }, 500); 
 
 
-
 const projectList = Array.from(document.getElementById('project-gallery').children);
 const midIdx = Math.ceil(projectList.length / 2) - 1;
 const middle = projectList[midIdx].firstElementChild;
@@ -132,7 +131,6 @@ document.addEventListener('keyup', event => {
         }
     }
 });
-
 for(let pjr of document.getElementsByClassName('project-main')) {
     let amount = (innerWidth >= 640 && innerWidth < 768) ? 1.8 : 1.65;
     pjr.addEventListener('mouseover', event => {        
@@ -165,7 +163,6 @@ document.getElementById('drop-nav-exit').addEventListener('click', event => {
 });
 
 
-
 const home = document.getElementById('home');
 const projects = document.getElementById('projects');
 const designs = document.getElementById('designs');
@@ -196,7 +193,6 @@ Array.from(document.getElementById('drop-nav-child').children).forEach((el, ind)
 });
 
 
-
 const root = document.getElementById('root');
 let modeRun = false;
 Array.from(document.getElementsByClassName('switch')).forEach(el => {
@@ -212,6 +208,3 @@ Array.from(document.getElementsByClassName('switch')).forEach(el => {
         setTimeout(() => modeRun = false, 700);
     });
 });
-
-
-

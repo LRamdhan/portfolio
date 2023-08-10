@@ -429,12 +429,23 @@ class Interactivity {
                 let data = await fetch(`../../data/projects_en.json`);
                 data = await data.json();
                 data = data[idx]; 
-                this.#detailProject.blurImg.style.backgroundImage = `url(assets/img/project/${data.image})`;
-                this.#detailProject.clearImg.setAttribute('src', `assets/img/project/${data.image}`);
+                let img;
+                if(innerWidth < 768 && innerWidth >= 640) {
+                    img = data.image.sm;
+                    if(!img) img = data.image.xs;
+                } else if(innerWidth < 640) {
+                    img = data.image.xs;
+                } else if(innerWidth >= 768) {
+                    img = data.image.md;
+                    if(!img) img = data.image.sm;
+                    if(!img) img = data.image.xs;
+                }
+                this.#detailProject.blurImg.style.backgroundImage = `url(assets/img/project/${img})`;
+                this.#detailProject.clearImg.setAttribute('src', `assets/img/project/${img}`);
                 this.#detailProject.title.textContent = data.name;
                 this.#detailProject.desk.textContent = data.description;
                 let newImage = "";
-                for(let tech of data.technology) { newImage += `<img src="assets/img/skill/${tech}.svg" alt="${tech}" class="h-9">`; }
+                for(let tech of data.technology) { newImage += `<img src="assets/img/skill/${tech}.svg" alt="${tech}" title="${tech}" class="h-9">`; }
                 this.#detailProject.tech.innerHTML = newImage;
                 this.#detailProject.demo.href = data.demo;
                 this.#detailProject.code.href = data.code;
@@ -442,7 +453,7 @@ class Interactivity {
                 this.#detailProject.title.style.display = 'block';
                 this.#detailProject.desk.style.display = 'block';
                 this.#detailProject.demo.style.display = 'block';
-                this.#detailProject.code.style.display = 'block';
+                this.#detailProject.code.style.display = data.code ? "block" : "none";
             } catch(error) {
                 console.log(error.message);
                 this.#detailProject.error.style.display = 'block';

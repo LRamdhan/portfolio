@@ -1798,24 +1798,48 @@ body {
   background-color: rgb(23 28 35 / var(--tw-bg-opacity));
 }
 
-.bg-article {
-  background-image: url(../img/project/article.avif);
-}
-
 .bg-gallery {
   background-image: url(../img/project/gallery.avif);
 }
 
 .bg-clock {
-  background-image: url(../img/design/clock.png);
+  background-image: url(../img/project/clock.avif);
+}
+
+.bg-calculator {
+  background-image: url(../img/project/calculator.avif);
 }
 
 .bg-weather {
-  background-image: url(../img/design/weather.png);
+  background-image: url(../img/project/weather.avif);
 }
 
-.bg-portfolio {
-  background-image: url(../img/design/portfolio.png);
+.bg-film {
+  background-image: url(../img/project/film.avif);
+}
+
+.bg-aspirasi {
+  background-image: url(../img/project/aspirasi.avif);
+}
+
+.bg-pizza {
+  background-image: url(../img/project/pizza.avif);
+}
+
+.bg-fashion {
+  background-image: url(../img/project/fashion.avif);
+}
+
+.bg-design-clock {
+  background-image: url(../img/design/clock.avif);
+}
+
+.bg-design-weather {
+  background-image: url(../img/design/weather.avif);
+}
+
+.bg-design-portfolio {
+  background-image: url(../img/design/portfolio.avif);
 }
 
 .bg-cover {

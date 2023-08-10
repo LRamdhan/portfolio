@@ -40,20 +40,17 @@ module.exports = {
         project: "0 0 10px 4px rgba(0, 0, 0, 0.2)"
       },
       backgroundImage: {
-        article: "url(../img/project/article.avif)",
         calculator: "url(../img/project/calculator.avif)",
-        chat: "url(../img/project/chat.avif)",
         fashion: "url(../img/project/fashion.avif)",
         film: "url(../img/project/film.avif)",
-        filter: "url(../img/project/filter.avif)",
         gallery: "url(../img/project/gallery.avif)",
-        menu: "url(../img/project/menu.avif)",
         pizza: "url(../img/project/pizza.avif)",
-        fullcalculator: "url(../img/project/fullcalculator.png)",
-        fullfashion: "url(../img/project/fullfashion.png)",
-        clock: "url(../img/design/clock.png)",
-        weather: "url(../img/design/weather.png)",
-        portfolio: "url(../img/design/portfolio.png)"
+        weather: "url(../img/project/weather.avif)",
+        aspirasi: "url(../img/project/aspirasi.avif)",
+        clock: "url(../img/project/clock.avif)",
+        "design-clock": "url(../img/design/clock.avif)",
+        "design-weather": "url(../img/design/weather.avif)",
+        "design-portfolio": "url(../img/design/portfolio.avif)"
       }, 
       aspectRatio: {
         design: "229 / 159"
