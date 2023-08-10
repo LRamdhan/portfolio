@@ -17,24 +17,24 @@ class Animation {
     }
 
     writing(dom) {
-        new anime({
-            targets: dom,
-            duration: 1000,
-            easing: `steps(${dom.textContent.length})`,
-            opacity: {
-                value: 1,
-                duration: 1
-            },
-            width: [0, dom.clientWidth]
-        });
+        const content = dom.dataset.content.split("");
+        let index = 0;
+        const ivl = setInterval(() => {
+            dom.textContent += content[index];
+            if(index === content.length - 1) clearInterval(ivl);
+            index++;
+        }, 80);
     }
 
-    fadeUp(dom) {
+    fadeUp(dom, direction, height, drt) {
+        if(!height) height = 30;
+        if(!drt) drt = 500;
         new anime({
             targets: dom,
             easing: "easeInOutCubic",
-            duration: 500,
-            translateY: [30, 0],
+            direction: direction,
+            duration: drt,
+            translateY: [height, 0],
             opacity: [0, 1]            
         });
     }
@@ -56,7 +56,7 @@ class Animation {
             easing: "easeInOutCubic",
             duration: 300,
             direction: direction,
-            translateY: [20, 0],
+            marginTop: [20, 0],
             opacity: [0, 1]            
         });
     }
@@ -85,45 +85,40 @@ class Animation {
                 duration: 5,
                 delay: 0
             },
-            height: [0, parseInt(dom.dataset.height)],
+            height: [0, parseInt(dom.dataset.height)]
         });
     }
 
     swipe(dom, direction, to, translate = 'default') {
-        let elementY;
-        if(translate == 'default') {
-            elementY = (to != 'right') ? -20 : 20;
-        } else if(translate == 'custom') {
-            if(dom.dataset.x == '') {
-                const translateX = parseInt(window.getComputedStyle(dom).transform.split(',')[4]);
-                dom.dataset.x = (translateX < 0) ? (translateX * (-1)) : translateX;
-            }
-            const value = parseInt(dom.dataset.x);
-            elementY = (to != 'right') ? (value * (-1)) : value;
-        }
+        let elementY = to === "right" ? 20 : -20;
         new anime({
             targets: dom,
             easing: 'easeInOutCubic',
             direction: direction,
             duration: 300,
             delay: 50,
-            translateY: {
-                value: (translate == 'custom') ? 0 : '20%',
-                duration: 10,
-                delay: 0
-            },
             opacity: [0, 1],
-            translateX: [0, elementY]
+            translateX: [elementY, 0]
         });
     }
     
-    scale(dom, direction) {
+    scale(dom, direction, amount) {
         new anime({
             targets: dom,
             direction: direction,
             easing: 'easeInOutCubic',
             duration: 300,
-            scale: [1, 1.5]
+            scale: [1, amount]
+        });
+    }
+    
+    scaleHover(dom, direction, normal, hover) {
+        new anime({
+            targets: dom,
+            direction: direction,
+            easing: 'easeInOutCubic',
+            duration: 100,
+            scale: [normal, hover]
         });
     }
 

@@ -1,163 +1,259 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="root">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="icon" href="assets/img/logo.svg">
+    <title>Luji</title>
+    <link rel="icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/portfolio.css" />
     <link rel="stylesheet" href="assets/css/font-awesome.css" />
+    <script defer src="node_modules/hammerjs/hammer.min.js"></script>
+    <script defer src="assets/js/main.js" type="module"></script>
   </head>
-  <body class="bg-background">
+  <body class="bg-background dark:bg-base">
     <!-- home-start -->
-    <section id="home" class="section-base bio:h-screen md:grid md:grid-cols-1 bio:grid-cols-bio md:grid-rows-bio justify-content-center bio:align-items-center">
-      <nav id="nav-desktop" class="hidden relative z-[80] md:flex items-center justify-between col-span-full py-7 space-x-2 opacity-0">
-        <div class="space-x-9 flex w-max items-center">
-          <div class="w-max flex items-center space-x-4">
-            <img src="assets/img/logo.svg" alt="logo">
-            <h3 class="text-2xl font-bold">Portfolio</h3>
-          </div>
-          <div class="w-max group opacity-0 invisible">
-            <div class="w-max hidden sm:flex items-center space-x-2 link">
-              <i class="fa-regular fa-globe"></i>
-              <span>EN</span>
-            </div>
+    <section id="home" class="px-[19px] sm:px-[22px] md:px-6 bio:px-0 bio:overflow-hidden transform-gpu mb-[98px] sm:mb-[92px] md:mb-[120px] bio:mb-0 bio:h-screen md:grid md:grid-cols-1 bio:grid-cols-bio md:grid-rows-bio justify-content-center bio:align-items-center">
+      <nav id="nav-desktop" class="hidden relative z-[80] md:flex items-center justify-between col-span-full py-7 bio:pb-0 space-x-2 opacity-0">
+        <div class="space-x-[39px] flex w-max items-center">
+          <div class="w-max h-max">
+            <a href="" class="w-max flex items-center">
+              <img src="assets/img/logo.svg" alt="logo" class="dark:hidden">
+              <img src="assets/img/logo-dark.svg" alt="logo" class="hidden dark:block">
+              <h3 class="text-[23px] ml-4 font-semibold">Luji R</h3>
+            </a>
             <div class="link-bar"></div>
           </div>
+          <div class="w-max group hidden">
+            <div class="switch-lang w-max hidden sm:flex items-center link">
+              <img src="assets/img/icon/globe-light.svg" alt="globe" class="w-[23px] dark:hidden">
+              <img src="assets/img/icon/globe-dark.svg" alt="globe" class="w-[23px] hidden dark:block">
+              <span class="language ml-2">ID</span>
+            </div>
+          </div>
+          
         </div>
-        <ul class="w-max capitalize font-semibold flex items-center space-x-14">
-          <li><a href="#home" class="text-accent link group">home<div class="link-bar"></div></a></li>
-          <li><a href="#education" class="link group">education<div class="link-bar"></div></a></li>
-          <li><a href="#skills" class="link group">skills<div class="link-bar"></div></a></li>
+        <ul id="bio-scroll-nav" class="w-max capitalize font-semibold flex items-center space-x-14">
+          <li><a href="#about" class="text-accent dark:text-accent-dark link hover:text-[#EBECED] dark:hover:text-background group">about<div class="link-bar"></div></a></li>
           <li><a href="#projects" class="link group">projects<div class="link-bar"></div></a></li>
+          <li><a href="#designs" class="link group">designs<div class="link-bar"></div></a></li>
           <li><a href="#contact" class="link group">contact<div class="link-bar"></div></a></li>
+          <div class="switch w-max h-max">
+            <img id="sun-lg" src="assets/img/icon/sun.svg" alt="sun" class="w-[23px] cursor-pointer">
+            <img id="moon-lg" src="assets/img/icon/moon.svg" alt="moon" class="w-[23px] cursor-pointer hidden">
+            <div class="link-bar"></div>
+          </div>
         </ul>
       </nav>
-      <div id="geometri" class="w-[320px] sm:w-[400px] md:w-[450px] mx-auto aspect-square relative mt-32 md:mt-0 bio:order-2 bio:justify-self-end bio:mx-0 opacity-0">
-        <svg class="absolute inset-0 scale-150 drop-shadow-basic" viewBox="0 0 200 200">
-          <path fill="#00BD95" d="M39.4,-41.8C50.3,-28.5,57.8,-14.3,57.1,-0.6C56.5,13,47.7,26,36.8,32.1C26,38.3,13,37.6,-2.6,40.2C-18.2,42.8,-36.5,48.8,-47.9,42.6C-59.3,36.5,-63.8,18.2,-58.6,5.2C-53.4,-7.9,-38.5,-15.7,-27.1,-29C-15.7,-42.2,-7.9,-60.8,3.2,-63.9C14.3,-67.1,28.5,-55,39.4,-41.8Z" transform="translate(100 100)" />
-        </svg>
-        <img class="absolute w-full scale-[.7] rotate-[8.5deg]" src="assets/img/geometri.svg" alt="geometri">
-      </div>
-      <div class="text-center capitalize mt-4 bio:mt-0 bio:order-1 bio:justify-self-start bio:text-start">
-        <div class="space-y-4 sm:space-y-5 flex flex-col justify-center items-center bio:items-start">
-          <h3 id="hello" class="bio-text text-2xl sm:text-3xl w-max opacity-0 h-max overflow-hidden whitespace-nowrap">hello, <span class="text-accent">i'm</span></h3>
-          <h1 id="name" class="bio-text text-4xl sm:text-5xl text-accent font-suez tracking-widest w-max opacity-0 h-max overflow-hidden whitespace-nowrap">luji ramdhan</h1>
-          <h2 id="role" class="bio-text text-2xl sm:text-3xl font-semibold w-max opacity-0 h-max overflow-hidden whitespace-nowrap">junior frontend developer</h2>
-          <p id="desk" class="text-sm sm:text-sm normal-case max-w-[470px] mx-auto opacity-0">Passionate about web development and new technology. I enjoy every process that makes something better.</p>
+      <div class="capitalize mt-[204px] sm:mt-52 md:mt-24 bio:mt-0 bio:justify-self-start">
+        <div class="space-y-[18px] sm:space-y-[24px] flex flex-col justify-center items-start sm:items-center bio:items-start">
+          <h3 id="hello" class="text-[22px] sm:text-[28px] w-max h-max overflow-hidden whitespace-nowrap leading-none">
+            <span data-content="hello, " class="bio-text"></span>
+            <span data-content="i'm" class="bio-text text-accent dark:text-accent-dark"></span>
+            <span> </span>
+          </h3>
+
+          <div class="w-max h-max text-[36.7px] sm:text-[46px] text-accent dark:text-accent-dark font-suez tracking-widest whitespace-nowrap overflow-hidden leading-none">
+            <h1 id="name" data-content="luji ramdhan" class="bio-text inline-block"></h1>
+            <span> </span>
+          </div>
+          
+          <div class="w-max h-max text-[22px] sm:text-[26px] md:text-[27px] font-semibold whitespace-nowrap overflow-hidden leading-none">
+            <h2 id="role" data-content="frontend developer" class="bio-text inline-block"></h2>
+            <span> </span>
+          </div>
         </div>
-        <a href="https://wa.me/62895385071788" target="_blank" class="w-max block bio:ml-0 mt-10 sm:mt-14 mx-auto opacity-0" id="talk">
-          <div class="btn">let's talk</div>
-        </a>
+        <p id="desk" class="normal-case pt-6 sm:pt-[26.3px] text-start sm:text-center sm:max-w-[470px] sm:mx-auto bio:text-start opacity-0">Passionate about web development and new technology. Currently focusing on the frontend. I always enjoy every process that makes something better.</p>
+        <div id="talk" class="mt-[38px] sm:mt-[70px] sm:flex sm:space-x-[35px] sm:justify-center bio:justify-start opacity-0">
+          <a href="https://wa.me/62895385071788" target="_blank" class="w-max block" id="talk">
+            <div id="wa" class="btn">let's talk</div>
+          </a> 
+          <a href="data/Luji Ramdhan_CV.pdf" target="_blank" class="w-max block mt-[23px] sm:mt-0" id="talk">
+            <div id="cv" class="btn bg-transparent dark:bg-transparent drop-shadow-none dark:drop-shadow-none text-accent dark:text-accent-dark">download CV</div>
+          </a> 
+        </div>
+      </div>
+      <div id="myself" class="relative w-[294px] sm:w-[350px] mx-auto mt-[92px] sm:mt-[95px] bio:mt-0 bio:justify-self-end bio:mx-0 opacity-0">
+        <img src="assets/img/self.svg" alt="self" class="relative w-full z-10">
+        <img src="assets/img/morp.svg" alt="morp" class="w-full absolute bottom-0 drop-shadow-basic dark:hidden">
+        <img src="assets/img/morp-dark.svg" alt="morp" class="w-full absolute bottom-0 drop-shadow-basic dark:drop-shadow-basic-dark hidden dark:block">
       </div>
     </section>
     <!-- home-end -->
 
     <!-- fixed-element-start -->
-    <nav id="nav-mobile" class="fixed z-50 bg-[#343E4B]/50 inset-x-0 top-6 mx-6 rounded-md border-solid border-2 p-3 backdrop-blur-lg border-accent flex justify-between items-center md:hidden opacity-0">
+    <nav id="nav-mobile" class="fixed z-50 bg-[#343E4B]/50 dark:bg-[#343E4B]/10 inset-x-0 top-6 mx-6 rounded-md border-solid border-2 p-3 backdrop-blur-lg border-accent dark:border-accent-dark flex justify-between items-center md:hidden"> <!-- -->
       <div class="space-x-9 flex w-max items-center">
-        <div class="w-max flex items-center space-x-4">
-          <img src="assets/img/logo.svg" alt="logo">
-          <h3 class="text-2xl font-bold">Portfolio</h3>
+        <a href="" class="w-max flex items-center">
+          <img src="assets/img/logo.svg" alt="logo" class="dark:hidden">
+          <img src="assets/img/logo-dark.svg" alt="logo" class="hidden dark:block">
+          <h3 class="text-[22px] ml-4 sm:text-2xl font-semibold">Luji R</h3>
+        </a>
+        <div class="switch-lang w-max hidden items-center"> 
+          <img src="assets/img/icon/globe-light.svg" alt="globe" class="w-[21px] dark:hidden">
+          <img src="assets/img/icon/globe-dark.svg" alt="globe" class="w-[21px] hidden dark:block">
+          <span class="language ml-2">ID</span>
         </div>
-        <div class="w-max hidden sm:flex items-center space-x-2 invisible">
-          <i class="fa-regular fa-globe"></i>
-          <span>EN</span>
+        <div class="switch w-max h-max hidden">
+          <img id="sun-md" src="assets/img/icon/sun.svg" alt="globe" class="w-[21px] hidden sm:block">
+          <img id="moon-md" src="assets/img/icon/moon.svg" alt="globe" class="w-[21px] hidden">
         </div>
       </div>
       <div class="w-11 h-8 flex flex-col justify-between cursor-pointer">
         <div id="hamberger" class="absolute inset-y-0 w-20 right-0"></div>
-        <div class="w-full h-1 bg-accent rounded-full"></div>
-        <div class="w-1/2 self-end h-1 bg-accent rounded-full"></div>
-        <div class="w-full h-1 bg-accent rounded-full"></div>
+        <div class="w-full h-1 bg-accent dark:bg-accent-dark rounded-full"></div>
+        <div class="w-1/2 self-end h-1 bg-accent dark:bg-accent-dark rounded-full"></div>
+        <div class="w-full h-1 bg-accent dark:bg-accent-dark rounded-full"></div>
       </div>
     </nav>
-    <nav id="drop-nav" class="fixed -translate-y-full inset-0 overflow-hidden z-[1009] bg-background px-12 py-7 grid grid-cols-2 grid-rows-nav align-items-center gap-y-4">
-      <div id="drop-nav-lang" class="w-max flex items-center space-x-2 sm:invisible opacity-0 invisible">
-        <i class="fa-regular fa-globe"></i>
-        <span>EN</span>
-      </div>
-      <div id="drop-nav-exit" class="aspect-square w-16 bg-dark rounded-full relative cursor-pointer justify-self-end opacity-0">
-        <div class="absolute w-full h-full p-2 flex items-center">
-          <div class="w-full rotate-45 h-1 bg-base"></div>
+    <nav id="drop-nav" class="fixed inset-0 -translate-y-full overflow-hidden z-[1009] bg-background dark:bg-base px-12 pt-[59px] pb-7 grid grid-cols-2 grid-rows-nav align-items-center sm:pt-[51px]">
+      <div id="drop-nav-lang" class="w-max flex items-center">
+        <div class="switch-lang w-max items-center hidden">
+          <img src="assets/img/icon/globe-light.svg" alt="globe" class="w-[19px] dark:hidden">
+          <img src="assets/img/icon/globe-dark.svg" alt="globe" class="w-[19px] hidden dark:block">
+          <span class="language font-semibold ml-[9px]">ID</span>
         </div>
-        <div class="absolute w-full h-full p-2 flex items-center">
-          <div class="w-full -rotate-45 h-1 bg-base"></div>
+        <div class="switch w-max h-max">
+          <img id="sun-sm" src="assets/img/icon/sun.svg" alt="sun" class="w-6 sm:w-8">
+          <img id="moon-sm" src="assets/img/icon/moon.svg" alt="moon" class="w-6 sm:w-8 hidden">
+        </div>
+      </div>
+      <div id="drop-nav-exit" class="aspect-square w-9 relative cursor-pointer justify-self-end">
+        <div class="absolute w-full h-full flex items-center">
+          <div class="w-full rotate-45 h-1 bg-base dark:bg-background"></div>
+        </div>
+        <div class="absolute w-full h-full flex items-center">
+          <div class="w-full -rotate-45 h-1 bg-base dark:bg-background"></div>
         </div>
       </div>
       <ul id="drop-nav-child" class="col-span-full">
-        <li class="nav-child">home</li>
-        <li class="nav-child">education</li>
-        <li class="nav-child">skills</li>          
-        <li class="nav-child">project</li>
+        <li class="nav-child">about</li>
+        <li class="nav-child">projects</li>
+        <li class="nav-child">designs</li>
         <li class="nav-child">contact</li>
       </ul>
     </nav>
-    <a id="arrow-up" href="#home" class="aspect-square w-16 fixed z-[100] right-10 sm:right-12 md:right-14 bottom-10 sm:bottom-12 bg-accent rounded-full flex justify-center items-center opacity-0">
+    <a href="#home" id="arrow-up" class="aspect-square w-16 fixed z-[100] right-10 sm:right-12 md:right-14 bottom-10 sm:bottom-12 bg-accent dark:bg-accent-dark rounded-full flex justify-center items-center opacity-0">
       <div class="aspect-square w-1/3 border-solid border-t-4 border-l-4 border-base rotate-45 translate-y-1/4"></div>
     </a>
-    <!-- fixed-element-start -->
+    <div id="detail-project" class="fixed inset-0 z-[200] hidden">
+      <div id="detail-project-layer" class="bg-black/50 absolute inset-0 z-[210] backdrop-blur-[10px] sm:backdrop-blur-none transition-all duration-300"></div>
+      <div class="absolute inset-0 z-[220] px-[21px] flex flex-col justify-center sm:px-0 sm:items-center md:px-5">
+        <div id="detail-project-exit-outer" class="detail-project-exit aspect-square w-9 cursor-pointer absolute top-6 right-[35px] sm:right-10 sm:top-10 md:hidden opacity-0">
+          <div class="absolute w-full h-full flex items-center">
+            <div class="w-full rotate-45 h-1 bg-base"></div>
+          </div>
+          <div class="absolute w-full h-full flex items-center">
+            <div class="w-full -rotate-45 h-1 bg-base"></div>
+          </div>
+        </div>
+        <div id="detail-project-paper" class="w-full h-[589px] bg-popup dark:bg-light rounded-[5px] overflow-hidden sm:rounded-[10px] sm:h-[753px] sm:w-[553px] md:w-full min-[820px]:w-[818px] md:h-[400px] md:flex relative transform-gpu opacity-0">
+          <div class="hidden top-4 md:flex justify-end absolute inset-x-0 right-[18px]">
+            <div class="detail-project-exit aspect-square w-5 cursor-pointer relative">
+              <div class="absolute w-full h-full flex items-center">
+                <div class="w-full rotate-45 h-[3px] bg-base dark:bg-background"></div>
+              </div>
+              <div class="absolute w-full h-full flex items-center">
+                <div class="w-full -rotate-45 h-[3px] bg-base dark:bg-background"></div>
+              </div>
+            </div>
+          </div>
+          <p id="detail-project-error" class="text-center absolute inset-x-0 top-14 capitalize hidden">something went wrong</p>
+          <div id="detail-project-blur" class="h-[198px] bg-cover bg-top sm:h-[300px] md:w-1/2 md:h-full hidden">
+            <div class="w-full h-full hidden backdrop-blur-[7px] justify-center items-start overflow-hidden pt-[31px] sm:flex md:pt-7">
+              <img id="detail-project-clear" class="w-[392px] shadow-project md:w-[308px]">
+            </div>
+          </div>
+          <div class="skeleton bone h-[198px] sm:h-[300px] md:w-1/2 md:h-full animate-pulse hidden"></div>
+          <div class="px-[21px] mt-[34px] sm:mt-[49px] sm:px-[38px] md:w-1/2 md:mt-0 md:py-[18px] md:px-[35px]">
+            <h2 id="detail-project-title" class="capitalize text-[20px] font-semibold sm:text-[21px] md:pt-5 hidden"></h2>
+            <div class="skeleton bone h-4 w-28 md:mt-5 hidden"></div>
+            <p id="detail-project-desk" class="text-justify mt-[26px] sm:mt-[35px] md:mt-7 hidden"></p>
+            <div class="skeleton space-y-3 mt-[26px] sm:mt-[35px] md:mt-7 hidden">
+              <div class="bone h-3"></div>
+              <div class="bone h-3"></div>
+              <div class="bone h-3"></div>
+              <div class="bone h-3 w-8/12"></div>
+            </div>
+            <img src="assets/img/skill/javascript.svg" alt="javascript" class="h-9 hidden">
+            <div class="bone aspect-square w-9 hidden"></div>
+            <div id="detail-project-tech" class="flex space-x-6 mt-[29px]"></div>
+            <div class="flex mt-14">
+              <a id="detail-project-demo" target="_blank" class="w-max h-max hidden">
+                <div class="w-[114px] h-10 border border-solid border-base dark:border-background rounded-full flex justify-center items-center space-x-2 hover:bg-black/10">
+                  <span id="demo-content" class="capitalize">demo</span>
+                  <img src="assets/img/icon/link.svg" alt="link" class="w-[19px] dark:hidden">
+                  <img src="assets/img/icon/link-dark.svg" alt="link" class="w-[19px] hidden dark:block">
+                </div>
+              </a>
+              <div class="skeleton bone w-[114px] h-10 ml-0 hidden"></div>
+              <a id="detail-project-code" target="_blank" class="w-max h-max ml-[19px] hidden">
+                <div class="w-[114px] h-10 border border-solid border-base dark:border-background rounded-full flex justify-center items-center space-x-2 hover:bg-black/10">
+                  <span id="code-content" class="capitalize">code</span>
+                  <img src="assets/img/icon/code.svg" alt="code" class="w-[19px] dark:hidden">
+                  <img src="assets/img/icon/code-dark.svg" alt="code" class="w-[19px] hidden dark:block">
+                </div>
+              </a>
+              <div class="skeleton bone w-[114px] h-10 ml-[19px] hidden"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fixed-element-end -->
 
     <!-- education-start -->
-    <section id="education" class="py-16 pb-[80px] section-base px-3 md:px-5 bg-dark space-y-11 md:space-y-14">
-      <h1 id="education-title" class="text-center uppercase font-semibold text-3xl text-accent opacity-0">education</h1>
-      <div class="mx-2">
-        <div id="graduation-cap" class="hidden md:flex md:justify-center md:items-center text-2xl text-accent w-16 aspect-square rounded-full border-solid border-accent border-4 mx-auto opacity-0">
-          <i class="fa-solid fa-graduation-cap"></i>
+    <section id="education" class="section-base bg-dark dark:bg-light">
+      <h1 id="education-title" class="section-title opacity-0">education</h1>
+      <div class="sm:max-md:px-[123px] mt-8 sm:mt-[35px] md:mt-12">
+        <div class="edu-root">
+          <div class="edu-point w-[21px] sm:w-[25px]">
+            <div id="line-1" class="edu-point-1 opacity-0" data-height=""></div> 
+          </div>
         </div>
         <div class="edu-root">
-          <div class="edu-icon row-start-1 row-end-3 col-start-1 col-end-2 hidden sm:max-md:block">
-            <i class="fa-solid fa-laptop text-8xl text-accent"></i>
-          </div>
-          <div id="edu-left-1" class="edu-school md:opacity-0">
-            <h2 class="text-accent text-lg sm:text-2xl">software engineering</h2>
-            <h3 class="text-xs mt-2 sm:text-sm">jun 2019-jun 2022 <span class="text-[#81848A]">|</span>  vocational high school</h3>
+          <div id="edu-left-1" class="edu-school opacity-0">
+            <h2 class="text-accent dark:text-accent-dark text-[19px] sm:text-[21px] font-semibold capitalize">software engineering</h2>
+            <h3 class="text-[13px] mt-2 sm:text-sm capitalize">jun 2019-jun 2022  <span class="text-[#81848A]">|</span>  SMKN Situraja</h3>
           </div>
           <div class="edu-point">
-            <div id="line-1" class="edu-point-1 md:opacity-0" data-height=""></div>
-            <div id="point-1" class="edu-point-2 md:opacity-0">
-              <div class="w-1/2 aspect-square bg-accent rounded-full"></div>
+            <div id="point-1" class="edu-point-2 opacity-0">
+              <div class="w-1/2 aspect-square bg-accent dark:bg-accent-dark rounded-full"></div>
             </div>
+            <div id="line-2" class="edu-point-1-long opacity-0" data-height=""></div>
           </div>
-          <div id="desk-right-1" class="edu-detail md:opacity-0">
-            <p class="edu-detail-text">For three years, I learned many things about computers from the basics, until finally I focused on programming.</p>
+          <div id="desk-right-1" class="edu-detail opacity-0">
+            <p class="edu-detail-text">For three years, I learned many things about computer and programming, until finally I focused on web developement.</p>
           </div>
         </div>
-        <div class="edu-root md:flex-row-reverse mt-9 sm:max-md:mt-28 md:mt-0">
-          <div class="edu-icon row-start-1 row-end-3 col-start-1 col-end-2 hidden sm:max-md:block">
-            <i class="fa-solid fa-code text-8xl text-accent"></i>
-          </div>
-          <div id="edu-right-2" class="edu-school md:text-left md:opacity-0">
-            <h2 class="text-accent text-lg sm:text-2xl">programming course</h2>
-            <h3 class="text-xs mt-2 sm:text-sm">feb 2021-now <span class="text-[#81848A]">|</span>  codepolitan, udemy</h3>
+        <div class="edu-root">
+          <div id="edu-right-2" class="edu-school opacity-0">
+            <h2 class="text-accent dark:text-accent-dark text-[19px] sm:text-[21px] font-semibold capitalize">programming course</h2>
+            <h3 class="text-[13px] mt-2 sm:text-sm capitalize">feb 2021-now  <span class="text-[#81848A]">|</span>  codepolitan, udemy</h3>
           </div>
           <div class="edu-point">
-            <div id="line-2" class="edu-point-1-long md:opacity-0" data-height=""></div>
-            <div id="point-2" class="edu-point-2 md:opacity-0">
-              <div class="w-1/2 aspect-square bg-accent rounded-full"></div>
+            <div id="point-2" class="edu-point-2 opacity-0">
+              <div class="w-1/2 aspect-square bg-accent dark:bg-accent-dark rounded-full"></div>
             </div>
+            <div id="line-3" class="edu-point-1-long opacity-0" data-height=""></div>
           </div>
-          <div id="desk-left-2" class="edu-detail md:opacity-0">
-            <p class="edu-detail-text md:text-right md:float-right">To learn programming, I took several online courses on backend and front web development.</p>
+          <div id="desk-left-2" class="edu-detail opacity-0">
+            <p class="edu-detail-text">I learnt from courses and tutorials, every time I finished it, I always built a useful project and deepen the concepts that had been learned before.</p>
           </div>
         </div>
-        <div class="edu-root mt-9 sm:max-md:mt-28 md:mt-0">
-          <div class="edu-icon row-start-1 row-end-3 col-start-1 col-end-2 hidden sm:max-md:block">
-            <i class="fa-solid fa-graduation-cap text-8xl text-accent"></i>
-          </div>
-          <div id="edu-left-3" class="edu-school md:opacity-0">
-            <h2 class="text-accent text-lg sm:text-2xl">computer science</h2>
-            <h3 class="text-xs mt-2 sm:text-sm">oct 2022-now <span class="text-[#81848A]">|</span>  bachelor degree</h3>
+        <div class="edu-root">
+          <div id="edu-left-3" class="edu-school opacity-0">
+            <h2 class="text-accent dark:text-accent-dark text-[19px] sm:text-[21px] font-semibold capitalize">computer science</h2>
+            <h3 class="text-[13px] mt-2 sm:text-sm capitalize">oct 2022-now  <span class="text-[#81848A]">|</span>  UNSAP</h3>
           </div>
           <div class="edu-point">
-            <div id="line-3" class="edu-point-1-long md:opacity-0" data-height=""></div>
-            <div id="point-3" class="edu-point-2 md:opacity-0">
-              <div class="w-1/2 aspect-square bg-accent rounded-full"></div>
+            <div id="point-3" class="edu-point-2 opacity-0">
+              <div class="w-1/2 aspect-square bg-accent dark:bg-accent-dark rounded-full"></div>
             </div>
+            <div id="line-4" class="edu-point-1 opacity-0" data-height=""></div>
           </div>
-          <div id="desk-right-3" class="edu-detail md:opacity-0">
-            <p class="edu-detail-text">I chose to major in informatics engineering, also entered a coding club and focused on front end web development.</p>
+          <div id="desk-right-3" class="edu-detail pb-0 opacity-0">
+            <p class="edu-detail-text">I learn advanced web frontend technologies, join coding club, and collaborate to build project.</p>
           </div>
         </div>
       </div>
@@ -165,192 +261,182 @@
     <!-- education-end -->
 
     <!-- skills-start -->
-    <section id="skills" class="section-base py-16 space-y-10 md:space-y-14">
-      <h1 id="skill-title" class="text-center uppercase font-semibold text-3xl text-accent opacity-0">skills</h1>
-      <div id="skill-img" class="w-max mx-auto grid grid-cols-skill-sm sm:grid-cols-skill-md grid-rows-skill-sm sm:grid-rows-skill-md place-items-center gap-8">
-        <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/html.svg" alt="html">
+    <section id="skills" class="section-base">
+      <h1 id="skill-title" class="section-title opacity-0">skills</h1>
+      <div id="skill-img" class="mt-[43px] sm:mt-[50px] grid grid-cols-2 auto-rows-max gap-x-[14px] gap-y-[32.4px] sm:max-w-[574px] sm:mx-auto sm:grid-cols-3 sm:gap-x-12 sm:gap-y-[38.4px] md:grid-cols-4 md:max-w-[898px] md:gap-x-2 bio:gap-x-[54px] md:gap-y-[34.5px]">
+        <div class="skill">
+          <img src="assets/img/skill/html.svg" alt="html" class="skill-img">
+          <h3 class="skill-title">HTML</h3>
         </div>
-        <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/css.svg" alt="css">
+        <div class="skill">
+          <img src="assets/img/skill/css.svg" alt="css" class="skill-img">
+          <h3 class="skill-title">CSS</h3>
         </div>
-        <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/javascript.svg" alt="javascript">
+        <div class="skill">
+          <img src="assets/img/skill/javascript.svg" alt="javascript" class="skill-img">
+          <h3 class="skill-title">javascript</h3>
         </div>
-        <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/sass.svg" alt="sass">
+        <div class="skill">
+          <img src="assets/img/skill/sass.svg" alt="sass" class="skill-img">
+          <h3 class="skill-title">sass</h3>
         </div>
-        <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/tailwind.svg" alt="tailwind">
+        <div class="skill">
+          <img src="assets/img/skill/tailwind.svg" alt="tailwind" class="skill-img">
+          <h3 class="skill-title">tailwind</h3>
         </div>
-        <div class="w-max sm:col-start-2 opacity-0">
-          <img class="teknologi" src="assets/img/php.svg" alt="php">
+        <div class="skill">
+          <img src="assets/img/skill/php.svg" alt="php" class="skill-img">
+          <h3 class="skill-title">PHP</h3>
         </div>
-        <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/mysql.svg" alt="mysql">
+        <div class="skill">
+          <img src="assets/img/skill/mysql.svg" alt="mysql" class="skill-img">
+          <h3 class="skill-title">MySQL</h3>
         </div>
-        <div class="w-max opacity-0">
-          <img class="teknologi" src="assets/img/git.svg" alt="git">
+        <div class="skill">
+          <img src="assets/img/skill/react.svg" alt="react" class="skill-img">
+          <h3 class="skill-title">react</h3>
         </div>
-        <div class="w-max sm:col-start-2 opacity-0">
-          <img class="teknologi sm:translate-x-1/2" src="assets/img/adobe xd.svg" alt="adobe xd">
+        <div class="skill">
+          <img src="assets/img/skill/redux.svg" alt="redux" class="skill-img">
+          <h3 class="skill-title">redux</h3>
         </div>
-        <div class="w-max col-start-2 sm:col-start-4 opacity-0">
-          <img class="teknologi sm:-translate-x-1/2" src="assets/img/figma.svg" alt="figma">
+        <div class="skill">
+          <img src="assets/img/skill/axios.svg" alt="axios" class="skill-img">
+          <h3 class="skill-title">axios</h3>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skill/materialui.svg" alt="materialui" class="skill-img">
+          <h3 class="skill-title">materialUI</h3>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skill/npm.svg" alt="npm" class="skill-img">
+          <h3 class="skill-title">NPM</h3>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skill/vite.svg" alt="vite" class="skill-img">
+          <h3 class="skill-title">vite</h3>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skill/git.svg" alt="git" class="skill-img">
+          <h3 class="skill-title">git</h3>
+        </div>
+        <div class="skill">
+          <img src="assets/img/skill/github.svg" alt="github" class="skill-img dark:hidden">
+          <img src="assets/img/skill/github-dark.svg" alt="github" class="skill-img hidden dark:block">
+          <h3 class="skill-title">github</h3>
+        </div>
+        <div class="skill sm:max-md:cell-center-sm">
+          <img src="assets/img/skill/figma.svg" alt="figma" class="skill-img">
+          <h3 class="skill-title">figma</h3>
+        </div>
+        <div class="skill cell-center sm:cell-center-sm md:cell-center-md bio:cell-center-bio">
+          <img src="assets/img/skill/adobexd.svg" alt="adobexd" class="skill-img">
+          <h3 class="skill-title">adobe xd</h3>
         </div>
       </div>
     </section>
     <!-- skills-end -->
 
+    <!-- sertification-start -->
+    <section id="certifications" class="section-base bg-dark dark:bg-light">
+      <h1 id="cert-title" class="section-title opacity-0">certifications</h1>
+      <div class="mt-11 sm:mt-[58px] grid grid-cols-1 auto-rows-max gap-y-[52px] sm:grid-cols-[406px] sm:justify-content-center sm:gap-y-[59px] bio:gap-y-0 bio:grid-cols-cert-bio bio:gap-x-[114px]">
+        <div id="cert-1" class="opacity-0">
+          <div class="hover:-translate-y-4 transition">
+            <a href="https://www.freecodecamp.org/certification/Luji_Ramdhan/javascript-algorithms-and-data-structures" target="_blank" class="block">
+              <img src="assets/img/cert1.svg" alt="freecodecamp" class="w-full bio:w-auto bio:h-[304px]">
+              <p class="text-accent dark:text-accent-dark leading-[27.8px] mt-[13px] sm:text-[17px]">FreeCodeCamp</p>
+              <h3 class="text-[15px] font-semibold leading-[25px] sm:text-[18px]">Javascript Algorithms and Data Structures</h3>
+            </a>
+          </div>
+        </div>
+        <div id="cert-2" class="opacity-0">
+          <div class="hover:-translate-y-4 transition">
+            <a href="https://www.udemy.com/certificate/UC-883c760d-3afb-4ae7-aa58-26a9aad3aeba/" target="_blank" class="block">
+              <img src="assets/img/cert2.svg" alt="udemy" class="w-full bio:w-auto bio:h-[304px]">
+              <p class="text-accent dark:text-accent-dark leading-[27.8px] mt-[13px] sm:text-[17px]">Udemy</p>
+              <h3 class="text-[15px] font-semibold leading-[25px] sm:text-[18px]">React Masterclass</h3>
+            </a>
+          </div>
+        </div>
+    </div>
+    </section>
+    <!-- sertification-end -->
+
     <!-- project-start -->
-    <section id="projects" class="w-full bg-dark pt-16 pb-32">
-      <h1 id="project-title" class="text-center uppercase font-semibold text-3xl text-accent opacity-0">projects</h1>
-      <p id="project-desk" class="text-center mx-auto w-80 sm:w-[433px] text-sm mt-4 opacity-0">These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously .</p>
-      <div id="project-img" class="w-full mt-20 sm:mt-24 opacity-0 relative">
-        <div class="absolute inset-0 z-[5]"></div>
+    <section id="projects" class="section-base px-0">
+      <h1 id="project-title" class="section-title opacity-0">projects</h1>
+      <p id="project-desk" class="px-[19px] mt-8 text-center sm:px-0 sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7 opacity-0">These are some of my projects, some are based on other website designs, but all are made by me from scratch.</p>
+      <div id="project-img" class="w-full relative pt-[90px] pb-[62px] sm:pt-[126px] sm:pb-[100px] md:pt-[116px] opacity-0">
         <div class="w-full overflow-hidden" id="scroll">
-          <div id="project-gallery" class="w-max flex px-[600px] justify-center space-x-5">
+          <div id="project-gallery" class="w-max flex space-x-[22px] px-[600px]">
             <div class="project-card">
-              <div class="w-full h-full flex justify-center inset-0"> 
-                <div class="project-main group/root shadow-pr bg-article">
-                  <div class="project-layer"></div>
-                  <div class="project-desk">
-                    <p class="project-teks">Article was made with basic tailwind utilities.</p>
-                    <a href="https://sortarticle.netlify.app" target="_blank" class="project-link">
-                      <div class="project-link-child">visit website</div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <div class="project-main bg-gallery"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center inset-0"> 
-                <div class="project-main group/root shadow-pr bg-chat">
-                  <div class="project-layer"></div>
-                  <div class="project-desk">
-                    <p class="project-teks">A simple chat ui that can automatically reply to random messages.</p>
-                    <a href="https://singlechat.netlify.app" target="_blank" class="project-link">
-                      <div class="project-link-child">visit website</div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <div class="project-main bg-clock"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center inset-0"> 
-                <div class="project-main group/root shadow-pr bg-fashion">
-                  <div class="project-layer"></div>
-                  <div class="project-desk">
-                    <p class="project-teks">Fashion landing page was made with sass and javascript for the
-                      interativity.</p>
-                    <a href="https://simplefashion.netlify.app" target="_blank" class="project-link">
-                      <div class="project-link-child">visit website</div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <div class="project-main bg-calculator"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center inset-0"> 
-                <div class="project-main group/root shadow-pr bg-film">
-                  <div class="project-layer"></div>
-                  <div class="project-desk">
-                    <p class="project-teks">It discovers film and its details by requesting to film open api.</p>
-                    <a href="http://findfilm.epizy.com" target="_blank" class="project-link">
-                      <div class="project-link-child">visit website</div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <div class="project-main bg-weather"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center inset-0"> 
-                <div class="project-main group/root shadow-pr bg-pizza">
-                  <div class="project-layer"></div>
-                  <div class="project-desk">
-                    <p class="project-teks">A responsive landing page for pizza made with tailwind.</p>
-                    <a href="https://simplepizza.netlify.app" target="_blank" class="project-link">
-                      <div class="project-link-child">visit website</div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <div class="project-main bg-film"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center inset-0"> 
-                <div class="project-main group/root shadow-pr bg-calculator">
-                  <div class="project-layer"></div>
-                  <div class="project-desk">
-                    <p class="project-teks">Calculator for simple computation made with html, css, and vanilla javascript.</p>
-                    <a href="https://javascriptkalkulator.netlify.app" target="_blank" class="project-link">
-                      <div class="project-link-child">visit website</div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <div class="project-main bg-aspirasi"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center inset-0"> 
-                <div class="project-main group/root shadow-pr bg-filter">
-                  <div class="project-layer"></div>
-                  <div class="project-desk">
-                    <p class="project-teks">It changes filter from image directly without reloading the page.</p>
-                    <a href="https://filterfoto.netlify.app" target="_blank" class="project-link">
-                      <div class="project-link-child">visit website</div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <div class="project-main bg-pizza"></div>
             </div>
             <div class="project-card">
-              <div class="w-full h-full flex justify-center inset-0"> 
-                <div class="project-main group/root shadow-pr bg-gallery">
-                  <div class="project-layer"></div>
-                  <div class="project-desk">
-                    <p class="project-teks">A gallery with grid zoom effect made with tailwind.</p>
-                    <a href="https://zoomeffectgallery.netlify.app" target="_blank" class="project-link">
-                      <div class="project-link-child">visit website</div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-card">
-              <div class="w-full h-full flex justify-center inset-0"> 
-                <div class="project-main group/root shadow-pr bg-menu">
-                  <div class="project-layer"></div>
-                  <div class="project-desk">
-                    <p class="project-teks">It gets data from json and displays it as product card, built with php.</p>
-                    <a href="http://pizzamenu.epizy.com" target="_blank" class="project-link">
-                      <div class="project-link-child">visit website</div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <div class="project-main bg-fashion"></div>
             </div>
           </div>
         </div>
-        <div class="w-max absolute inset-y-0 flex items-center left-0 z-30" data-x="">
-          <div id="project-nav-previous" class="project-nav translate-x-[5%] sm:translate-x-[140%] md:translate-x-[150%] bio:translate-x-[520%]">
-            <div class="project-arrow -rotate-45 translate-x-1/4"></div>
-          </div>
+        <div id="project-nav-previous" data-x="" class="project-nav left-1/2 -translate-x-[330px]">
+          <div class="project-arrow -rotate-45 translate-x-1/4"></div>
         </div>
-        <div class="w-max absolute inset-y-0 flex items-center right-0 z-30" data-x="">
-          <div id="project-nav-next" class="project-nav -translate-x-[5%] sm:-translate-x-[140%] md:-translate-x-[150%] bio:-translate-x-[520%]">
-            <div class="project-arrow rotate-[135deg] -translate-x-1/4"></div>
-          </div>
+        <div data-x="" id="project-nav-next" class="project-nav right-1/2 translate-x-[330px]">
+          <div class="project-arrow rotate-[135deg] -translate-x-1/4"></div>
         </div>
       </div>
     </section>
     <!-- project-end -->
 
+    <!-- design-start -->
+    <section id="designs" class="section-base bg-dark dark:bg-light">
+      <h1 id="design-title" class="section-title opacity-0">designs</h1>
+      <p id="design-desk" class="mt-8 text-center sm:w-[433px] sm:mx-auto md:w-[537px] md:mt-7 opacity-0">These design were created to support the development of my project. all of these have been sliced ​​for my projects.</p>
+      <div id="design-pict" class="mt-[34px] sm:mt-[25px] md:mt-[35px] sm:text-center">
+        <div class="aspect-design rounded-[10px] sm:aspect-auto sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px] cursor-pointer overflow-hidden opacity-0">
+          <a href="https://www.figma.com/file/oO2ecFeTuCBlCUJ9qJh4xV/Clock?type=design&mode=design&t=3bQo6eFkrWfVJ0KP-1" target="_blank" class="w-full h-full">
+            <div class="w-full h-full bg-design-clock bg-cover bg-center hover:scale-[1.1] transition-transform"></div>
+          </a>
+        </div>
+        <div class="aspect-design rounded-[10px] sm:aspect-auto mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:inline-block sm:ml-11 md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px] overflow-hidden cursor-pointer opacity-0">
+          <a href="https://www.figma.com/file/cQt8HFTXtZohW0OTVR8Hb2/weather?type=design&mode=design&t=3bQo6eFkrWfVJ0KP-1" target="_blank" class="w-full h-full">
+            <div class="w-full h-full bg-design-weather bg-cover bg-center hover:scale-[1.1] transition-transform"></div>
+          </a>
+        </div>
+        <div class="aspect-design rounded-[10px] sm:aspect-auto mt-6 sm:rounded-[15px] sm:w-[229px] sm:h-[159px] sm:mx-auto sm:mt-[42px] bio:mt-0 bio:inline-block md:w-[289px] md:h-[208px] md:rounded-[13px] bio:ml-[30px] overflow-hidden cursor-pointer opacity-0">
+          <a href="https://www.figma.com/file/SKqdkB06TTDRSIPY5LxmYN/portfolio?type=design&mode=design&t=3bQo6eFkrWfVJ0KP-1" target="_blank" class="w-full h-full">
+            <div class="w-full h-full bg-design-portfolio bg-cover bg-center hover:scale-[1.1] transition-transform"></div>
+          </a>
+        </div>
+      </div>
+    </section> 
+    <!-- design-end -->
+
     <!-- contact-start -->
     <section id="contact" class="section-base relative text-center py-6 h-[80vh] sm:h-[90vh] md:h-screen flex flex-col justify-center">
       <div class="w-full -translate-y-8">
-        <h3 class="text-xl sm:text-3xl opacity-0">what's next?</h3>
-        <h1 class="text-5xl sm:text-6xl font-semibold capitalize text-accent mt-5 md:mt-6 opacity-0">get in touch</h1>
-        <p class="text-xl w-[350px] sm:w-[537px] md:w-[771px] mx-auto mt-5 md:mt-6 opacity-0">Although i'm still learning, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-        <div class="flex w-max mx-auto space-x-5 mt-12 opacity-0">
+        <h3 id="contact-question" class="text-[20px] sm:text-[27px] leading-normal opacity-0">What's next?</h3>
+        <h1 id="contact-title" class="text-[38px] font-semibold capitalize text-accent dark:text-accent-dark leading-normal mt-[13px] sm:text-[50px] sm:mt-[10px] opacity-0">get in touch</h1>
+        <p id="contact-desk" class="sm:text-[18px] sm:max-w-[527px] bio:max-w-[771px] leading-normal mx-auto mt-[15px] sm:mt-[20px] md:mt-[21px] opacity-0">Whenever you want to contact me or just want to talk, my inbox is always open. Although I'm still learning, I will do my best for you.</p>
+        <div class="flex w-max mx-auto space-x-5 mt-14 sm:mt-12 md:mt-14 opacity-0">
           <a href="https://github.com/LRamdhan" target="_blank" class="hexagon group">
             <div class="sosial-link-layer"></div>
             <i class="sosial-link-icon fa-brands fa-github"></i>  
@@ -359,9 +445,9 @@
             <div class="sosial-link-layer"></div>
             <i class="sosial-link-icon fa-brands fa-instagram"></i>  
           </a>
-          <a href="https://facebook.com/luji.ramdhan" target="_blank" class="hexagon group">
+          <a href="https://www.linkedin.com/in/lujiramdhan/" target="_blank" class="hexagon group">
             <div class="sosial-link-layer"></div>
-            <i class="sosial-link-icon fa-brands fa-facebook-f"></i>  
+            <i class="sosial-link-icon fa-brands fa-linkedin-in"></i>
           </a>
           <a href="mailto:luzirmdhn@gmail.com" target="_blank" class="hexagon group">
             <div class="sosial-link-layer"></div>
@@ -369,10 +455,8 @@
           </a>
         </div>
       </div>
-      <h3 id="copyright" class="absolute bottom-0 text-lg py-5 capitalize w-full self-center opacity-0">built by luji ramdhan</h3>
+      <h3 id="copyright" class="absolute bottom-0 py-5 capitalize w-full self-center sm:text-[14px] opacity-0">built by luji ramdhan</h3>
     </section>
-    <!-- contact-end -->
-    
-    <script src="assets/js/portfolio.js" type="module"></script>
+    <!-- contact-end -->    
   </body>
 </html>

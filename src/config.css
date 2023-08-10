@@ -11,7 +11,6 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        color: #EBECED;
         @apply scroll-smooth;
     }
 
@@ -21,35 +20,39 @@
     }
     
     @font-face {
-        font-family: 'sansation';
-        src: url('../font/Sansation-Regular-webfont.woff') format('woff');
+        font-family: 'rubik';
+        src: url('../font/rubik-regular-webfont.woff2') format('woff');
     }
     
     ::-webkit-scrollbar {
-        @apply w-2 bg-dark;
+        @apply w-2 bg-dark dark:bg-light;
     }
 
     ::-webkit-scrollbar-thumb {
-        @apply bg-accent rounded-full;
+        @apply bg-accent dark:bg-accent-dark rounded-full;
     }
 
     body {
-        @apply font-sansation text-base;
+        @apply font-rubik text-base dark:text-background text-sm sm:text-[15px];
+    }
+
+    * {
+        @apply transition-colors;
     }
 }
 
 @layer components {
     .section-base {
-       @apply px-2.5 md:px-5 overflow-hidden transform-gpu;
+       @apply px-[19px] sm:px-[22px] py-[73px] sm:py-[71px] overflow-hidden transform-gpu;
     }
 
     .hexagon {
         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        @apply relative w-16 h-14 flex justify-center items-center text-3xl bg-[#165750] rotate-0 cursor-pointer overflow-hidden;
+        @apply relative w-16 h-14 flex justify-center items-center text-3xl bg-[#165750] dark:bg-accent-dark rotate-0 cursor-pointer overflow-hidden dark:text-[#EBECED];
     }
 
     .sosial-link-layer {
-        @apply absolute scale-150 -top-full -left-full transition-all ease-out duration-300 w-full h-full rotate-45 bg-accent group-hover:top-0 group-hover:left-0;
+        @apply absolute scale-150 -top-full -left-full transition-all ease-out duration-300 w-full h-full rotate-45 bg-accent dark:bg-[#01735B] group-hover:top-0 group-hover:left-0;
     }
 
     .sosial-link-icon {
@@ -57,55 +60,35 @@
     }
 
     .nav-child {
-        @apply bg-dark text-center capitalize font-semibold text-4xl py-10;
+        @apply bg-dark dark:bg-light text-center capitalize font-semibold text-[28px] sm:text-[45px] py-[54px] sm:py-20;
     }
 
     .project-card {
-        @apply aspect-square w-44 rounded-md md:w-56 sm:rounded-lg md:rounded-xl overflow-hidden flex-initial;
+        @apply aspect-square w-44 rounded-md sm:w-[214px] md:w-[230px] sm:rounded-lg md:rounded-xl overflow-hidden flex-initial;
     }
 
     .project-main {
-        @apply project-card relative bg-cover bg-center;
-    }
-
-    .project-layer {
-        @apply absolute w-full h-full left-0 -top-full bg-black/60 transition-all ease-out group-hover/root:top-0;
-    }
-
-    .project-desk {
-        @apply absolute inset-0 flex flex-col justify-center items-center p-2.5 space-y-4;
-    }
-
-    .project-teks {
-        @apply text-center text-xs font-semibold transition-all ease-out translate-y-5 opacity-0 group-hover/root:opacity-100 group-hover/root:translate-y-0 delay-300;
-    }
-
-    .project-link {
-        @apply transition-all ease-out translate-y-5 opacity-0 invisible group-hover/root:opacity-100 group-hover/root:translate-y-0 delay-500 group-hover/root:visible;
-    }
-
-    .project-link-child {
-        @apply w-max text-[11px] px-4 py-[2px] border-solid border-2 border-base rounded-full font-semibold capitalize hover:border-base hover:bg-base hover:text-dark transition-all;
+        @apply project-card bg-cover bg-center shadow-pr z-50 cursor-pointer;
     }
 
     .project-nav {
-        @apply bg-[#2F3135]/80 aspect-square w-[62px] rounded-full overflow-hidden flex justify-center items-center md:hover:scale-110 transition ease-out cursor-pointer;
+        @apply hidden md:flex bg-[#2F3135]/80 dark:bg-[#2F3135]/30 aspect-square w-[62px] rounded-full overflow-hidden justify-center items-center md:hover:scale-110 transition ease-out cursor-pointer absolute z-30 top-1/2 -translate-y-1/2;
     }
 
     .project-arrow {
-        @apply aspect-square w-1/3 border-solid border-t-[3.5px] sm:border-t-4 border-l-[3.5px] sm:border-l-4 border-accent;
+        @apply aspect-square w-1/3 border-solid border-t-[3.5px] sm:border-t-4 border-l-[3.5px] sm:border-l-4 border-accent dark:border-accent-dark;
     }
 
     .btn {
-        @apply mx-auto mb-20 bg-accent drop-shadow-basic capitalize w-36 h-11 font-bold text-xl font-arial flex justify-center items-center rounded-xl border-solid border-accent border-2 hover:text-accent hover:scale-110 cursor-pointer transition ease-out hover:bg-transparent hover:drop-shadow-none;
+        @apply mx-auto bg-accent dark:bg-accent-dark dark:text-base drop-shadow-basic dark:drop-shadow-basic-dark capitalize py-[6px] px-[22px] sm:py-[7px] sm:px-[27px] font-bold text-lg sm:text-xl dark:text-lg dark:sm:text-xl font-arial flex justify-center items-center rounded-xl border-solid border-accent dark:border-accent-dark border-2 hover:text-accent dark:hover:text-accent-dark hover:scale-110 cursor-pointer transition ease-out hover:bg-transparent dark:hover:bg-transparent hover:drop-shadow-none dark:hover:drop-shadow-none;
     }
 
     .link {
-        @apply cursor-pointer hover:text-base transition;
+        @apply cursor-pointer transition-all leading-none;
     }
 
     .link-bar {
-        @apply w-0 bg-base h-[2px] mt-[2px] transition-all ease-out group-hover:w-full;
+        @apply w-0 bg-base dark:bg-background h-[2px] mt-[2px] transition-all ease-out group-hover:w-full;
     }
 
     .teknologi {
@@ -113,39 +96,55 @@
     }
 
     .edu-root {
-        @apply border-2 border-accent border-solid rounded-xl p-5 bg-[#2C343E] sm:p-0 sm:bg-transparent sm:border-none sm:grid sm:grid-cols-edu-md sm:grid-rows-edu-md sm:place-content-center sm:place-items-start sm:gap-x-10 sm:gap-y-2 md:flex md:gap-0 md:justify-center md:items-end opacity-0 md:opacity-100;
-    }
-
-    .edu-icon {
-        @applay w-max h-max self-center;
+        @apply grid grid-cols-edu md:grid-cols-edu-md grid-rows-edu md:justify-content-center; /* */
     }
 
     .edu-school {
-        @apply font-semibold uppercase md:translate-y-1/4 md:text-end md:w-96;
+        @apply order-2 md:order-1 md:text-end md:w-96;
     }
 
     .edu-point {
-        @apply hidden md:block w-max mr-5 md:ml-5 md:self-start;
+        @apply order-1 h-full flex flex-col items-start md:order-2 row-span-2 md:row-span-1 w-max mr-3 sm:mr-[22px] md:mx-[18px];
     }
 
     .edu-point-1 {
-        @apply hidden md:block w-[2.5px] md:h-[51px] sm:h-[140px] bg-accent mx-auto;
+        @apply w-[2px] h-[32px] bg-accent dark:bg-accent-dark mx-auto md:h-[35px];
     }
 
     .edu-point-1-long {
-        @apply w-[2.5px] h-20 sm:h-[111px] md:h-36 bg-accent mx-auto;
+        @apply w-[2px] h-full bg-accent dark:bg-accent-dark mx-auto;
     }
 
     .edu-point-2 {
-        @apply aspect-square w-7 border-solid border-2 border-accent mx-auto rounded-full flex justify-center items-center;
+        @apply aspect-square w-[21px] sm:w-[25px] border-solid border-2 border-accent dark:border-accent-dark mx-auto rounded-full flex justify-center items-center;
     }
 
     .edu-detail {
-       @apply mt-2 sm:mt-0 sm:w-max md:w-96 md:translate-y-1/4;
+       @apply order-3 md:order-3 mt-2 pb-[79px] sm:pb-[93px] md:w-96 md:mt-0;
     }
 
     .edu-detail-text {
-       @apply text-justify sm:text-justify md:text-start text-sm sm:w-96 md:w-80;
+       @apply text-justify sm:text-justify md:text-start md:w-80;
+    }
+
+    .section-title {
+        @apply text-center capitalize font-semibold text-3xl sm:text-[33px] text-accent dark:text-accent-dark;
+    }
+
+    .skill {
+        @apply flex justify-start items-center space-x-[13px] h-[45px] px-[23px] border-[1px] border-solid border-[#3E4651] dark:border-[#C5C5C5] rounded-[8px] md:space-x-[14.4px] md:h-[54.4px] opacity-0;
+    }
+
+    .skill-img {
+        @apply h-7 md:h-[34px];
+    }
+
+    .skill-title {
+        @apply capitalize md:text-[17px]; 
+    }
+
+    .bone {
+        @apply bg-[#4E5C6D] dark:bg-[#C9C9C9] animate-pulse;
     }
 }
 
@@ -164,5 +163,21 @@
     
     .b-border {
         border: 1px solid blue;
+    }
+
+    .cell-center {
+        transform: translateX(calc(50% + 7px));
+    }
+
+    .cell-center-sm {
+        transform: translateX(calc(50% + 24px));
+    }
+    
+    .cell-center-md {
+        transform: translateX(calc(150% + 12px));
+    }
+    
+    .cell-center-bio {
+        transform: translateX(calc(150% + 81px));
     }
 }

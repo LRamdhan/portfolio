@@ -1,0 +1,62 @@
+ {
+  "main": {
+    "bio": {
+      "nav": ["about", "projects", "designs", "contact"],
+      "greet": ["hello, ",  "i'm"],
+      "name": "luji ramdhan",
+      "role": "frontend developer",
+      "description": "Passionate about web development and new technology. I enjoy every process that makes something better.",
+      "whatsapp": "let's talk",
+      "cv": "download CV"
+    },
+    "education": {
+      "title": "education",
+      "educations": [
+        {
+          "specialist": "software engineering",
+          "period": "jun 2019-jun 2022  ",
+          "place": "  SMKN Situraja",
+          "description": "For three years, I learned many things about computers from the basics, until finally I focused on programming. lorem"
+        },
+        {
+          "specialist": "programming course",
+          "period": "feb 2021-now  ",
+          "place": "  codepolitan, udemy",
+          "description": "To learn programming, I took several online courses on backend and front web development."
+        },
+        {
+          "specialist": "computer science",
+          "period": "oct 2022-now  ",
+          "place": "  UNSAP",
+          "description": "I chose to major in informatics engineering, also entered a coding club and focused on front end web development."
+        }
+      ]
+    },
+    "skill": {
+      "title": "skills"
+    },
+    "certification": {
+      "title": "certifications"
+    },
+    "project": {
+      "title": "projects",
+      "description": "These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously.",
+      "error": "something went wrong"
+    },
+    "design": {
+      "title": "designs",
+      "description": "These are some of my projects, some are made with other website designs and some are also made for practice, but all of them are made by me seriously."
+    },
+    "contact": {
+      "question": "what's next?",
+      "heading": "get in touch",
+      "description": "Although i'm still learning, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+      "copyright": "built by luji ramdhan"
+    }
+  },
+  "detail": {
+    "demo": "demo",
+    "code": "code"
+  },
+  "nav": ["about", "projects", "designs", "contact"]
+ }
