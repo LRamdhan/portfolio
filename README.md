@@ -1,2 +1,2 @@
 # Portfolio
-Portfolio with animation.
+Portfolio with transitions.
