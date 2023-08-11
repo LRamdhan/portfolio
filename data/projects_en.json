@@ -37,7 +37,7 @@
   },
   {
     "name": "weather",
-    "description": "Weather app that looks up the weather status of a specific country's city. it provides hourly and 5-day forecasts and can also suggest the best activities based on the current weather. in addition it supports search history.",
+    "description": "Weather app that looks up the weather status of a specific country's city. it provides hourly and 5-day forecasts and can also suggest the best activities based on current weather. In addition, it supports search history.",
     "technology": ["react", "tailwind", "redux", "axios", "materialui"],
     "image": {
       "xs": "fullweather.avif",
@@ -61,7 +61,7 @@
   },
   {
     "name": "aspirasi kampus",
-    "description": "Application that can send aspirations. The status of submitted aspirations can be tracked. It also has an admin role. i built this app only in backend. If you want to access it, you can use npm: 220660122210 and pass: jkla.",
+    "description": "Application that can send aspirations. The status of submitted aspirations can be tracked. It also has an admin role. I built this app only in backend. If you want to access it, you can use npm: 220660122210 and pass: jkla.",
     "technology": ["php", "mysql", "bootstrap"],
     "image": {
       "xs": "fullaspirasi.avif",
@@ -73,7 +73,7 @@
   },
   {
     "name": "pizzCheap",
-    "description": "A pizza delivery shop landing page that includes information like plans, contacts, and foods. It has parallax effect and is responsive.",
+    "description": "A pizza delivery shop landing page that includes information like plans, contact, and foods. It has parallax effect and is responsive.",
     "technology": ["html", "tailwind"],
     "image": {
       "xs": "fullpizza.avif",
@@ -85,7 +85,7 @@
   },
   {
     "name": "fashion",
-    "description": "Fashion shop landing page that features horizontal scrolling, parallax effect and responsiveness.",
+    "description": "Fashion shop landing page that features horizontal scrolling, parallax effect, and responsiveness.",
     "technology": ["html", "sass", "javascript"],
     "image": {
       "xs": "fullfashion.avif",
