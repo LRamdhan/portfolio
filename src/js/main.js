@@ -1,33 +1,38 @@
 import Interactivity from "./Interactivity.js";
 import Animation from "./Animation.js";
 
+
+// *initial style for animation is created in index.html (using tailwind)
+
+
+// provide interactivity and animation method for each component
 const run = new Interactivity();
+
+
+// provide all simplified animation method
 const animate = new Animation();
 
+
+// utility data
 const tringgerHeight = innerHeight * (50 / 100);
 const triggerData = run.triggerData;
 let arrowVisibility = false;
 let scrollProject = true;
 const half = innerHeight * (50 /100);
 
+
+// check visbility of each section every 500ms, if it's either visible or invisible -> run start/reverse animation
 setInterval(() => {
     triggerData.forEach(el => {
         const top = el.element.getBoundingClientRect().top;
         if(top <= tringgerHeight) {
-            if(!el.visible && el.running) {
+            if(!el.visible && el.running) { // only execute once
                 eval("run" + el.start);
                 el.visible = true;
                 el.running = false;
                 setTimeout(() => el.running = true, el.duration + 200);
             }
-        } else {
-            if(el.visible && el.running) {
-                eval("run" + el.end);
-                el.visible = false;
-                el.running = false;
-                setTimeout(() => el.running = true, el.duration + 200);
-            }
-        }
+        } 
     });
     if(scrollY > half) {
         if(!arrowVisibility) {
@@ -43,109 +48,7 @@ setInterval(() => {
 }, 500); 
 
 
-const projectList = Array.from(document.getElementById('project-gallery').children);
-const midIdx = Math.ceil(projectList.length / 2) - 1;
-const middle = projectList[midIdx].firstElementChild;
-middle.style.position = "absolute";
-middle.style.left = `calc(50% - ${middle.clientWidth / 2}px)`;
-middle.style.transform = `scale(${(innerWidth >= 640 && innerWidth < 768) ? 1.8 : 1.65})`;
-let sLeft = 0;
-for(let i = 0; i < midIdx; i++) {
-    sLeft += middle.clientWidth;
-    sLeft += 22;
-}
-sLeft += 600;
-sLeft -= (innerWidth / 2) - (middle.clientWidth / 2);
-document.getElementById('scroll').scrollLeft = sLeft;
-let projectRun = true;
-document.getElementById('project-nav-previous').addEventListener('click', event => {
-    if(projectRun) {
-        run.previousProject();
-        projectRun = false;
-        setTimeout(() => projectRun = true, 1070);
-    }
-});
-document.getElementById('project-nav-next').addEventListener('click', event => {
-    if(projectRun) {
-        run.nextProject();
-        projectRun = false;
-        setTimeout(() => projectRun = true, 1070);
-    }
-});
-new Hammer(document.getElementById('project-img')).on('swipeleft swiperight', function(e) {
-    if(e.type === "swiperight" && projectRun) {
-        run.previousProject();
-        projectRun = false;
-        setTimeout(() => projectRun = true, 1070);
-    } else if(e.type === "swipeleft" && projectRun) {
-        run.nextProject();
-        projectRun = false;
-        setTimeout(() => projectRun = true, 1070);
-    }
-});
-let popupOpen = false;
-Array.from(document.getElementsByClassName('project-card')).forEach((el, idx) => {
-    el.addEventListener('click', event => {
-        if(event.target.style.position === "absolute") {
-            run.startDetailProject(idx);
-            popupOpen = true;
-            return;
-        }
-        if(projectRun) {
-            run.pickProject(idx);
-            projectRun = false;
-            let syncDrt = 0;
-            if(innerWidth >= 1300) {
-                syncDrt = 200;
-            } else if(innerWidth >= 800) {
-                syncDrt = 100;
-            }
-            setTimeout(() => projectRun = true, 1070 + syncDrt);
-        }
-    });
-});
-Array.from(document.getElementsByClassName('detail-project-exit')).forEach(el => el.addEventListener('click', () => {
-    run.endDetailProject();
-    popupOpen = false;
-}));
-let projectVisbility = false;
-new IntersectionObserver(entries => projectVisbility = entries[0].isIntersecting).observe(document.getElementById('projects'));
-document.addEventListener('keyup', event => {
-    if(popupOpen && event.code === "Escape") {
-        event.preventDefault();
-        run.endDetailProject();
-    }
-    if(event.code === 'ArrowRight') {
-        event.preventDefault();
-        if(projectVisbility && triggerData[3].visible && projectRun) {
-            run.nextProject();
-            projectRun = false;
-            setTimeout(() => projectRun = true, 1070);
-        }
-    } else if(event.code === 'ArrowLeft') {
-        event.preventDefault();
-        if(projectVisbility && triggerData[3].visible && projectRun) {
-            run.previousProject();
-            projectRun = false;
-            setTimeout(() => projectRun = true, 1070);
-        }
-    }
-});
-for(let pjr of document.getElementsByClassName('project-main')) {
-    let amount = (innerWidth >= 640 && innerWidth < 768) ? 1.8 : 1.65;
-    pjr.addEventListener('mouseover', event => {        
-        if(event.target.style.position === 'absolute' && projectRun) {
-            animate.scaleHover(event.target, 'normal', amount, amount + 0.10);
-        }
-    });
-    pjr.addEventListener('mouseleave', event => {
-        if(event.target.style.position === 'absolute' && projectRun) {
-            animate.scaleHover(event.target, 'reverse', amount, amount + 0.10);
-        }
-    });
-}
-
-
+// open navigation in phone & tablet
 let dropRun = true;
 document.getElementById('hamberger').addEventListener('click', event => {
     if(dropRun) {
@@ -163,6 +66,7 @@ document.getElementById('drop-nav-exit').addEventListener('click', event => {
 });
 
 
+// click navigation in phone & tablet
 const home = document.getElementById('home');
 const projects = document.getElementById('projects');
 const designs = document.getElementById('designs');
@@ -193,6 +97,7 @@ Array.from(document.getElementById('drop-nav-child').children).forEach((el, ind)
 });
 
 
+// switch between dark and light mode
 const root = document.getElementById('root');
 let modeRun = false;
 Array.from(document.getElementsByClassName('switch')).forEach(el => {

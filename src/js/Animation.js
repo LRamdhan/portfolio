@@ -1,5 +1,7 @@
 import anime from "./../../node_modules/animejs/lib/anime.es.js";
 
+
+// provide all simplified animation method
 class Animation {
     fadeDown(dom) {
         new anime({

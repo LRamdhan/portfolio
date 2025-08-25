@@ -1,7 +1,9 @@
 import Animation from "./Animation.js";
 
+
+// provide interactivity and animation method
 class Interactivity {
-    #animate = new Animation();
+    #animate = new Animation(); // provide all simplified animation method
     #normalEducation = [];
     #reverseEducation = [];
     #educationDelay = 0;
@@ -11,8 +13,8 @@ class Interactivity {
     #normalProject = [];
     #reverseProject = [];
     #contact = Array.from(document.getElementById('contact').firstElementChild.children);
-    #projectGallery = document.getElementById('project-gallery').children;
-    #currentProject = Math.ceil(this.#projectGallery.length / 2) - 1;
+    // #projectGallery = document.getElementById('project-gallery').children;
+    // #currentProject = Math.ceil(this.#projectGallery.length / 2) - 1;
     #dropNav;
     #navChild;
     #dropNavLang;
@@ -78,6 +80,7 @@ class Interactivity {
         setTimeout(() => this.#animate.fadeUp("#myself"), 3000);
     }
 
+    // provide current section info, used to check whether to run start/reverse animation
     get triggerData() {
         return [
             {
@@ -220,10 +223,6 @@ class Interactivity {
     #createProject() {
         this.#normalProject.push("this.#animate.fadeUp('#project-title', 'normal', 20)");
         this.#normalProject.push("this.#animate.fadeUp('#project-desk', 'normal', 20)");
-        this.#normalProject.push("this.#animate.pop('#project-img', 'normal', 20)");
-        this.#normalProject.forEach(el => {
-            this.#reverseProject.unshift(el.replaceAll('normal', 'reverse'));
-        });
     }
 
     startProject() {
@@ -276,57 +275,6 @@ class Interactivity {
     
     endArrowUp() {
         this.#animate.fadeUp('#arrow-up', 'reverse', undefined, 300);
-    }
-
-    nextProject() {
-        const scaleAmount = (innerWidth >= 640 && innerWidth < 768) ? 1.8 : 1.65;
-        if(this.#currentProject == this.#projectGallery.length - 1) return;
-        this.#animate.scale(this.#projectGallery[this.#currentProject].firstElementChild, 'reverse', scaleAmount);
-        setTimeout(() => this.#projectGallery[this.#currentProject].firstElementChild.style.position = "static", 350);
-        setTimeout(() => this.#currentProject++, 355);
-        setTimeout(() => this.#projectGallery[this.#currentProject].scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'}), 360);    
-        const width = this.#projectGallery[this.#currentProject].firstElementChild.clientWidth;
-        setTimeout(() => {
-            this.#projectGallery[this.#currentProject].firstElementChild.style.position = "absolute";
-            this.#projectGallery[this.#currentProject].firstElementChild.style.left = `calc(50% - ${parseInt(width) / 2}px)`;
-        }, 760);
-        setTimeout(() => this.#animate.scale(this.#projectGallery[this.#currentProject].firstElementChild, 'normal', scaleAmount), 765);
-    }
-
-    previousProject() {
-        const scaleAmount = (innerWidth >= 640 && innerWidth < 768) ? 1.8 : 1.65;
-        if(this.#currentProject == 0) return;
-        this.#animate.scale(this.#projectGallery[this.#currentProject].firstElementChild, 'reverse', scaleAmount);
-        setTimeout(() => this.#projectGallery[this.#currentProject].firstElementChild.style.position = "static", 350);
-        setTimeout(() => this.#currentProject--, 355);
-        setTimeout(() => this.#projectGallery[this.#currentProject].scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'}), 360);    
-        const width = this.#projectGallery[this.#currentProject].firstElementChild.clientWidth;
-        setTimeout(() => {
-            this.#projectGallery[this.#currentProject].firstElementChild.style.position = "absolute";
-            this.#projectGallery[this.#currentProject].firstElementChild.style.left = `calc(50% - ${parseInt(width) / 2}px)`;
-        }, 760);
-        setTimeout(() => this.#animate.scale(this.#projectGallery[this.#currentProject].firstElementChild, 'normal', scaleAmount), 765);
-    }
-
-    pickProject(idx) {
-        const scaleAmount = (innerWidth >= 640 && innerWidth < 768) ? 1.8 : 1.65;
-        if(this.#currentProject == this.#projectGallery.length - 1) return;
-        this.#animate.scale(this.#projectGallery[this.#currentProject].firstElementChild, 'reverse', scaleAmount);
-        setTimeout(() => this.#projectGallery[this.#currentProject].firstElementChild.style.position = "static", 350);
-        setTimeout(() => this.#currentProject = idx, 355);
-        setTimeout(() => this.#projectGallery[this.#currentProject].scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'}), 360);    
-        const width = this.#projectGallery[this.#currentProject].firstElementChild.clientWidth;
-        let syncDrt = 0;
-        if(innerWidth >= 1300) {
-            syncDrt = 200;
-        } else if(innerWidth >= 800) {
-            syncDrt = 100;
-        }
-        setTimeout(() => {
-            this.#projectGallery[this.#currentProject].firstElementChild.style.position = "absolute";
-            this.#projectGallery[this.#currentProject].firstElementChild.style.left = `calc(50% - ${parseInt(width) / 2}px)`;
-        }, 760 + syncDrt);
-        setTimeout(() => this.#animate.scale(this.#projectGallery[this.#currentProject].firstElementChild, 'normal', scaleAmount), 765 + syncDrt);
     }
 
     #createDropNav() {
@@ -426,7 +374,7 @@ class Interactivity {
         }, 150);
         setTimeout(async () => {
             try {  
-                let data = await fetch(`../../data/projects_en.json`);
+                let data = await fetch(`../../src/data/projects_en.json`);
                 data = await data.json();
                 data = data[idx]; 
                 let img;
@@ -440,12 +388,12 @@ class Interactivity {
                     if(!img) img = data.image.sm;
                     if(!img) img = data.image.xs;
                 }
-                this.#detailProject.blurImg.style.backgroundImage = `url(assets/img/project/${img})`;
-                this.#detailProject.clearImg.setAttribute('src', `assets/img/project/${img}`);
+                this.#detailProject.blurImg.style.backgroundImage = `url(src/img/project/${img})`;
+                this.#detailProject.clearImg.setAttribute('src', `src/img/project/${img}`);
                 this.#detailProject.title.textContent = data.name;
                 this.#detailProject.desk.textContent = data.description;
                 let newImage = "";
-                for(let tech of data.technology) { newImage += `<img src="assets/img/skill/${tech}.svg" alt="${tech}" title="${tech}" class="h-9">`; }
+                for(let tech of data.technology) { newImage += `<img src="src/img/skill/${tech}.svg" alt="${tech}" title="${tech}" class="h-9">`; }
                 this.#detailProject.tech.innerHTML = newImage;
                 this.#detailProject.demo.href = data.demo;
                 this.#detailProject.code.href = data.code;

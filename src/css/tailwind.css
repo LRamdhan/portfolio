@@ -16,12 +16,12 @@
 
     @font-face {
         font-family: 'suez';
-        src: url('../font/SuezOne-Regular.ttf') format('truetype');
+        src: url('/font/SuezOne-Regular.ttf') format('truetype');
     }
     
     @font-face {
         font-family: 'rubik';
-        src: url('../font/rubik-regular-webfont.woff2') format('woff');
+        src: url('/font/rubik-regular-webfont.woff2') format('woff');
     }
     
     ::-webkit-scrollbar {
