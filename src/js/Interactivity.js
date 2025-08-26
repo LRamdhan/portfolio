@@ -5,55 +5,49 @@ import Animation from "./Animation.js";
 class Interactivity {
     #animate = new Animation(); // provide all simplified animation method
     #normalEducation = [];
-    #reverseEducation = [];
     #educationDelay = 0;
     #educationDuration = 0;
     #skillImg = Array.from(document.getElementById('skill-img').children);
     #skillDuration = (innerWidth >= 640) ? 300 * 4 : 300 * 5;
-    #normalProject = [];
-    #reverseProject = [];
+    #projectElement = [
+        document.getElementById('project-title'),
+        document.getElementById('project-desk'),
+        document.getElementById('project-item-1'),
+        document.getElementById('project-item-2'),
+        document.getElementById('project-item-3'),
+        document.getElementById('project-item-4'),
+        document.getElementById('project-item-5'),
+        document.getElementById('project-item-6'),
+        document.getElementById('project-item-7'),
+
+    ];
     #contact = Array.from(document.getElementById('contact').firstElementChild.children);
-    // #projectGallery = document.getElementById('project-gallery').children;
-    // #currentProject = Math.ceil(this.#projectGallery.length / 2) - 1;
     #dropNav;
     #navChild;
     #dropNavLang;
     #dropNavExit;
-    #eduRoot;
     #switchModeElement;
     #certificationElements = {
         title: document.getElementById('cert-title'),
         cert1: document.getElementById('cert-1'),
-        cert2: document.getElementById('cert-2')
+        cert2: document.getElementById('cert-2'),
+        cert3: document.getElementById('cert-3'),
+        cert4: document.getElementById('cert-4'),
+        cert5: document.getElementById('cert-5'),
     };
     #designElements = {
         title: document.getElementById('design-title'),
         desk: document.getElementById('design-desk'),
         pict: Array.from(document.getElementById('design-pict').children)
     };
-    #detailProject = {
-        popup: document.getElementById('detail-project'),
-        blurImg: document.getElementById('detail-project-blur'),
-        clearImg: document.getElementById('detail-project-clear'),
-        title: document.getElementById('detail-project-title'),
-        desk: document.getElementById('detail-project-desk'),
-        tech: document.getElementById('detail-project-tech'),
-        demo: document.getElementById('detail-project-demo'),
-        code: document.getElementById('detail-project-code'),
-        paper: document.getElementById('detail-project-paper'),
-        layer: document.getElementById('detail-project-layer'),
-        outerExit: document.getElementById('detail-project-exit-outer'),
-        skeleton: document.getElementsByClassName('skeleton'),
-        error: document.getElementById('detail-project-error')
-    };
 
     constructor() {
         this.#setHeight();
         this.#bioSection();
         this.#createNormalEducation();
-        this.#createReverseEducation();
+        // this.#createReverseEducation();
         this.#countEducationDuration();
-        this.#createProject();
+        // this.#createProject();
         this.#createDropNav();
         this.#contact.push(document.getElementById('copyright'));
         this.#createSwitchMode();
@@ -145,12 +139,6 @@ class Interactivity {
         this.#normalEducation.push(['this.#animate.growY(document.getElementById("line-4"), "normal");', 300]);
     }
 
-    #createReverseEducation() {     
-        this.#normalEducation.forEach(el => {
-            this.#reverseEducation.unshift([el[0].replaceAll("normal", "reverse"), el[1]]);
-        });
-    }
-
     #countEducationDuration() {
         this.#normalEducation.forEach(el => {
             this.#educationDuration += el[1];
@@ -160,14 +148,6 @@ class Interactivity {
     startEducation() {
         this.#educationDelay = 0;
         this.#normalEducation.forEach((el, ind) => {
-            setTimeout(() => eval(el[0]), this.#educationDelay);
-            this.#educationDelay += el[1];
-        });
-    }
-
-    endEducation() {
-        this.#educationDelay = 0;
-        this.#reverseEducation.forEach((el, ind) => {
             setTimeout(() => eval(el[0]), this.#educationDelay);
             this.#educationDelay += el[1];
         });
@@ -190,66 +170,13 @@ class Interactivity {
         });
     }
     
-    endSkill() {
-        let delay = 0;
-        for(let i = this.#skillImg.length - 1; i >= 0; i--) {
-            let ind = i;
-            if(innerWidth < 640) {
-                ind--;
-                if(ind % 2 === 0) delay += 150;
-            } else if(innerWidth > 640 && innerWidth < 768) {
-                switch(ind) {
-                    case 2 :
-                    case 5 :
-                    case 7 :
-                    case 11 :
-                    case 14 :
-                        delay += 150;
-                }
-            } else {
-                switch(ind) {
-                    case 3 :
-                    case 7 :
-                    case 11 :
-                    case 15 :
-                        delay += 150;
-                }
-            }
-            setTimeout(() => this.#animate.fadeUpR(this.#skillImg[i], 'reverse'), delay);
-        };
-        setTimeout(() => this.#animate.fadeUpR("#skill-title", 'reverse'), (innerWidth >= 640) ? 900 : 1800);
-    };
-
-    #createProject() {
-        this.#normalProject.push("this.#animate.fadeUp('#project-title', 'normal', 20)");
-        this.#normalProject.push("this.#animate.fadeUp('#project-desk', 'normal', 20)");
-    }
-
     startProject() {
         let delay = 0;
-        this.#normalProject.forEach((el, ind) => {
-            if(ind == 1) {
-                delay = 200;
-            } else if(ind == 2) {
-                delay = 500;
-            } else if(ind > 2){
-                delay = 700;
-            }
-            setTimeout(() => eval(el), delay);
-        });
-    }
-
-    endProject() {
-        let delay = 0;
-        this.#reverseProject.forEach((el, ind) => {
-            if(ind == 1) {
-                delay = 200;
-            } else if(ind == 2) {
-                delay = 500;
-            } else if(ind > 2) {
-                delay = 700;
-            }
-            setTimeout(() => eval(el), delay);
+        this.#projectElement.forEach((el, ind) => {
+            setTimeout(() => {
+                this.#animate.fadeUp(el, 'normal', 20)
+            }, delay);
+            delay += 200;
         });
     }
 
@@ -258,14 +185,6 @@ class Interactivity {
         this.#contact.forEach((el, ind) => {
             setTimeout(() => this.#animate.fadeUp(el, 'normal', undefined, 300), delay);
             delay += 150;
-        });
-    }
-
-    endContact() {
-        let delay = 800;
-        this.#contact.forEach((el, ind) => {
-            setTimeout(() => this.#animate.fadeUp(el, 'reverse', undefined, 300), delay);
-            delay -= 150;
         });
     }
 
@@ -336,97 +255,20 @@ class Interactivity {
         this.#animate.fadeUp(this.#certificationElements.title, "normal", undefined, 200);
         setTimeout(() => this.#animate.fadeUp(this.#certificationElements.cert1, "normal", undefined, 400), 200);
         setTimeout(() => this.#animate.fadeUp(this.#certificationElements.cert2, "normal", undefined, 400), 400);
+        setTimeout(() => this.#animate.fadeUp(this.#certificationElements.cert3, "normal", undefined, 400), 600);
+        setTimeout(() => this.#animate.fadeUp(this.#certificationElements.cert4, "normal", undefined, 400), 800);
+        setTimeout(() => this.#animate.fadeUp(this.#certificationElements.cert5, "normal", undefined, 400), 1000);
     }
     
-    endCertification() {
-        this.#animate.fadeUp(this.#certificationElements.cert2, "reverse", undefined, 400);
-        setTimeout(() => this.#animate.fadeUp(this.#certificationElements.cert1, "reverse", undefined, 400), 200);
-        setTimeout(() => this.#animate.fadeUp(this.#certificationElements.title, "reverse", undefined, 200), 400);
-    }
-
     startDesign() {
         this.#animate.fadeUp(this.#designElements.title, "normal", undefined, 200);
         setTimeout(() => this.#animate.fadeUp(this.#designElements.desk, "normal", undefined, 200), 100);
         setTimeout(() => this.#animate.fadeUp(this.#designElements.pict[0], "normal", undefined, 400), 200);
         setTimeout(() => this.#animate.fadeUp(this.#designElements.pict[1], "normal", undefined, 400), 400);
         setTimeout(() => this.#animate.fadeUp(this.#designElements.pict[2], "normal", undefined, 400), 600);
+        setTimeout(() => this.#animate.fadeUp(this.#designElements.pict[3], "normal", undefined, 400), 800);
 
-    }
-    
-    endDesign() {
-        this.#animate.fadeUp(this.#designElements.pict[1], "reverse", undefined, 400);
-        setTimeout(() => this.#animate.fadeUp(this.#designElements.pict[2], "reverse", undefined, 400), 100);
-        setTimeout(() => this.#animate.fadeUp(this.#designElements.pict[0], "reverse", undefined, 400), 300);
-        setTimeout(() => this.#animate.fadeUp(this.#designElements.desk, "reverse", undefined, 200), 700);
-        setTimeout(() => this.#animate.fadeUp(this.#designElements.title, "reverse", undefined, 200), 800);
-    }
-
-    startDetailProject(idx) {
-        this.#detailProject.popup.style.display = "flex";
-        setTimeout(() => this.#detailProject.layer.style.opacity = 1, 100);
-        setTimeout(() => this.#animate.fadeUp(this.#detailProject.paper, "normal", null, 300), 100);
-        if(innerWidth <= 768) setTimeout(() => this.#animate.pop(this.#detailProject.outerExit, "normal"), 100);
-        setTimeout(() => {
-            for(let bone of this.#detailProject.skeleton) { bone.style.display = 'block'; }
-            this.#detailProject.tech.innerHTML = `<div class="skeleton bone aspect-square w-9"></div>
-            <div class="skeleton bone aspect-square w-9"></div>
-            <div class="skeleton bone aspect-square w-9"></div>`;
-        }, 150);
-        setTimeout(async () => {
-            try {  
-                let data = await fetch(`../../src/data/projects_en.json`);
-                data = await data.json();
-                data = data[idx]; 
-                let img;
-                if(innerWidth < 768 && innerWidth >= 640) {
-                    img = data.image.sm;
-                    if(!img) img = data.image.xs;
-                } else if(innerWidth < 640) {
-                    img = data.image.xs;
-                } else if(innerWidth >= 768) {
-                    img = data.image.md;
-                    if(!img) img = data.image.sm;
-                    if(!img) img = data.image.xs;
-                }
-                this.#detailProject.blurImg.style.backgroundImage = `url(src/img/project/${img})`;
-                this.#detailProject.clearImg.setAttribute('src', `src/img/project/${img}`);
-                this.#detailProject.title.textContent = data.name;
-                this.#detailProject.desk.textContent = data.description;
-                let newImage = "";
-                for(let tech of data.technology) { newImage += `<img src="src/img/skill/${tech}.svg" alt="${tech}" title="${tech}" class="h-9">`; }
-                this.#detailProject.tech.innerHTML = newImage;
-                this.#detailProject.demo.href = data.demo;
-                this.#detailProject.code.href = data.code;
-                this.#detailProject.blurImg.style.display = 'block';
-                this.#detailProject.title.style.display = 'block';
-                this.#detailProject.desk.style.display = 'block';
-                this.#detailProject.demo.style.display = 'block';
-                this.#detailProject.code.style.display = data.code ? "block" : "none";
-            } catch(error) {
-                console.log(error.message);
-                this.#detailProject.error.style.display = 'block';
-            } finally {
-                for(let bone of this.#detailProject.skeleton) { bone.style.display = 'none'; }
-            }
-        }, 500);
-    }
-
-    endDetailProject() {
-        this.#animate.fadeUp(this.#detailProject.paper, "reverse", null, 300);
-        if(innerWidth <= 768) this.#animate.pop(this.#detailProject.outerExit, "reverse");
-        this.#detailProject.layer.style.opacity = 0;
-        setTimeout(() => this.#detailProject.popup.style.display = "none", 350);
-        setTimeout(() => {
-            for(let bone of this.#detailProject.skeleton) { bone.style.display = 'none'; }
-            this.#detailProject.tech.innerHTML = "";
-            this.#detailProject.blurImg.style.display = 'none';
-            this.#detailProject.title.style.display = 'none';
-            this.#detailProject.desk.style.display = 'none';
-            this.#detailProject.demo.style.display = 'none';
-            this.#detailProject.code.style.display = 'none';
-            this.#detailProject.error.style.display = 'none';
-        }, 400);
-    }
+    }    
 }
 
 export default Interactivity;
