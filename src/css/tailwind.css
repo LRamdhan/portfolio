@@ -180,4 +180,12 @@
     .cell-center-bio {
         transform: translateX(calc(150% + 81px));
     }
+
+    .translate-half-md {
+        transform: translateX(calc(50% + 4px));
+    }
+
+    .translate-half-bio {
+        transform: translateX(calc(50% + 27px));
+    }
 }
