@@ -188,4 +188,8 @@
     .translate-half-bio {
         transform: translateX(calc(50% + 27px));
     }
+
+    .hover-scale {
+        @apply hover:scale-110 transition;
+    }
 }
