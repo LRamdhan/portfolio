@@ -25,7 +25,7 @@ module.exports = {
         bio: "minmax(max-content, 500px) minmax(max-content, 500px)",
         edu: "max-content auto",
         "edu-md": "max-content max-content max-content",
-        "cert-bio": "max-content max-content"
+        "cert-bio": "1fr 1fr"
       },
       gridTemplateRows: {
         bio: "max-content auto",
